@@ -1,0 +1,112 @@
+extends Node2D
+
+var global
+	
+@export var room_scenes:Array[PackedScene]
+@export var camera_y_offset = -160
+
+var rng = RandomNumberGenerator.new()
+
+var modules = {}
+var screen_size
+var map_size
+
+class ClampArea:
+	var clamp_x_min
+	var clamp_x_max
+	var clamp_y_min
+	var clamp_y_max
+	
+	func _init(x_min, x_max, y_min, y_max):
+		clamp_x_min = x_min
+		clamp_x_max = x_max
+		clamp_y_min = y_min
+		clamp_y_max = y_max
+	
+var clamp_area: ClampArea
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	global = get_node("/root/Global")
+	
+	screen_size = get_viewport_rect().size
+	var screen_offset = screen_size / 2
+	map_size = generate_room(global.progress + 1)
+	clamp_area = ClampArea.new(
+		screen_size.x / 2,
+		map_size.x - screen_size.x / 2,
+		screen_size.y / 2 + map_size.y,
+		screen_size.y / 2
+	)
+	$Camera.position = screen_offset.clamp(
+		Vector2(clamp_area.clamp_x_min, clamp_area.clamp_y_min),
+		Vector2(clamp_area.clamp_x_max, clamp_area.clamp_y_max),
+	)
+	
+	$GUI.update_stamina()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	change_stamina(-delta)
+	
+	var new_camera_position = Vector2(
+		$Giant.position.x,
+		$Giant.position.y + camera_y_offset
+	).clamp(
+		Vector2(clamp_area.clamp_x_min, clamp_area.clamp_y_min),
+		Vector2(clamp_area.clamp_x_max, clamp_area.clamp_y_max),
+	)
+	$Camera.position = new_camera_position
+	
+	if $Giant.position.x >= map_size.x:
+		change_room()
+
+# ROOM GENERATION:
+
+func generate_room(value):
+	var offset = Vector2(0, 0)
+	for n in value:
+		offset = generate_module(n, offset)		
+	return offset
+	
+func generate_module(value, offset):		
+	if value in modules: return
+	
+	var index = rng.randi_range(0, room_scenes.size() - 1)
+	
+	var new_room = room_scenes[index].instantiate()
+	new_room.position = offset
+	new_room.name = "room_" + str(index)
+	add_child(new_room)
+	
+	modules[value] = true
+	
+	return offset + Vector2(new_room.width(), -new_room.height_difference())
+
+func change_stamina(value):
+	global.change_stamina(global.stamina + value)
+	$GUI.update_stamina()
+	
+	if global.stamina <= 0:
+		get_tree().change_scene_to_file("res://scenes/camp/camp.tscn")
+
+func change_currency(value):
+	global.change_currency(global.currency + value)
+	$GUI.update_currency()
+		
+func change_room():
+	change_stamina(20)
+	global.progress += 1
+	$Giant.refresh_shield()
+	get_tree().reload_current_scene()
+
+# SIGNALS:
+
+func _on_giant_hazard_hit(amount):
+	change_stamina(amount)
+
+func _on_giant_currency_collected(amount):
+	change_currency(amount)
+
+func _on_giant_potion_collected(amount):
+	change_stamina(amount)

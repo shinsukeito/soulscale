@@ -1,0 +1,48 @@
+[gd_scene load_steps=11 format=3 uid="uid://cv38awhdc6tbb"]
+
+[ext_resource type="Script" path="res://scripts/climb.gd" id="1_ktavc"]
+[ext_resource type="PackedScene" uid="uid://djp0qbyow0l8j" path="res://scenes/climb/modules/module_hall.tscn" id="2_05wdf"]
+[ext_resource type="PackedScene" uid="uid://beblkgsblksrl" path="res://scenes/climb/modules/module_1.tscn" id="3_1hlcq"]
+[ext_resource type="PackedScene" uid="uid://cslxaxhgvxwyt" path="res://scenes/climb/gui.tscn" id="3_31qmc"]
+[ext_resource type="PackedScene" uid="uid://bgiqielq6ue7g" path="res://scenes/climb/modules/module_2.tscn" id="4_jq87g"]
+[ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/climb/debugger.tscn" id="4_rvg5e"]
+[ext_resource type="PackedScene" uid="uid://0qq38t6qculs" path="res://scenes/climb/modules/module_table.tscn" id="5_2l08i"]
+[ext_resource type="PackedScene" uid="uid://wvc313jlr258" path="res://scenes/climb/giant.tscn" id="5_pc7ru"]
+[ext_resource type="Texture2D" uid="uid://c0xiaagq2orf7" path="res://assets/visual/background.jpg" id="6_nwp4s"]
+[ext_resource type="TileSet" uid="uid://dotegxn6gb77k" path="res://tilesets/terrain.tres" id="8_isia6"]
+
+[node name="Climb" type="Node2D"]
+script = ExtResource("1_ktavc")
+room_scenes = Array[PackedScene]([ExtResource("2_05wdf"), ExtResource("3_1hlcq"), ExtResource("4_jq87g"), ExtResource("5_2l08i")])
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(320, 320)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+
+[node name="GUI" parent="." instance=ExtResource("3_31qmc")]
+
+[node name="Debugger" parent="." instance=ExtResource("4_rvg5e")]
+
+[node name="Giant" parent="." instance=ExtResource("5_pc7ru")]
+position = Vector2(85, 516)
+
+[node name="StartWall" type="TileMap" parent="."]
+tile_set = ExtResource("8_isia6")
+format = 2
+layer_0/tile_data = PackedInt32Array(1310719, 3, 0, 1245183, 3, 0, 1179647, 3, 0, 1114111, 3, 0, 1048575, 3, 0, 983039, 3, 0, 917503, 3, 0, 851967, 3, 0, 786431, 3, 0, 720895, 3, 0, 655359, 3, 0, 589823, 3, 0, 524287, 3, 0, 458751, 3, 0, 393215, 3, 0, 327679, 3, 0, 262143, 3, 0, 196607, 3, 0, 131071, 3, 0, 65535, 3, 0)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.01, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(1, 0.890196, 0.705882, 1)
+position = Vector2(969.251, -514.249)
+scale = Vector2(1.95459, 2.29639)
+texture = ExtResource("6_nwp4s")
+
+[connection signal="currency_collected" from="Giant" to="." method="_on_giant_currency_collected"]
+[connection signal="hazard_hit" from="Giant" to="." method="_on_giant_hazard_hit"]
+[connection signal="potion_collected" from="Giant" to="." method="_on_giant_potion_collected"]

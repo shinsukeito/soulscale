@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba1gvbrsvyaeq"]
+
+[ext_resource type="Script" path="res://scripts/collectible.gd" id="1_11v66"]
+[ext_resource type="Texture2D" uid="uid://jafgkfo8givq" path="res://assets/visual/bottle.png" id="2_j06ct"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y3rfg"]
+radius = 8.0
+height = 26.0
+
+[node name="Potion" type="Area2D"]
+collision_layer = 8
+collision_mask = 3
+script = ExtResource("1_11v66")
+type = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_j06ct")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_y3rfg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

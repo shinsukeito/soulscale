@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=3 uid="uid://clwhmw7sft4nb"]
+
+[ext_resource type="Script" path="res://scripts/camp.gd" id="1_is3m8"]
+[ext_resource type="Texture2D" uid="uid://cbf67weqkjemm" path="res://assets/visual/campfire.jpg" id="2_88px5"]
+[ext_resource type="Texture2D" uid="uid://ygf21srxmad6" path="res://assets/visual/giant.png" id="2_oy2om"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hl6u6"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_h02b1"]
+font_size = 24
+
+[node name="Camp" type="Node2D"]
+script = ExtResource("1_is3m8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(258, 493)
+scale = Vector2(0.231689, 0.231689)
+texture = ExtResource("2_88px5")
+
+[node name="Message" type="Label" parent="CanvasLayer"]
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 249.0
+offset_bottom = 35.0
+text = "Time to camp for the night..."
+
+[node name="SleepButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -53.0
+offset_right = -19.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "SLEEP"
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(371, 547)
+texture = ExtResource("2_oy2om")
+
+[node name="DayLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_top = 8.0
+offset_right = 34.0
+offset_bottom = 45.0
+grow_horizontal = 2
+text = "DAY 1"
+label_settings = SubResource("LabelSettings_hl6u6")
+horizontal_alignment = 1
+
+[node name="ProgressLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -67.0
+offset_top = 37.0
+offset_right = 67.0
+offset_bottom = 74.0
+grow_horizontal = 2
+text = "PROGRESS"
+label_settings = SubResource("LabelSettings_h02b1")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/SleepButton" to="." method="_on_sleep_button_pressed"]

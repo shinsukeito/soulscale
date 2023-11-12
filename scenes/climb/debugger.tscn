@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cncpw54e7xo7"]
+
+[ext_resource type="Script" path="res://scripts/debugger.gd" id="1_filwj"]
+
+[node name="Debugger" type="CanvasLayer"]
+script = ExtResource("1_filwj")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 62.0
+offset_bottom = 31.0
+text = "DEBUG"

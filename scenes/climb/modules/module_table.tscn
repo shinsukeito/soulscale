@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://0qq38t6qculs"]
+
+[ext_resource type="Script" path="res://scripts/module.gd" id="1_fyrb7"]
+[ext_resource type="PackedScene" uid="uid://dll32f7kvivxl" path="res://scenes/climb/hazard.tscn" id="2_blv4e"]
+[ext_resource type="TileSet" uid="uid://dotegxn6gb77k" path="res://tilesets/terrain.tres" id="3_p3c7m"]
+[ext_resource type="PackedScene" uid="uid://3m6h6oty2lln" path="res://scenes/climb/currency.tscn" id="4_68gah"]
+
+[sub_resource type="Curve2D" id="Curve2D_1dy5m"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 141, 432, 0, 0, 0, 0, 214, 431)
+}
+point_count = 2
+
+[node name="Module" type="Node2D"]
+script = ExtResource("1_fyrb7")
+end_height = 17
+hazard_scene = ExtResource("2_blv4e")
+
+[node name="Terrain" type="TileMap" parent="."]
+tile_set = ExtResource("3_p3c7m")
+cell_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(1114112, 3, 0, 1179648, 3, 0, 1245184, 3, 0, 1310720, 3, 0, 1376256, 3, 0, 1441792, 3, 0, 1507328, 3, 0, 1048579, 0, 0, 1114115, 3, 0, 1179651, 3, 0, 1245187, 3, 0, 1310723, 3, 0, 1376259, 3, 0, 1441795, 3, 0, 1507331, 3, 0, 917508, 3, 0, 983044, 3, 0, 1048580, 3, 0, 1114116, 3, 0, 1179652, 3, 0, 1310724, 3, 0, 1376260, 3, 0, 1441796, 3, 0, 1507332, 3, 0, 1048581, 3, 0, 1114117, 3, 0, 1179653, 3, 0, 1245189, 3, 0, 1310725, 3, 0, 1376261, 3, 0, 1441797, 3, 0, 1507333, 3, 0, 1114118, 3, 0, 1179654, 3, 0, 1245190, 3, 0, 1310726, 3, 0, 1376262, 3, 0, 1441798, 3, 0, 1507334, 3, 0, 917509, 3, 0, 983045, 3, 0, 917510, 3, 0, 983046, 3, 0, 1048582, 3, 0, 1048583, 0, 65536, 1114119, 3, 0, 1179655, 3, 0, 1245191, 3, 0, 1310727, 3, 0, 1376263, 3, 0, 1441799, 3, 0, 1507335, 3, 0, 1114120, 3, 0, 1179656, 3, 0, 1245192, 3, 0, 1310728, 3, 0, 1376264, 3, 0, 1441800, 3, 0, 1507336, 3, 0, 1245188, 3, 0, 1114114, 3, 0, 1114113, 3, 0, 1376257, 3, 0, 1441793, 3, 0, 1507329, 3, 0, 1441794, 3, 0, 1376258, 3, 0, 1310722, 3, 0, 1245186, 3, 0, 1245185, 3, 0, 1179649, 3, 0, 1310721, 3, 0, 1179650, 3, 0, 1507330, 3, 0, 1114121, 3, 0, 1179657, 3, 0, 1245193, 3, 0, 1310729, 3, 0, 1376265, 3, 0, 1441801, 3, 0, 1507337, 3, 0, 458758, 3, 0, 458757, 3, 0, 458756, 3, 0)
+
+[node name="HazardPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_1dy5m")
+
+[node name="HazardSampler" type="PathFollow2D" parent="HazardPath"]
+position = Vector2(141, 432)
+rotation = -0.0136978
+
+[node name="Currency" parent="." instance=ExtResource("4_68gah")]
+position = Vector2(176, 427)
+
+[node name="Currency2" parent="." instance=ExtResource("4_68gah")]
+position = Vector2(178, 332)
