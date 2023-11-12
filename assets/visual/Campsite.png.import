@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ygf21srxmad6"
-path="res://.godot/imported/giant.png-a805abe1123a466ae70807a3ccb71b1b.ctex"
+uid="uid://ciru6xle4f4a0"
+path="res://.godot/imported/Campsite.png-51b334df6529b404b50d52d322a9d132.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/giant.png"
-dest_files=["res://.godot/imported/giant.png-a805abe1123a466ae70807a3ccb71b1b.ctex"]
+source_file="res://assets/visual/Campsite.png"
+dest_files=["res://.godot/imported/Campsite.png-51b334df6529b404b50d52d322a9d132.ctex"]
 
 [params]
 

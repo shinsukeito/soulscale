@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cv38awhdc6tbb"]
+[gd_scene load_steps=12 format=3 uid="uid://cv38awhdc6tbb"]
 
 [ext_resource type="Script" path="res://scripts/climb.gd" id="1_ktavc"]
 [ext_resource type="PackedScene" uid="uid://djp0qbyow0l8j" path="res://scenes/climb/modules/module_hall.tscn" id="2_05wdf"]
@@ -8,21 +8,31 @@
 [ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/climb/debugger.tscn" id="4_rvg5e"]
 [ext_resource type="PackedScene" uid="uid://0qq38t6qculs" path="res://scenes/climb/modules/module_table.tscn" id="5_2l08i"]
 [ext_resource type="PackedScene" uid="uid://wvc313jlr258" path="res://scenes/climb/giant.tscn" id="5_pc7ru"]
-[ext_resource type="Texture2D" uid="uid://c0xiaagq2orf7" path="res://assets/visual/background.jpg" id="6_nwp4s"]
 [ext_resource type="TileSet" uid="uid://dotegxn6gb77k" path="res://tilesets/terrain.tres" id="8_isia6"]
 
+[sub_resource type="Gradient" id="Gradient_b23ys"]
+offsets = PackedFloat32Array(0, 0.510836, 1)
+colors = PackedColorArray(0.933333, 0.537255, 0.623529, 1, 0.980392, 0.631373, 0.392157, 1, 1, 0.752941, 0.478431, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6b0hr"]
+gradient = SubResource("Gradient_b23ys")
+width = 255
+
 [node name="Climb" type="Node2D"]
+position = Vector2(1, 0)
 script = ExtResource("1_ktavc")
 room_scenes = Array[PackedScene]([ExtResource("2_05wdf"), ExtResource("3_1hlcq"), ExtResource("4_jq87g"), ExtResource("5_2l08i")])
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2(320, 320)
+position = Vector2(960, 540)
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
 [node name="GUI" parent="." instance=ExtResource("3_31qmc")]
 
 [node name="Debugger" parent="." instance=ExtResource("4_rvg5e")]
+
+[node name="Terrain" type="Node" parent="."]
 
 [node name="Giant" parent="." instance=ExtResource("5_pc7ru")]
 position = Vector2(85, 516)
@@ -35,13 +45,15 @@ layer_0/tile_data = PackedInt32Array(1310719, 3, 0, 1245183, 3, 0, 1179647, 3, 0
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+rotation = 1.5708
 motion_scale = Vector2(0.01, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-modulate = Color(1, 0.890196, 0.705882, 1)
-position = Vector2(969.251, -514.249)
-scale = Vector2(1.95459, 2.29639)
-texture = ExtResource("6_nwp4s")
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = -1810.0
+offset_top = -1939.0
+offset_right = 1116.0
+offset_bottom = 17.0
+texture = SubResource("GradientTexture1D_6b0hr")
 
 [connection signal="currency_collected" from="Giant" to="." method="_on_giant_currency_collected"]
 [connection signal="hazard_hit" from="Giant" to="." method="_on_giant_hazard_hit"]

@@ -31,7 +31,7 @@ func _ready():
 	
 	screen_size = get_viewport_rect().size
 	var screen_offset = screen_size / 2
-	map_size = generate_room(global.progress + 1)
+	map_size = generate_room(1920 +  global.progress * 200)
 	clamp_area = ClampArea.new(
 		screen_size.x / 2,
 		map_size.x - screen_size.x / 2,
@@ -45,8 +45,11 @@ func _ready():
 	
 	$GUI.update_stamina()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Called every frame. 'delta' is the elapsed time since the previ ous frame.
 func _process(delta):
+	if Input.is_action_pressed("menu"):
+		get_tree().change_scene_to_file("res://scenes/start.tscn")
+		
 	change_stamina(-delta)
 	
 	var new_camera_position = Vector2(
@@ -63,10 +66,14 @@ func _process(delta):
 
 # ROOM GENERATION:
 
-func generate_room(value):
+func generate_room(width):
 	var offset = Vector2(0, 0)
-	for n in value:
-		offset = generate_module(n, offset)		
+	var n = 0
+	
+	while offset.x < width:
+		offset = generate_module(n, offset)
+		n += 1
+		
 	return offset
 	
 func generate_module(value, offset):		
@@ -77,7 +84,7 @@ func generate_module(value, offset):
 	var new_room = room_scenes[index].instantiate()
 	new_room.position = offset
 	new_room.name = "room_" + str(index)
-	add_child(new_room)
+	$Terrain.add_child(new_room)
 	
 	modules[value] = true
 	

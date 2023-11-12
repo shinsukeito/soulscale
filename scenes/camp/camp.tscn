@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://clwhmw7sft4nb"]
+[gd_scene load_steps=5 format=3 uid="uid://clwhmw7sft4nb"]
 
 [ext_resource type="Script" path="res://scripts/camp.gd" id="1_is3m8"]
-[ext_resource type="Texture2D" uid="uid://cbf67weqkjemm" path="res://assets/visual/campfire.jpg" id="2_88px5"]
-[ext_resource type="Texture2D" uid="uid://ygf21srxmad6" path="res://assets/visual/giant.png" id="2_oy2om"]
+[ext_resource type="Texture2D" uid="uid://ciru6xle4f4a0" path="res://assets/visual/Campsite.png" id="2_nea17"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hl6u6"]
 font_size = 24
@@ -15,10 +14,12 @@ script = ExtResource("1_is3m8")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(258, 493)
-scale = Vector2(0.231689, 0.231689)
-texture = ExtResource("2_88px5")
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+offset_left = -447.0
+offset_top = 5.0
+offset_right = 2593.0
+offset_bottom = 1085.0
+texture = ExtResource("2_nea17")
 
 [node name="Message" type="Label" parent="CanvasLayer"]
 offset_left = 9.0
@@ -40,10 +41,6 @@ offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "SLEEP"
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(371, 547)
-texture = ExtResource("2_oy2om")
 
 [node name="DayLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = 5

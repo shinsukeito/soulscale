@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0xiaagq2orf7"
-path="res://.godot/imported/background.jpg-eb3c83cdeac1f4db754e9c5a9c10b7bd.ctex"
+uid="uid://njxewv656fco"
+path="res://.godot/imported/Game_Jam_Charas_-_PC.png-fbf84f4a2b531477cc7bdac391c01abe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/background.jpg"
-dest_files=["res://.godot/imported/background.jpg-eb3c83cdeac1f4db754e9c5a9c10b7bd.ctex"]
+source_file="res://assets/visual/Game_Jam_Charas_-_PC.png"
+dest_files=["res://.godot/imported/Game_Jam_Charas_-_PC.png-fbf84f4a2b531477cc7bdac391c01abe.ctex"]
 
 [params]
 

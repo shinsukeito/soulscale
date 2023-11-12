@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://wvc313jlr258"]
 
 [ext_resource type="Script" path="res://scripts/giant.gd" id="1_ja3nj"]
-[ext_resource type="Texture2D" uid="uid://ygf21srxmad6" path="res://assets/visual/giant.png" id="2_y64v8"]
+[ext_resource type="Texture2D" uid="uid://njxewv656fco" path="res://assets/visual/Game_Jam_Charas_-_PC.png" id="2_8vkpr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_arj1b"]
-size = Vector2(32, 52)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwoqd"]
+size = Vector2(21, 86)
 
 [node name="Giant" type="CharacterBody2D"]
 collision_mask = 15
@@ -12,11 +12,14 @@ floor_constant_speed = true
 script = ExtResource("1_ja3nj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -3)
-texture = ExtResource("2_y64v8")
+z_index = 1
+position = Vector2(-1, -52)
+scale = Vector2(0.122305, 0.122305)
+texture = ExtResource("2_8vkpr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_arj1b")
+position = Vector2(-4.5, -43)
+shape = SubResource("RectangleShape2D_jwoqd")
 
 [node name="ShieldTimer" type="Timer" parent="."]
 one_shot = true

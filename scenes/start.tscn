@@ -1,18 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://0o3pe1i5d0qo"]
+[gd_scene load_steps=9 format=3 uid="uid://0o3pe1i5d0qo"]
 
 [ext_resource type="Script" path="res://scripts/start.gd" id="1_jf46d"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_spgvh"]
 font_size = 48
 
-[sub_resource type="InputEventAction" id="InputEventAction_ocny0"]
+[sub_resource type="InputEventAction" id="InputEventAction_63c2w"]
 action = &"jump"
 
-[sub_resource type="InputEventAction" id="InputEventAction_unn1b"]
+[sub_resource type="InputEventAction" id="InputEventAction_h3abw"]
 action = &"shield"
 
 [sub_resource type="Shortcut" id="Shortcut_3visq"]
-events = [SubResource("InputEventAction_ocny0"), SubResource("InputEventAction_unn1b")]
+events = [SubResource("InputEventAction_63c2w"), SubResource("InputEventAction_h3abw")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_p4u7l"]
+action = &"menu"
+
+[sub_resource type="Shortcut" id="Shortcut_kmj1n"]
+events = [SubResource("InputEventAction_p4u7l")]
 
 [sub_resource type="LabelSettings" id="LabelSettings_x5idf"]
 font_color = Color(0.807843, 0.8, 0.815686, 1)
@@ -52,14 +58,30 @@ grow_vertical = 2
 shortcut = SubResource("Shortcut_3visq")
 text = "START"
 
+[node name="QuitButton" type="Button" parent="GUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -53.0
+offset_top = 98.0
+offset_right = 59.0
+offset_bottom = 137.0
+grow_horizontal = 2
+grow_vertical = 2
+shortcut = SubResource("Shortcut_kmj1n")
+text = "QUIT
+"
+
 [node name="Instructions" type="Label" parent="GUI"]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = -125.0
-offset_right = 618.0
-offset_bottom = 5.0
+offset_left = 16.0
+offset_top = -155.0
+offset_right = 626.0
+offset_bottom = -25.0
 grow_vertical = 0
 text = "Move Left: Left Arrow / A / Joystick Left / D-Pad Left
 Move Right: Right Arrow / D / Joystick Right / D-Pad Right
@@ -70,3 +92,4 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [connection signal="pressed" from="GUI/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="GUI/QuitButton" to="." method="_on_quit_button_pressed"]

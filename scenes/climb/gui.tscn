@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cslxaxhgvxwyt"]
+[gd_scene load_steps=5 format=3 uid="uid://cslxaxhgvxwyt"]
 
 [ext_resource type="Script" path="res://scripts/gui.gd" id="1_p8jsj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ns2y1"]
+font_size = 48
 
 [sub_resource type="LabelSettings" id="LabelSettings_bw1if"]
 font_size = 24
@@ -11,31 +14,28 @@ font_size = 24
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource("1_p8jsj")
 
-[node name="StaminaLabel" type="Label" parent="."]
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -82.0
-offset_top = -306.0
-offset_right = -20.0
-offset_bottom = -280.0
-grow_horizontal = 0
-grow_vertical = 2
-text = "100"
-horizontal_alignment = 2
-
 [node name="StaminaBar" type="ProgressBar" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -214.0
-offset_top = 12.0
-offset_right = -14.0
-offset_bottom = 39.0
+offset_left = -855.0
+offset_top = 14.0
+offset_right = -15.0
+offset_bottom = 76.0
 grow_horizontal = 0
 show_percentage = false
+
+[node name="StaminaLabel" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -846.0
+offset_top = 10.0
+offset_right = -765.0
+offset_bottom = 80.0
+grow_horizontal = 0
+text = "100"
+label_settings = SubResource("LabelSettings_ns2y1")
 
 [node name="DayLabel" type="Label" parent="."]
 anchors_preset = 5
@@ -67,10 +67,10 @@ horizontal_alignment = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -55.0
-offset_top = 48.0
-offset_right = -15.0
-offset_bottom = 71.0
+offset_left = -59.0
+offset_top = 89.0
+offset_right = -19.0
+offset_bottom = 115.0
 grow_horizontal = 0
 text = "000"
 horizontal_alignment = 2
