@@ -10,20 +10,8 @@ var rng = RandomNumberGenerator.new()
 var modules = {}
 var screen_size
 var map_size
-
-class ClampArea:
-	var clamp_x_min
-	var clamp_x_max
-	var clamp_y_min
-	var clamp_y_max
 	
-	func _init(x_min, x_max, y_min, y_max):
-		clamp_x_min = x_min
-		clamp_x_max = x_max
-		clamp_y_min = y_min
-		clamp_y_max = y_max
-	
-var clamp_area: ClampArea
+var clamp_area: Area
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,15 +20,15 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	var screen_offset = screen_size / 2
 	map_size = generate_room(1920 +  global.progress * 200)
-	clamp_area = ClampArea.new(
+	clamp_area = Area.new(
 		screen_size.x / 2,
 		map_size.x - screen_size.x / 2,
 		screen_size.y / 2 + map_size.y,
 		screen_size.y / 2
 	)
 	$Camera.position = screen_offset.clamp(
-		Vector2(clamp_area.clamp_x_min, clamp_area.clamp_y_min),
-		Vector2(clamp_area.clamp_x_max, clamp_area.clamp_y_max),
+		Vector2(clamp_area.x_min, clamp_area.y_min),
+		Vector2(clamp_area.x_max, clamp_area.y_max),
 	)
 	
 	$GUI.update_stamina()
@@ -56,8 +44,8 @@ func _process(delta):
 		$Giant.position.x,
 		$Giant.position.y + camera_y_offset
 	).clamp(
-		Vector2(clamp_area.clamp_x_min, clamp_area.clamp_y_min),
-		Vector2(clamp_area.clamp_x_max, clamp_area.clamp_y_max),
+		Vector2(clamp_area.x_min, clamp_area.y_min),
+		Vector2(clamp_area.x_max, clamp_area.y_max),
 	)
 	$Camera.position = new_camera_position
 	

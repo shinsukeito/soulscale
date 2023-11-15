@@ -6,28 +6,25 @@ extends Node2D
 @export var end_height = 13
 @export var hazard_scene: PackedScene
 
-var tile_width = 0
+var area: Area
 
 var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var cells = $Terrain.get_used_cells(0)
-	var minx = 0
-	var maxx = 0
-	var miny = 0
-	var maxy = 0
+	var a = Area.new(0, 0, 0, 0)
 	for cell in cells:
-		if cell.x < minx:
-			minx = cell.x
-		if cell.x > maxx:
-			maxx = cell.x
-		if cell.y < miny:
-			miny = cell.x
-		if cell.y > maxy:
-			maxy = cell.x
+		if cell.x < a.x_min:
+			a.x_min = cell.x
+		if cell.x > a.x_max:
+			a.x_max = cell.x
+		if cell.y < a.y_min:
+			a.y_min = cell.x
+		if cell.y > a.y_max:
+			a.y_max = cell.x
 	
-	tile_width = maxx - minx
+	area = a
 	
 	for n in 2:
 		create_hazards()
@@ -49,4 +46,4 @@ func height_difference():
 	return (start_height - end_height) * tile_size
 
 func width():
-	return tile_width * tile_size
+	return (area.x_max - area.x_min) * tile_size
