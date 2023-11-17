@@ -6,13 +6,20 @@ var day = 1
 var progress = 0
 var currency = 0
 
-# Called when the node enters the scene tree for the first time.
+# Called when the node enters the scene tree for the first time. 
 func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
+
+func new_game():
+	max_stamina = 40
+	stamina = max_stamina
+	day = 1
+	progress = 0
+	currency = 0
 
 func new_day():
 	stamina = max_stamina

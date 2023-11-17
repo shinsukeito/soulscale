@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://clwhmw7sft4nb"]
+[gd_scene load_steps=9 format=3 uid="uid://clwhmw7sft4nb"]
 
 [ext_resource type="Script" path="res://scripts/camp.gd" id="1_is3m8"]
 [ext_resource type="Texture2D" uid="uid://ciru6xle4f4a0" path="res://assets/visual/Campsite.png" id="2_nea17"]
+[ext_resource type="PackedScene" uid="uid://bwkwtaue0x3yi" path="res://scenes/camera.tscn" id="2_vgqsm"]
+[ext_resource type="PackedScene" uid="uid://wvc313jlr258" path="res://scenes/climb/giant.tscn" id="3_bd51h"]
+[ext_resource type="PackedScene" uid="uid://wvt2suixd2jw" path="res://scenes/camp/dialogue.tscn" id="3_ruchj"]
+[ext_resource type="PackedScene" uid="uid://cg2u0as37g0b7" path="res://scenes/camp/npc.tscn" id="6_kimfh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hl6u6"]
 font_size = 24
@@ -12,21 +16,9 @@ font_size = 24
 [node name="Camp" type="Node2D"]
 script = ExtResource("1_is3m8")
 
+[node name="Camera" parent="." instance=ExtResource("2_vgqsm")]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Background" type="TextureRect" parent="CanvasLayer"]
-offset_left = -447.0
-offset_top = 5.0
-offset_right = 2593.0
-offset_bottom = 1085.0
-texture = ExtResource("2_nea17")
-
-[node name="Message" type="Label" parent="CanvasLayer"]
-offset_left = 9.0
-offset_top = 9.0
-offset_right = 249.0
-offset_bottom = 35.0
-text = "Time to camp for the night..."
 
 [node name="SleepButton" type="Button" parent="CanvasLayer"]
 anchors_preset = 3
@@ -67,5 +59,56 @@ grow_horizontal = 2
 text = "PROGRESS"
 label_settings = SubResource("LabelSettings_h02b1")
 horizontal_alignment = 1
+
+[node name="Dialogue" parent="." instance=ExtResource("3_ruchj")]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 3040.0
+offset_bottom = 1080.0
+texture = ExtResource("2_nea17")
+metadata/_edit_lock_ = true
+
+[node name="Ground" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+position = Vector2(1, 0)
+polygon = PackedVector2Array(-80, 1132, -74, -81, 69, -78, 104, 764, 237, 780, 822, 817, 1169, 776, 1721, 796, 2380, 794, 2690, 776, 2764, 653, 2768, -78, 3053, -59, 3066, 1107)
+
+[node name="Giant" parent="." instance=ExtResource("3_bd51h")]
+position = Vector2(562, 735)
+scale = Vector2(2.1, 2.1)
+speed = 120
+
+[node name="Mercenary" parent="." instance=ExtResource("6_kimfh")]
+position = Vector2(365, 680)
+
+[node name="Dad" parent="." instance=ExtResource("6_kimfh")]
+position = Vector2(809, 769)
+npc_name = "Dad"
+
+[node name="Girl" parent="." instance=ExtResource("6_kimfh")]
+position = Vector2(93, 767)
+npc_name = "Girl"
+
+[node name="Grandma" parent="." instance=ExtResource("6_kimfh")]
+position = Vector2(1332, 727)
+npc_name = "Grandma"
+
+[node name="Teen" parent="." instance=ExtResource("6_kimfh")]
+position = Vector2(1533, 728)
+npc_name = "Teen"
+
+[node name="Boy" parent="." instance=ExtResource("6_kimfh")]
+position = Vector2(2033, 764)
+npc_name = "Boy"
+
+[node name="Cat" parent="." instance=ExtResource("6_kimfh")]
+position = Vector2(1765, 785)
+npc_name = "Cat"
+
+[node name="Servant" parent="." instance=ExtResource("6_kimfh")]
+position = Vector2(2366, 675)
+npc_name = "Servant"
 
 [connection signal="pressed" from="CanvasLayer/SleepButton" to="." method="_on_sleep_button_pressed"]

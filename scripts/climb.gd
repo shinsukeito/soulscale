@@ -3,15 +3,12 @@ extends Node2D
 var global
 	
 @export var room_scenes:Array[PackedScene]
-@export var camera_y_offset = -160
 
 var rng = RandomNumberGenerator.new()
 
 var modules = {}
 var screen_size
 var map_size
-	
-var clamp_area: Area
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,15 +17,12 @@ func _ready():
 	screen_size = get_viewport_rect().size
 	var screen_offset = screen_size / 2
 	map_size = generate_room(1920 +  global.progress * 200)
-	clamp_area = Area.new(
+	
+	$Camera.clamp_area = Area.new(
 		screen_size.x / 2,
 		map_size.x - screen_size.x / 2,
 		screen_size.y / 2 + map_size.y,
 		screen_size.y / 2
-	)
-	$Camera.position = screen_offset.clamp(
-		Vector2(clamp_area.x_min, clamp_area.y_min),
-		Vector2(clamp_area.x_max, clamp_area.y_max),
 	)
 	
 	$GUI.update_stamina()
@@ -39,15 +33,6 @@ func _process(delta):
 		get_tree().change_scene_to_file("res://scenes/start.tscn")
 		
 	change_stamina(-delta)
-	
-	var new_camera_position = Vector2(
-		$Giant.position.x,
-		$Giant.position.y + camera_y_offset
-	).clamp(
-		Vector2(clamp_area.x_min, clamp_area.y_min),
-		Vector2(clamp_area.x_max, clamp_area.y_max),
-	)
-	$Camera.position = new_camera_position
 	
 	if $Giant.position.x >= map_size.x:
 		change_room()

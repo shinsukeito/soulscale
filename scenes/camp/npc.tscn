@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg2u0as37g0b7"]
+
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_jpxmk"]
+[ext_resource type="Texture2D" uid="uid://ciemdldwedl6o" path="res://assets/visual/ball_sm.png" id="2_5icn2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kusp"]
+size = Vector2(136, 196)
+
+[node name="NPC" type="Area2D"]
+script = ExtResource("1_jpxmk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5kusp")
+
+[node name="Indicator" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -128)
+texture = ExtResource("2_5icn2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

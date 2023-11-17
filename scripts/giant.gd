@@ -18,6 +18,8 @@ var flinching =  false
 var shielding =  false
 var cooldown = false
 
+var frozen = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$ShieldTimer.wait_time = shield_length
@@ -28,7 +30,7 @@ func _physics_process(_delta):
 	velocity.y += gravity
 	velocity.x *= friction
 	
-	if !flinching:
+	if !flinching && !frozen:
 		if Input.is_action_pressed("right"):
 			velocity.x += speed
 			$Sprite2D.flip_h = false

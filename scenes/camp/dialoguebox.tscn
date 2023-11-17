@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw0pi7yomytnh"]
+
+[ext_resource type="Texture2D" uid="uid://3ho3y6rpoabo" path="res://assets/visual/Dialogue_Box.png" id="2_anfb0"]
+[ext_resource type="Script" path="res://scripts/dialoguebox.gd" id="2_u0jlr"]
+[ext_resource type="FontFile" uid="uid://bk5q15y1568n4" path="res://assets/fonts/Cabin-Bold.ttf" id="3_uao7r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_76ief"]
+font = ExtResource("3_uao7r")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+
+[node name="DialogueBox" type="Node2D"]
+script = ExtResource("2_u0jlr")
+
+[node name="Frame" type="Sprite2D" parent="."]
+texture = ExtResource("2_anfb0")
+centered = false
+
+[node name="Message" type="Label" parent="."]
+offset_left = 204.0
+offset_top = 159.0
+offset_right = 1131.0
+offset_bottom = 452.0
+label_settings = SubResource("LabelSettings_76ief")
+autowrap_mode = 3
+
+[node name="LetterTimer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[connection signal="timeout" from="LetterTimer" to="." method="_on_letter_timer_timeout"]

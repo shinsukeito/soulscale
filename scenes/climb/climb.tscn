@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cv38awhdc6tbb"]
+[gd_scene load_steps=13 format=3 uid="uid://cv38awhdc6tbb"]
 
 [ext_resource type="Script" path="res://scripts/climb.gd" id="1_ktavc"]
 [ext_resource type="PackedScene" uid="uid://djp0qbyow0l8j" path="res://scenes/climb/modules/module_hall.tscn" id="2_05wdf"]
+[ext_resource type="PackedScene" uid="uid://bwkwtaue0x3yi" path="res://scenes/camera.tscn" id="2_ygds7"]
 [ext_resource type="PackedScene" uid="uid://beblkgsblksrl" path="res://scenes/climb/modules/module_1.tscn" id="3_1hlcq"]
 [ext_resource type="PackedScene" uid="uid://cslxaxhgvxwyt" path="res://scenes/climb/gui.tscn" id="3_31qmc"]
 [ext_resource type="PackedScene" uid="uid://bgiqielq6ue7g" path="res://scenes/climb/modules/module_2.tscn" id="4_jq87g"]
@@ -23,10 +24,7 @@ position = Vector2(1, 0)
 script = ExtResource("1_ktavc")
 room_scenes = Array[PackedScene]([ExtResource("2_05wdf"), ExtResource("3_1hlcq"), ExtResource("4_jq87g"), ExtResource("5_2l08i")])
 
-[node name="Camera" type="Camera2D" parent="."]
-position = Vector2(960, 540)
-position_smoothing_enabled = true
-position_smoothing_speed = 7.0
+[node name="Camera" parent="." instance=ExtResource("2_ygds7")]
 
 [node name="GUI" parent="." instance=ExtResource("3_31qmc")]
 

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://wvt2suixd2jw"]
+
+[ext_resource type="Script" path="res://scripts/dialogue.gd" id="1_5sod4"]
+[ext_resource type="PackedScene" uid="uid://bw0pi7yomytnh" path="res://scenes/camp/dialoguebox.tscn" id="2_hquok"]
+
+[node name="Dialogue" type="CanvasLayer"]
+script = ExtResource("1_5sod4")
+
+[node name="DialogueBox" parent="." instance=ExtResource("2_hquok")]
+visible = false

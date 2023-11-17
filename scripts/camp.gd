@@ -2,17 +2,27 @@ extends Node2D
 
 var global
 
-# Called when the node enters the scene tree for the first time.
+# Called when the node enters the scene tree for t he first time.
 func _ready():
 	global = get_node("/root/Global")
 	$CanvasLayer/DayLabel.text = "NIGHT " + str(global.day)
 	$CanvasLayer/ProgressLabel.text = "PROGRESS " + str(global.progress)
-
+	
+	var screen_size = get_viewport_rect().size
+	var screen_offset = screen_size / 2
+	
+	$Camera.clamp_area = Area.new(
+		screen_size.x / 2,
+		screen_size.x / 2 + 1120,
+		screen_size.y / 2,
+		screen_size.y / 2
+	)
+ 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _process(delta):  
+	if Input.is_action_pressed("menu"):
+		get_tree().change_scene_to_file("res://scenes/start.tscn")
 
 func _on_sleep_button_pressed():
 	global.new_day()
-	
 	get_tree().change_scene_to_file("res://scenes/climb/climb.tscn")
