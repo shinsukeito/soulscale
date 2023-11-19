@@ -100,7 +100,7 @@ position = Vector2(1533, 728)
 npc_name = "Teen"
 
 [node name="Boy" parent="." instance=ExtResource("6_kimfh")]
-position = Vector2(2033, 764)
+position = Vector2(2035, 776)
 npc_name = "Boy"
 
 [node name="Cat" parent="." instance=ExtResource("6_kimfh")]
@@ -108,7 +108,7 @@ position = Vector2(1765, 785)
 npc_name = "Cat"
 
 [node name="Servant" parent="." instance=ExtResource("6_kimfh")]
-position = Vector2(2366, 675)
+position = Vector2(2362, 667)
 npc_name = "Servant"
 
 [connection signal="pressed" from="CanvasLayer/SleepButton" to="." method="_on_sleep_button_pressed"]

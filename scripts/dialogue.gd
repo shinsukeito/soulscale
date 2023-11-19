@@ -2,8 +2,9 @@ extends CanvasLayer
 
 var global
 
-@export var box_offset = Vector2(558, 476)
 @export var left = true
+@export var left_offset = Vector2(20, 476)
+@export var right_offset = Vector2(558, 476)
 
 var current_npc = ""
 var giant: CharacterBody2D
@@ -16,7 +17,9 @@ func _ready():
 	giant = get_parent().get_node("Giant")
 	
 	if left: 
-		$DialogueBox.set_position(box_offset)
+		$DialogueBox.set_position(left_offset)
+	else:
+		$DialogueBox.set_position(right_offset)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -49,10 +52,12 @@ func trigger():
 		
 func _show_dialogue_box(show):
 	if show:
-		$DialogueBox.visible = true 
+		$DialogueBox.visible = true
+		$Companion.visible = true
 		giant.frozen = true
 	else:
 		$DialogueBox.visible = false
+		$Companion.visible = false
 		giant.frozen = false
 
 func on_npc_meet(npc_name):

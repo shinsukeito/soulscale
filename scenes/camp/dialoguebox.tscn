@@ -3,11 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://3ho3y6rpoabo" path="res://assets/visual/Dialogue_Box.png" id="2_anfb0"]
 [ext_resource type="Script" path="res://scripts/dialoguebox.gd" id="2_u0jlr"]
 [ext_resource type="FontFile" uid="uid://bk5q15y1568n4" path="res://assets/fonts/Cabin-Bold.ttf" id="3_uao7r"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_76ief"]
-font = ExtResource("3_uao7r")
-font_size = 48
-font_color = Color(0, 0, 0, 1)
+[ext_resource type="FontFile" uid="uid://c8fyntb63m1u7" path="res://assets/fonts/Cabin-BoldItalic.ttf" id="4_wghwg"]
 
 [node name="DialogueBox" type="Node2D"]
 script = ExtResource("2_u0jlr")
@@ -16,16 +12,24 @@ script = ExtResource("2_u0jlr")
 texture = ExtResource("2_anfb0")
 centered = false
 
-[node name="Message" type="Label" parent="."]
-offset_left = 204.0
-offset_top = 159.0
-offset_right = 1131.0
-offset_bottom = 452.0
-label_settings = SubResource("LabelSettings_76ief")
-autowrap_mode = 3
-
 [node name="LetterTimer" type="Timer" parent="."]
 wait_time = 0.05
 one_shot = true
+
+[node name="Message" type="RichTextLabel" parent="."]
+offset_left = 211.0
+offset_top = 154.0
+offset_right = 1103.0
+offset_bottom = 479.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_uao7r")
+theme_override_fonts/bold_font = ExtResource("3_uao7r")
+theme_override_fonts/italics_font = ExtResource("4_wghwg")
+theme_override_fonts/bold_italics_font = ExtResource("4_wghwg")
+theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/bold_font_size = 48
+theme_override_font_sizes/italics_font_size = 48
+theme_override_font_sizes/bold_italics_font_size = 48
+bbcode_enabled = true
 
 [connection signal="timeout" from="LetterTimer" to="." method="_on_letter_timer_timeout"]

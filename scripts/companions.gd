@@ -319,44 +319,44 @@ static var companions = {
 	{
 		"daily_messages":
 		[
-			["The cat looks bored. You wonder if he would like something to play with."],
+			["[i]The cat looks bored. You wonder if he would like something to play with.[/i]"],
 			[
-				"The cat meows at you, like he wants something. You feel uneasy that you have nothing to give him. "
+				"[i]The cat meows at you, like he wants something. You feel uneasy that you have nothing to give him.[/i]"
 			],
 			[
-				"The cat's fur is clean and shiny, and his posture is regal. You almost feel like you're being addressed by a king. Like he he is asking you for something..."
+				"[i]The cat's fur is clean and shiny, and his posture is regal. You almost feel like you're being addressed by a king. Like he he is asking you for something...[/i]"
 			],
 			[
-				"Is there something cats like? A toy, maybe? But this cat is dressed in jewellery. He would have been given only the best in life. If you're going to give him something, it will have to be worthy of him. "
+				"[i]Is there something cats like? A toy, maybe? But this cat is dressed in jewellery. He would have been given only the best in life. If you're going to give him something, it will have to be worthy of him.[/i]"
 			],
 			[
-				"The cat circles your legs once then sits and looks up at you expectantly. You have nothing to give him. When he realises this, he starts to lick his paws like he doesn't care. You can tell he's lying. "
+				"[i]The cat circles your legs once then sits and looks up at you expectantly. You have nothing to give him. When he realises this, he starts to lick his paws like he doesn't care. You can tell he's lying.[/i]"
 			],
 			[
-				"The cat bats at the fabric of the tent with its paw a few times, then turns and walks away. It's not good enough. You should find something that will please him."
+				"[i]The cat bats at the fabric of the tent with its paw a few times, then turns and walks away. It's not good enough. You should find something that will please him.[/i]"
 			],
 			[
-				"It might be a good idea to find the cat something to play with. He's starting to look impatient. "
+				"[i]It might be a good idea to find the cat something to play with. He's starting to look impatient.[/i]"
 			],
 			[
-				"The cat is curled up, facing away from you, but you can tell he's ignoring you on purpose. Maybe you should have found something to give him to play with. "
+				"[i]The cat is curled up, facing away from you, but you can tell he's ignoring you on purpose. Maybe you should have found something to give him to play with.[/i]"
 			],
 		],
 		"found_messages":
 		[
 			[
-				"The cat is looking at the necklace with interest. It's almost as if... does he want to play with it? �return the ...?"
+				"[i]The cat is looking at the necklace with interest. It's almost as if... does he want to play with it?[/i]"
 			],
-			["He loves it. You wonder if it was his once. It's nice to see him having fun."],
+			["[i]He loves it. You wonder if it was his once. It's nice to see him having fun.[/i]"],
 			[
-				"You can't help but feel like the cat is glaring at you, planning revenge. Was it a good idea to disrespect a cat?"
+				"[i]You can't help but feel like the cat is glaring at you, planning revenge. Was it a good idea to disrespect a cat?[/i]"
 			],
 		],
 		"after_messages":
 		[
-			["The cat pauses his playing to rub against your leg and purr. He is pleased."],
+			["[i]The cat pauses his playing to rub against your leg and purr. He is pleased.[/i]"],
 			[
-				"The cat glares at you from the corner of his eye as you come near. It's best not to linger. "
+				"[i]The cat glares at you from the corner of his eye as you come near. It's best not to linger.[/i]"
 			],
 		]
 	},
