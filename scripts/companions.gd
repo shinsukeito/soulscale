@@ -1,6 +1,6 @@
-class_name Party
+class_name Companions
 
-static var companions = {
+static var dialogue = {
 	"Mercenary":
 	{
 		"daily_messages":
@@ -29,7 +29,8 @@ static var companions = {
 		"found_messages":
 		[
 			[
-				"That knife! You found it! Hand it over, so I may claim my revenge on my killer, when they too come to join the dead."
+				"That knife! You found it! Hand it over, so I may claim my revenge on my killer, when they too come to join the dead.",
+				"-return the knife?"
 			],
 			["A wise choice."],
 			["You will regret this."]
@@ -84,9 +85,10 @@ static var companions = {
 		"found_messages":
 		[
 			[
-				"Is that'her rattle! That's my little girl's rattle! I can't believe you found it! I'm so relieved I'll be able to return it to her.",
+				"Is that... her rattle! That's my little girl's rattle! I can't believe you found it! I'm so relieved I'll be able to return it to her.",
 				"It always made her so very happy - her smiles were so bright we almost didn't need the oil lamps! Oh, she will be so overjoyed to have it again!",
-				"And I can finally apologise for forgetting to bury it with her. Oh, thank you!"
+				"And I can finally apologise for forgetting to bury it with her. Oh, thank you!",
+				"-return the rattle?"
 			],
 			[
 				"Such a kindness can never be repaid, but you have my everlasting gratitude!",
@@ -156,7 +158,8 @@ static var companions = {
 				"...",
 				"I know he's not here. That's a good thing, even if he must be sad without me there to sing him to sleep.",
 				"But one day I'll see him again, and I want to be prepared. I promised to always light his way. But then I came here before him... broke my promise.",
-				"I'll have a lot of nights to make up to him, you know. I'll need to be there, waiting with my lamp to guide him safely in the dark when he eventually comes to find me."
+				"I'll have a lot of nights to make up to him, you know. I'll need to be there, waiting with my lamp to guide him safely in the dark when he eventually comes to find me.",
+				"-return the oil lamp?",
 			],
 			[
 				"Thank you. If you ever get scared of the dark and need singing to sleep, let me know. I want to practice more before I see my brother again."
@@ -206,7 +209,10 @@ static var companions = {
 		[
 			[
 				"My dear, that bust, it is Anubis, is it not?",
-				"It is the one I have been looking for. May I have it? Though I tried my best, I fear I did not lead a good enough life... It is my hope that carrying this bust with me to judgment will show my devotion. Perhaps Anubis will deign to be lenient on me for my long, foolish life."
+				"It is the one I have been looking for. May I have it? Though I tried my best, I fear I did not lead a good enough life...",
+				"It is my hope that carrying this bust with me to judgment will show my devotion.",
+				"Perhaps Anubis will deign to be lenient on me for my long, foolish life.",
+				"-return the bust?"
 			],
 			["Thank you my dear. May Anubis smile upon you."],
 			["Oh, dear... "]
@@ -217,7 +223,7 @@ static var companions = {
 			["Oh, dear... What will I do now?"],
 		]
 	},
-	"Teen":
+	"Teen": 
 	{
 		"daily_messages":
 		[
@@ -258,7 +264,8 @@ static var companions = {
 				"Hey! You found it! That's my mirror! Well... technically I stole it from some lady... but it's mine now, and I need it.",
 				"My friends and I got separated when we came here, even though I'm pretty sure we all died together when the guards caught us trying to escape.",
 				"If I can signal my friends with that mirror, they'll know it's me! We can make the rest of the journey to judgement together, and I can make sure they get there safely.",
-				"Maybe then I'll be forgiven. Maybe then I might make it into paradise, after everything... after I let them down. Can I have it?"
+				"Maybe then I'll be forgiven. Maybe then I might make it into paradise, after everything... after I let them down. Can I have it?",
+				"-return the mirror?",
 			],
 			["Thanks! You're a pretty good guide. I owe you one."],
 			[
@@ -302,7 +309,11 @@ static var companions = {
 		"found_messages":
 		[
 			[
-				"That amulet you're holding looks just like the one I lost. I'm jealous you still have yours. My mum told me to hold onto it carefully, said it was very expensive to get spelled and that I had to hold it all the time. It was supposed to make me feel better. I don't know, but I wasn't careful like mum told me to be. I lost it, and now I'm here, and mum's going to be so upset with me. I don't like it when she's upset. Did you lose yours too? Is that why you're here? I wish I could find mine. I don't want mum to be sad. �return the amulet?"
+				"That amulet you're holding looks just like the one I lost. I'm jealous you still have yours.",
+				"My mum told me to hold onto it carefully, said it was very expensive to get spelled and that I had to hold it all the time.",
+				"It was supposed to make me feel better. I don't know, but I wasn't careful like mum told me to be. I lost it, and now I'm here, and mum's going to be so upset with me.",
+				"I don't like it when she's upset. Did you lose yours too? Is that why you're here? I wish I could find mine. I don't want mum to be sad.",
+				"-return the amulet?",
 			],
 			[
 				"You're giving me your amulet? Are you sure you don't need it? Thank you! Now mum doesn't have to be sad!"
@@ -319,44 +330,46 @@ static var companions = {
 	{
 		"daily_messages":
 		[
-			["[i]The cat looks bored. You wonder if he would like something to play with.[/i]"],
+			["[i]The cat looks bored. You wonder if he would like something to play with."],
 			[
-				"[i]The cat meows at you, like he wants something. You feel uneasy that you have nothing to give him.[/i]"
+				"[i]The cat meows at you, like he wants something. You feel uneasy that you have nothing to give him."
 			],
 			[
-				"[i]The cat's fur is clean and shiny, and his posture is regal. You almost feel like you're being addressed by a king. Like he he is asking you for something...[/i]"
+				"[i]The cat's fur is clean and shiny, and his posture is regal. You almost feel like you're being addressed by a king. Like he he is asking you for something..."
 			],
 			[
-				"[i]Is there something cats like? A toy, maybe? But this cat is dressed in jewellery. He would have been given only the best in life. If you're going to give him something, it will have to be worthy of him.[/i]"
+				"[i]Is there something cats like? A toy, maybe? But this cat is dressed in jewellery. He would have been given only the best in life. If you're going to give him something, it will have to be worthy of him."
 			],
 			[
-				"[i]The cat circles your legs once then sits and looks up at you expectantly. You have nothing to give him. When he realises this, he starts to lick his paws like he doesn't care. You can tell he's lying.[/i]"
+				"[i]The cat circles your legs once then sits and looks up at you expectantly. You have nothing to give him.",
+				"[i]When he realises this, he starts to lick his paws like he doesn't care. You can tell he's lying."
 			],
 			[
-				"[i]The cat bats at the fabric of the tent with its paw a few times, then turns and walks away. It's not good enough. You should find something that will please him.[/i]"
+				"[i]The cat bats at the fabric of the tent with its paw a few times, then turns and walks away. It's not good enough. You should find something that will please him."
 			],
 			[
-				"[i]It might be a good idea to find the cat something to play with. He's starting to look impatient.[/i]"
+				"[i]It might be a good idea to find the cat something to play with. He's starting to look impatient."
 			],
 			[
-				"[i]The cat is curled up, facing away from you, but you can tell he's ignoring you on purpose. Maybe you should have found something to give him to play with.[/i]"
+				"[i]The cat is curled up, facing away from you, but you can tell he's ignoring you on purpose. Maybe you should have found something to give him to play with."
 			],
 		],
 		"found_messages":
 		[
 			[
-				"[i]The cat is looking at the necklace with interest. It's almost as if... does he want to play with it?[/i]"
+				"[i]The cat is looking at the necklace with interest. It's almost as if... does he want to play with it?",
+				"-return the jewellery?"
 			],
-			["[i]He loves it. You wonder if it was his once. It's nice to see him having fun.[/i]"],
+			["[i]He loves it. You wonder if it was his once. It's nice to see him having fun."],
 			[
-				"[i]You can't help but feel like the cat is glaring at you, planning revenge. Was it a good idea to disrespect a cat?[/i]"
+				"[i]You can't help but feel like the cat is glaring at you, planning revenge. Was it a good idea to disrespect a cat?"
 			],
 		],
 		"after_messages":
 		[
-			["[i]The cat pauses his playing to rub against your leg and purr. He is pleased.[/i]"],
+			["[i]The cat pauses his playing to rub against your leg and purr. He is pleased."],
 			[
-				"[i]The cat glares at you from the corner of his eye as you come near. It's best not to linger.[/i]"
+				"[i]The cat glares at you from the corner of his eye as you come near. It's best not to linger."
 			],
 		]
 	},
@@ -386,7 +399,11 @@ static var companions = {
 		"found_messages":
 		[
 			[
-				"I know that chalice! That's the one I served to the lord before he was poisoned! See, there on the edge, there's a chip where he dropped it! Please, can I have it? They thought I poisoned him, but it wasn't me. I know if I show the chalice at judgement they'll be able to see that it wasn't me, I didn't kill anyone! I can't get my life back, but at least I can prove my heart is pure and go to paradise. �return the ...?"
+				"I know that chalice! That's the one I served to the lord before he was poisoned!",
+				"See, there on the edge, there's a chip where he dropped it! Please, can I have it? They thought I poisoned him, but it wasn't me.",
+				"I know if I show the chalice at judgement they'll be able to see that it wasn't me, I didn't kill anyone!",
+				"I can't get my life back, but at least I can prove my heart is pure and go to paradise.",
+				"-return the chalice?"
 			],
 			[
 				"Thank you! I won't forget this kindness. It is more than anything I was shown in life. "

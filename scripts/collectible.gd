@@ -23,4 +23,6 @@ func _on_body_entered(body):
 				body.on_currency(self)
 			CollectibleType.POTION:
 				body.on_potion(self)
+			CollectibleType.ARTIFACT:
+				body.on_artifact(self)
 		queue_free()

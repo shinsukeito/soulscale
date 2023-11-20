@@ -80,6 +80,9 @@ func on_currency(collectible):
 func on_potion(collectible):
 	potion_collected.emit(8)
 	
+func on_artifact(collectible):
+	artifact_collected.emit()
+	
 func refresh_shield():
 	shielding = false
 	cooldown = false

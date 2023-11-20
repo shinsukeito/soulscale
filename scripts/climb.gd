@@ -90,3 +90,6 @@ func _on_giant_currency_collected(amount):
 
 func _on_giant_potion_collected(amount):
 	change_stamina(amount)
+
+func _on_giant_artifact_collected():
+	global.artifact_collected()

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgiqielq6ue7g"]
+[gd_scene load_steps=8 format=3 uid="uid://bgiqielq6ue7g"]
 
 [ext_resource type="Script" path="res://scripts/module.gd" id="1_kqs26"]
 [ext_resource type="PackedScene" uid="uid://dll32f7kvivxl" path="res://scenes/climb/hazard.tscn" id="2_x8kgb"]
 [ext_resource type="TileSet" uid="uid://dotegxn6gb77k" path="res://tilesets/terrain.tres" id="3_1xmvv"]
-[ext_resource type="PackedScene" uid="uid://3m6h6oty2lln" path="res://scenes/climb/currency.tscn" id="4_cldj8"]
-[ext_resource type="PackedScene" uid="uid://ba1gvbrsvyaeq" path="res://scenes/climb/potion.tscn" id="5_3q3c6"]
+[ext_resource type="PackedScene" uid="uid://3m6h6oty2lln" path="res://scenes/climb/collectibles/currency.tscn" id="4_cldj8"]
+[ext_resource type="PackedScene" uid="uid://ba1gvbrsvyaeq" path="res://scenes/climb/collectibles/potion.tscn" id="5_3q3c6"]
+[ext_resource type="PackedScene" uid="uid://c33m2saaecdsn" path="res://scenes/climb/collectibles/artifact.tscn" id="6_nym4x"]
 
 [sub_resource type="Curve2D" id="Curve2D_1dy5m"]
 _data = {
@@ -46,3 +47,6 @@ position = Vector2(1230, 636)
 
 [node name="Potion" parent="." instance=ExtResource("5_3q3c6")]
 position = Vector2(274, 333)
+
+[node name="Artifact" parent="." instance=ExtResource("6_nym4x")]
+position = Vector2(1149, 692)

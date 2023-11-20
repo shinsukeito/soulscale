@@ -4,9 +4,9 @@ var index = 0
 var message = ""
 var displayMessage = ""
 
-var waitLetters = ".,!?"
+var waitLetters = ".,!?-"
 
-func say(msg):   
+func say(msg):
 	$Message.text = ""
 	index = 0
 	message = msg
@@ -21,6 +21,12 @@ func speaking():
 	return index < message.length()
 
 func _on_letter_timer_timeout():
+	if message[index] == "[":
+		index += 3
+		$Message.text += "[i]"
+		$LetterTimer.start(0)
+		return
+		
 	$Message.text += message[index]
 	
 	if index < message.length() - 1:

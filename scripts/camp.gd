@@ -6,7 +6,7 @@ var global
 func _ready():
 	global = get_node("/root/Global")
 	$CanvasLayer/DayLabel.text = "NIGHT " + str(global.day)
-	$CanvasLayer/ProgressLabel.text = "PROGRESS " + str(global.progress)
+	$CanvasLayer/ProgressLabel.text = "PROGRESS " + str (global.progress)
 	
 	var screen_size = get_viewport_rect().size
 	var screen_offset = screen_size / 2

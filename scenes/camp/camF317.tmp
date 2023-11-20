@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://clwhmw7sft4nb"]
+[gd_scene load_steps=9 format=3 uid="uid://clwhmw7sft4nb"]
 
 [ext_resource type="Script" path="res://scripts/camp.gd" id="1_is3m8"]
 [ext_resource type="Texture2D" uid="uid://ciru6xle4f4a0" path="res://assets/visual/Campsite.png" id="2_nea17"]
 [ext_resource type="PackedScene" uid="uid://bwkwtaue0x3yi" path="res://scenes/camera.tscn" id="2_vgqsm"]
 [ext_resource type="PackedScene" uid="uid://wvc313jlr258" path="res://scenes/climb/giant.tscn" id="3_bd51h"]
-[ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/climb/debugger.tscn" id="3_oxcso"]
 [ext_resource type="PackedScene" uid="uid://wvt2suixd2jw" path="res://scenes/camp/dialogue.tscn" id="3_ruchj"]
 [ext_resource type="PackedScene" uid="uid://cg2u0as37g0b7" path="res://scenes/camp/npc.tscn" id="6_kimfh"]
 
@@ -18,8 +17,6 @@ font_size = 24
 script = ExtResource("1_is3m8")
 
 [node name="Camera" parent="." instance=ExtResource("2_vgqsm")]
-
-[node name="Debugger" parent="." instance=ExtResource("3_oxcso")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var global
+var global: Global
 
 @export var left = true
 @export var left_offset = Vector2(20, 476)
@@ -28,8 +28,25 @@ func _process(_delta):
 			trigger()
 		else:
 			if current_npc != "":
-				show_messages(Party.companions[current_npc].daily_messages[global.day - 1])
-		
+				talk_to_npc()
+
+func talk_to_npc():
+	var artifact: Artifact
+	for a in global.artifact_list:
+		if a.companion == current_npc:
+			artifact = a
+			break
+			
+	if artifact.collected:
+		if artifact.returned == null:
+			show_messages(Companions.dialogue[current_npc].found_messages[0])
+		elif artifact.returned:
+			show_messages(Companions.dialogue[current_npc].after_messages[0])
+		else:
+			show_messages(Companions.dialogue[current_npc].after_messages[1])
+	else:
+		show_messages(Companions.dialogue[current_npc].daily_messages[global.day - 1])
+	
 
 func show_messages(messages):
 	message_queue = messages.duplicate()
