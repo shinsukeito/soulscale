@@ -6,7 +6,7 @@ var global
 
 var rng = RandomNumberGenerator.new()
 
-var modules = {}
+var modules = []
 var screen_size
 var map_size
 
@@ -24,6 +24,9 @@ func _ready():
 		screen_size.y / 2 + map_size.y,
 		screen_size.y / 2
 	)
+	
+	if !global.is_artifact_collected():
+		spawn_artifact()
 	
 	$GUI.update_stamina()
 
@@ -59,7 +62,7 @@ func generate_module(value, offset):
 	new_room.name = "room_" + str(index)
 	$Terrain.add_child(new_room)
 	
-	modules[value] = true
+	modules.push_front(new_room)
 	
 	return offset + Vector2(new_room.width(), -new_room.height_difference())
 
@@ -75,10 +78,16 @@ func change_currency(value):
 	$GUI.update_currency()
 		
 func change_room():
-	change_stamina(20)
+	change_stamina(5)
 	global.progress += 1
 	$Giant.refresh_shield()
 	get_tree().reload_current_scene()
+# 
+
+func spawn_artifact():
+	var x= 0
+	modules.shuffle()
+	modules[0].spawn_artifact()
 
 # SIGNALS:
 

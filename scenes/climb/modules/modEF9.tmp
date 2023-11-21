@@ -41,4 +41,7 @@ position = Vector2(275, 364)
 [node name="ArtifactSpawner" type="Node2D" parent="."]
 
 [node name="SpawnPoint1" type="Node2D" parent="ArtifactSpawner"]
-position = Vector2(306, 324)
+position = Vector2(303, 299)
+
+[node name="SpawnPoint2" type="Node2D" parent="ArtifactSpawner"]
+position = Vector2(173, 386)

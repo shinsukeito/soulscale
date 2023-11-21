@@ -1,5 +1,7 @@
 extends Node
 
+var debug = false
+
 var max_stamina = 40
 var stamina = max_stamina
 var day = 1
@@ -56,3 +58,6 @@ func change_currency(value):
 
 func artifact_collected():
 	artifact_list[progress].collected = true
+	
+func is_artifact_collected():
+	return artifact_list[progress].collected
