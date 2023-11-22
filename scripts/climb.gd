@@ -37,6 +37,11 @@ func _process(delta):
 		
 	change_stamina(-delta)
 	
+	# TODO: Remove this
+	if Input.is_action_pressed("jump") && Input.is_action_pressed("shield") && Input.is_action_pressed("left") && Input.is_action_pressed("right"):
+		change_stamina(-20)
+	
+	
 	if $Giant.position.x >= map_size.x:
 		change_room()
 

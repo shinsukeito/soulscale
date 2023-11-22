@@ -32,4 +32,4 @@ func set_collected(name):
 			"Jewellery":
 				$Jewellery/Artifact.visible = true
 			"Chalice":
-				$KChalice/Artifact.visible = true
+				$Chalice/Artifact.visible = true

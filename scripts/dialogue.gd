@@ -9,9 +9,11 @@ var global: Global
 var current_npc = ""
 var giant: CharacterBody2D
 
+var questioning = false
+
 var message_queue = []
   
-# Called when the node enters the scene tr ee for the first time.
+# Called when the node enters the scene tree for the first time.
 func _ready():
 	global = get_node("/root/Global")
 	giant = get_parent().get_node("Giant")
@@ -29,13 +31,10 @@ func _process(_delta):
 		else:
 			if current_npc != "":
 				talk_to_npc()
+		
 
 func talk_to_npc():
-	var artifact: Artifact
-	for a in global.artifact_list:
-		if a.companion == current_npc:
-			artifact = a
-			break
+	var artifact: Artifact = global.artifact_map[current_npc]
 			
 	if artifact.collected:
 		if artifact.returned == null:
@@ -54,18 +53,22 @@ func show_messages(messages):
 	_show_next_message()
  
 func _show_next_message():
-	var message = message_queue.pop_front()
+	var message = message_queue.pop_front() as String
+	if message.begins_with("-return"):
+		questioning = true
+		
 	if message != null:
 		$DialogueBox.say(message)
 
 func trigger():
 	if $DialogueBox.speaking():
 		$DialogueBox.skip()
-	else:
+	elif !questioning:
 		if message_queue.size() > 0:
 			_show_next_message()
 		else:
 			_show_dialogue_box(false)
+			
 		
 func _show_dialogue_box(show):
 	if show:
@@ -82,3 +85,25 @@ func on_npc_meet(npc_name):
 
 func on_npc_leave():
 	current_npc = ""
+
+
+func _on_dialogue_box_finished_speaking():
+	if questioning:
+		$DialogueBox/Answers.visible = true 
+
+func _on_dialogue_box_no():
+	_set_returned(false)
+	_show_dialogue_box(false)
+	questioning = false
+
+func _on_dialogue_box_yes():
+	_set_returned(true)
+	_show_dialogue_box(false)
+	questioning = false
+
+func _set_returned(value):
+	if !questioning: return
+	if current_npc == "": return
+	
+	var artifact = global.artifact_map[current_npc] as Artifact
+	artifact.returned = value

@@ -1,9 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://bw0pi7yomytnh"]
+[gd_scene load_steps=9 format=3 uid="uid://bw0pi7yomytnh"]
 
 [ext_resource type="Texture2D" uid="uid://3ho3y6rpoabo" path="res://assets/visual/Dialogue_Box.png" id="2_anfb0"]
 [ext_resource type="Script" path="res://scripts/dialoguebox.gd" id="2_u0jlr"]
 [ext_resource type="FontFile" uid="uid://bk5q15y1568n4" path="res://assets/fonts/Cabin-Bold.ttf" id="3_uao7r"]
 [ext_resource type="FontFile" uid="uid://c8fyntb63m1u7" path="res://assets/fonts/Cabin-BoldItalic.ttf" id="4_wghwg"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_uxohg"]
+action = &"jump"
+
+[sub_resource type="Shortcut" id="Shortcut_xwc0n"]
+events = [SubResource("InputEventAction_uxohg")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_k41q7"]
+action = &"shield"
+
+[sub_resource type="Shortcut" id="Shortcut_uyny8"]
+events = [SubResource("InputEventAction_k41q7")]
 
 [node name="DialogueBox" type="Node2D"]
 script = ExtResource("2_u0jlr")
@@ -32,4 +44,27 @@ theme_override_font_sizes/italics_font_size = 48
 theme_override_font_sizes/bold_italics_font_size = 48
 bbcode_enabled = true
 
+[node name="Answers" type="Node2D" parent="."]
+visible = false
+
+[node name="YesButton" type="Button" parent="Answers"]
+offset_left = 261.0
+offset_top = 398.0
+offset_right = 552.0
+offset_bottom = 469.0
+shortcut = SubResource("Shortcut_xwc0n")
+text = "YES
+"
+
+[node name="NoButton" type="Button" parent="Answers"]
+offset_left = 799.0
+offset_top = 398.0
+offset_right = 1090.0
+offset_bottom = 469.0
+shortcut = SubResource("Shortcut_uyny8")
+text = "NO
+"
+
 [connection signal="timeout" from="LetterTimer" to="." method="_on_letter_timer_timeout"]
+[connection signal="pressed" from="Answers/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="Answers/NoButton" to="." method="_on_no_button_pressed"]

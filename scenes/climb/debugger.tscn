@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cncpw54e7xo7"]
+[gd_scene load_steps=3 format=3 uid="uid://cncpw54e7xo7"]
 
 [ext_resource type="Script" path="res://scripts/debugger.gd" id="1_filwj"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_5h6b0"]
+font_size = 24
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Debugger" type="CanvasLayer"]
+layer = 5
 script = ExtResource("1_filwj")
 
 [node name="Label" type="Label" parent="."]
@@ -11,3 +17,4 @@ offset_top = 5.0
 offset_right = 62.0
 offset_bottom = 31.0
 text = "DEBUG"
+label_settings = SubResource("LabelSettings_5h6b0")

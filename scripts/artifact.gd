@@ -1,11 +1,9 @@
 class_name Artifact
 
 var name
-var companion
 var collected
 var returned
 
-func _init(name, companion):
+func _init(name):
 	self.name = name
-	self.companion = companion
 	collected = false

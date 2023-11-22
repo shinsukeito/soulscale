@@ -17,14 +17,14 @@ func _process(_delta):
 	
 	if !on: return
 	
-	var text = "Artifacts\n"
+	var text = ""
 	for i in global.artifact_list.size():
-		var a = global.artifact_list[i]
+		var a = global.artifact_list[i] as Artifact
 		if i == global.progress:
-			text += "> " + a.name + "\n"
+			text += ">> " + a.name
 		else:
-			text += a.name + "\n"
-		text += " - collected: " + str(a.collected) + "\n"
+			text += a.name
+		text += " - Collected: " + str(a.collected) + "; Returned: " + str(a.returned) + ";\n"
 	
 	$Label.text = text
 

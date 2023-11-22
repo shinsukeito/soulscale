@@ -18,3 +18,7 @@ position = Vector2(1628, 801)
 scale = Vector2(1.20957, 1.20957)
 texture = SubResource("CompressedTexture2D_03jv6")
 flip_h = true
+
+[connection signal="finished_speaking" from="DialogueBox" to="." method="_on_dialogue_box_finished_speaking"]
+[connection signal="no" from="DialogueBox" to="." method="_on_dialogue_box_no"]
+[connection signal="yes" from="DialogueBox" to="." method="_on_dialogue_box_yes"]

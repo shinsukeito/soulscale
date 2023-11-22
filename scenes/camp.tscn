@@ -67,6 +67,9 @@ horizontal_alignment = 1
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("4_ciltx")]
 
 [node name="Dialogue" parent="." instance=ExtResource("4_5sa2l")]
+left = true
+left_offset = Vector2(20, 476)
+right_offset = Vector2(558, 476)
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 3040.0
