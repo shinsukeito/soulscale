@@ -23,3 +23,6 @@ func update_stamina():
 
 func update_currency():
 	$CurrencyLabel.text = str(global.currency)
+
+func update_inventory():
+	$Inventory.refresh()

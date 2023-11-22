@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=3 uid="uid://cv38awhdc6tbb"]
 
-[ext_resource type="Script" path="res://scripts/climb.gd" id="1_ktavc"]
-[ext_resource type="PackedScene" uid="uid://dac50v5yr7fx6" path="res://scenes/climb/modules/module_0.tscn" id="2_7hq4r"]
-[ext_resource type="PackedScene" uid="uid://bwkwtaue0x3yi" path="res://scenes/camera.tscn" id="2_ygds7"]
-[ext_resource type="PackedScene" uid="uid://beblkgsblksrl" path="res://scenes/climb/modules/module_1.tscn" id="3_1hlcq"]
-[ext_resource type="PackedScene" uid="uid://cslxaxhgvxwyt" path="res://scenes/climb/gui.tscn" id="3_31qmc"]
-[ext_resource type="PackedScene" uid="uid://bgiqielq6ue7g" path="res://scenes/climb/modules/module_2.tscn" id="4_jq87g"]
-[ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/climb/debugger.tscn" id="4_rvg5e"]
-[ext_resource type="PackedScene" uid="uid://wvc313jlr258" path="res://scenes/climb/giant.tscn" id="5_pc7ru"]
-[ext_resource type="TileSet" uid="uid://dotegxn6gb77k" path="res://tilesets/terrain.tres" id="8_isia6"]
+[ext_resource type="Script" path="res://scripts/climb.gd" id="1_fpvvq"]
+[ext_resource type="PackedScene" uid="uid://dac50v5yr7fx6" path="res://scenes/climb/modules/module_0.tscn" id="2_di4ik"]
+[ext_resource type="PackedScene" uid="uid://beblkgsblksrl" path="res://scenes/climb/modules/module_1.tscn" id="3_nr4ll"]
+[ext_resource type="PackedScene" uid="uid://bgiqielq6ue7g" path="res://scenes/climb/modules/module_2.tscn" id="4_77qna"]
+[ext_resource type="PackedScene" uid="uid://bwkwtaue0x3yi" path="res://scenes/camera.tscn" id="5_gsf0x"]
+[ext_resource type="PackedScene" uid="uid://cslxaxhgvxwyt" path="res://scenes/climb/gui.tscn" id="6_alj40"]
+[ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/climb/debugger.tscn" id="7_ei4yj"]
+[ext_resource type="PackedScene" uid="uid://wvc313jlr258" path="res://scenes/climb/giant.tscn" id="8_yerx6"]
+[ext_resource type="TileSet" uid="uid://dotegxn6gb77k" path="res://tilesets/terrain.tres" id="9_jepj3"]
 
 [sub_resource type="Gradient" id="Gradient_b23ys"]
 offsets = PackedFloat32Array(0, 0.510836, 1)
@@ -20,23 +20,23 @@ width = 255
 
 [node name="Climb" type="Node2D"]
 position = Vector2(1, 0)
-script = ExtResource("1_ktavc")
-room_scenes = Array[PackedScene]([ExtResource("2_7hq4r"), ExtResource("3_1hlcq"), ExtResource("4_jq87g")])
+script = ExtResource("1_fpvvq")
+room_scenes = Array[PackedScene]([ExtResource("2_di4ik"), ExtResource("3_nr4ll"), ExtResource("4_77qna")])
 
-[node name="Camera" parent="." instance=ExtResource("2_ygds7")]
+[node name="Camera" parent="." instance=ExtResource("5_gsf0x")]
 position = Vector2(960, 98)
 
-[node name="GUI" parent="." instance=ExtResource("3_31qmc")]
+[node name="GUI" parent="." instance=ExtResource("6_alj40")]
 
-[node name="Debugger" parent="." instance=ExtResource("4_rvg5e")]
+[node name="Debugger" parent="." instance=ExtResource("7_ei4yj")]
 
 [node name="Terrain" type="Node" parent="."]
 
-[node name="Giant" parent="." instance=ExtResource("5_pc7ru")]
+[node name="Giant" parent="." instance=ExtResource("8_yerx6")]
 position = Vector2(85, 516)
 
 [node name="StartWall" type="TileMap" parent="."]
-tile_set = ExtResource("8_isia6")
+tile_set = ExtResource("9_jepj3")
 format = 2
 layer_0/tile_data = PackedInt32Array(1310719, 3, 0, 1245183, 3, 0, 1179647, 3, 0, 1114111, 3, 0, 1048575, 3, 0, 983039, 3, 0, 917503, 3, 0, 851967, 3, 0, 786431, 3, 0, 720895, 3, 0, 655359, 3, 0, 589823, 3, 0, 524287, 3, 0, 458751, 3, 0, 393215, 3, 0, 327679, 3, 0, 262143, 3, 0, 196607, 3, 0, 131071, 3, 0, 65535, 3, 0)
 

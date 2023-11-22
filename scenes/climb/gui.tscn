@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cslxaxhgvxwyt"]
+[gd_scene load_steps=6 format=3 uid="uid://cslxaxhgvxwyt"]
 
 [ext_resource type="Script" path="res://scripts/gui.gd" id="1_p8jsj"]
+[ext_resource type="PackedScene" uid="uid://dyid85hafptel" path="res://scenes/climb/inventory.tscn" id="2_fh52s"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ns2y1"]
 font_size = 48
@@ -74,3 +75,5 @@ offset_bottom = 115.0
 grow_horizontal = 0
 text = "000"
 horizontal_alignment = 2
+
+[node name="Inventory" parent="." instance=ExtResource("2_fh52s")]

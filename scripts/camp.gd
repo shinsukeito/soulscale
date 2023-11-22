@@ -25,4 +25,4 @@ func _process(delta):
 
 func _on_sleep_button_pressed():
 	global.new_day()
-	get_tree().change_scene_to_file("res://scenes/climb/climb.tscn")
+	get_tree().change_scene_to_file("res://scenes/climb.tscn")

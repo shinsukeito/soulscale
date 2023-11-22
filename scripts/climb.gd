@@ -71,7 +71,7 @@ func change_stamina(value):
 	$GUI.update_stamina()
 	
 	if global.stamina <= 0:
-		get_tree().change_scene_to_file("res://scenes/camp/camp.tscn")
+		get_tree().change_scene_to_file("res://scenes/camp.tscn")
 
 func change_currency(value):
 	global.change_currency(global.currency + value)
@@ -102,3 +102,4 @@ func _on_giant_potion_collected(amount):
 
 func _on_giant_artifact_collected():
 	global.artifact_collected()
+	$GUI.update_inventory()

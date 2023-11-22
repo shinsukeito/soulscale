@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://clwhmw7sft4nb"]
+[gd_scene load_steps=11 format=3 uid="uid://clwhmw7sft4nb"]
 
-[ext_resource type="Script" path="res://scripts/camp.gd" id="1_is3m8"]
-[ext_resource type="Texture2D" uid="uid://ciru6xle4f4a0" path="res://assets/visual/Campsite.png" id="2_nea17"]
-[ext_resource type="PackedScene" uid="uid://bwkwtaue0x3yi" path="res://scenes/camera.tscn" id="2_vgqsm"]
-[ext_resource type="PackedScene" uid="uid://wvc313jlr258" path="res://scenes/climb/giant.tscn" id="3_bd51h"]
-[ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/climb/debugger.tscn" id="3_oxcso"]
-[ext_resource type="PackedScene" uid="uid://wvt2suixd2jw" path="res://scenes/camp/dialogue.tscn" id="3_ruchj"]
-[ext_resource type="PackedScene" uid="uid://cg2u0as37g0b7" path="res://scenes/camp/npc.tscn" id="6_kimfh"]
+[ext_resource type="Script" path="res://scripts/camp.gd" id="1_kq6gs"]
+[ext_resource type="PackedScene" uid="uid://bwkwtaue0x3yi" path="res://scenes/camera.tscn" id="2_m64bq"]
+[ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/climb/debugger.tscn" id="3_wvro7"]
+[ext_resource type="PackedScene" uid="uid://wvt2suixd2jw" path="res://scenes/camp/dialogue.tscn" id="4_5sa2l"]
+[ext_resource type="PackedScene" uid="uid://dyid85hafptel" path="res://scenes/climb/inventory.tscn" id="4_ciltx"]
+[ext_resource type="Texture2D" uid="uid://ciru6xle4f4a0" path="res://assets/visual/Campsite.png" id="5_2dbyu"]
+[ext_resource type="PackedScene" uid="uid://wvc313jlr258" path="res://scenes/climb/giant.tscn" id="6_nc6tn"]
+[ext_resource type="PackedScene" uid="uid://cg2u0as37g0b7" path="res://scenes/camp/npc.tscn" id="7_uk68a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hl6u6"]
 font_size = 24
@@ -15,11 +16,11 @@ font_size = 24
 font_size = 24
 
 [node name="Camp" type="Node2D"]
-script = ExtResource("1_is3m8")
+script = ExtResource("1_kq6gs")
 
-[node name="Camera" parent="." instance=ExtResource("2_vgqsm")]
+[node name="Camera" parent="." instance=ExtResource("2_m64bq")]
 
-[node name="Debugger" parent="." instance=ExtResource("3_oxcso")]
+[node name="Debugger" parent="." instance=ExtResource("3_wvro7")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -63,12 +64,14 @@ text = "PROGRESS"
 label_settings = SubResource("LabelSettings_h02b1")
 horizontal_alignment = 1
 
-[node name="Dialogue" parent="." instance=ExtResource("3_ruchj")]
+[node name="Inventory" parent="CanvasLayer" instance=ExtResource("4_ciltx")]
+
+[node name="Dialogue" parent="." instance=ExtResource("4_5sa2l")]
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 3040.0
 offset_bottom = 1080.0
-texture = ExtResource("2_nea17")
+texture = ExtResource("5_2dbyu")
 metadata/_edit_lock_ = true
 
 [node name="Ground" type="StaticBody2D" parent="."]
@@ -78,39 +81,39 @@ metadata/_edit_lock_ = true
 position = Vector2(1, 0)
 polygon = PackedVector2Array(-80, 1132, -74, -81, 69, -78, 104, 764, 237, 780, 822, 817, 1169, 776, 1721, 796, 2380, 794, 2690, 776, 2764, 653, 2768, -78, 3053, -59, 3066, 1107)
 
-[node name="Giant" parent="." instance=ExtResource("3_bd51h")]
+[node name="Giant" parent="." instance=ExtResource("6_nc6tn")]
 position = Vector2(562, 735)
 scale = Vector2(2.1, 2.1)
 speed = 120
 
-[node name="Mercenary" parent="." instance=ExtResource("6_kimfh")]
+[node name="Mercenary" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(365, 680)
 
-[node name="Dad" parent="." instance=ExtResource("6_kimfh")]
+[node name="Dad" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(809, 769)
 npc_name = "Dad"
 
-[node name="Girl" parent="." instance=ExtResource("6_kimfh")]
+[node name="Girl" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(93, 767)
 npc_name = "Girl"
 
-[node name="Grandma" parent="." instance=ExtResource("6_kimfh")]
+[node name="Grandma" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(1332, 727)
 npc_name = "Grandma"
 
-[node name="Teen" parent="." instance=ExtResource("6_kimfh")]
+[node name="Teen" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(1533, 728)
 npc_name = "Teen"
 
-[node name="Boy" parent="." instance=ExtResource("6_kimfh")]
+[node name="Boy" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(2035, 776)
 npc_name = "Boy"
 
-[node name="Cat" parent="." instance=ExtResource("6_kimfh")]
+[node name="Cat" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(1765, 785)
 npc_name = "Cat"
 
-[node name="Servant" parent="." instance=ExtResource("6_kimfh")]
+[node name="Servant" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(2362, 667)
 npc_name = "Servant"
 

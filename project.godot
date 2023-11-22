@@ -85,3 +85,7 @@ menu={
 2d_physics/layer_2="Ground"
 2d_physics/layer_3="Hazards"
 2d_physics/layer_4="Collectibles"
+
+[rendering]
+
+2d/snap/snap_2d_vertices_to_pixel=true
