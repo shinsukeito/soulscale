@@ -7,7 +7,7 @@ var stamina = max_stamina
 var day = 1
 var progress = 0
 var currency = 0
-var artifact_map = {
+var artifact_map: Dictionary = {
 	"Mercenary": Artifact.new("Flint Knife"),
 	"Dad": Artifact.new("Menat"),
 	"Girl": Artifact.new("Oil Lamp"),
@@ -53,3 +53,12 @@ func artifact_collected():
 	
 func is_artifact_collected():
 	return artifact_list[progress].collected
+
+func artifacts_returned():
+	var count = 0
+	
+	for a in artifact_list as Array[Artifact]:
+		if a.returned != null && a.returned == true:
+			count += 1
+
+	return count

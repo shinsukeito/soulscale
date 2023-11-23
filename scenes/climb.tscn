@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://dac50v5yr7fx6" path="res://scenes/climb/modules/module_0.tscn" id="2_di4ik"]
 [ext_resource type="PackedScene" uid="uid://beblkgsblksrl" path="res://scenes/climb/modules/module_1.tscn" id="3_nr4ll"]
 [ext_resource type="PackedScene" uid="uid://bgiqielq6ue7g" path="res://scenes/climb/modules/module_2.tscn" id="4_77qna"]
-[ext_resource type="PackedScene" uid="uid://bwkwtaue0x3yi" path="res://scenes/camera.tscn" id="5_gsf0x"]
+[ext_resource type="PackedScene" uid="uid://bwkwtaue0x3yi" path="res://scenes/common/camera.tscn" id="5_gsf0x"]
 [ext_resource type="PackedScene" uid="uid://cslxaxhgvxwyt" path="res://scenes/climb/gui.tscn" id="6_alj40"]
-[ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/climb/debugger.tscn" id="7_ei4yj"]
-[ext_resource type="PackedScene" uid="uid://wvc313jlr258" path="res://scenes/climb/giant.tscn" id="8_yerx6"]
+[ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/common/debugger.tscn" id="7_ei4yj"]
+[ext_resource type="PackedScene" uid="uid://wvc313jlr258" path="res://scenes/common/giant.tscn" id="8_yerx6"]
 [ext_resource type="TileSet" uid="uid://dotegxn6gb77k" path="res://tilesets/terrain.tres" id="9_jepj3"]
 
 [sub_resource type="Gradient" id="Gradient_b23ys"]

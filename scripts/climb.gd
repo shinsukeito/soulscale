@@ -1,6 +1,6 @@
 extends Node2D
 
-var global
+var global: Global
 	
 @export var room_scenes:Array[PackedScene]
 
@@ -15,7 +15,6 @@ func _ready():
 	global = get_node("/root/Global")
 	
 	screen_size = get_viewport_rect().size
-	var screen_offset = screen_size / 2
 	map_size = generate_room(1920 +  global.progress * 200)
 	
 	$Camera.clamp_area = Area.new(
@@ -38,9 +37,10 @@ func _process(delta):
 	change_stamina(-delta)
 	
 	# TODO: Remove this
-	if Input.is_action_pressed("jump") && Input.is_action_pressed("shield") && Input.is_action_pressed("left") && Input.is_action_pressed("right"):
+	if Input.is_action_pressed("jump") && Input.is_action_pressed("shield") && Input.is_action_just_pressed("left"):
 		change_stamina(-20)
-	
+	if Input.is_action_pressed("jump") && Input.is_action_pressed("shield") && Input.is_action_just_pressed("right"):
+		change_room()
 	
 	if $Giant.position.x >= map_size.x:
 		change_room()
@@ -76,7 +76,10 @@ func change_stamina(value):
 	$GUI.update_stamina()
 	
 	if global.stamina <= 0:
-		get_tree().change_scene_to_file("res://scenes/camp.tscn")
+		if global.day < 8:
+			get_tree().change_scene_to_file("res://scenes/camp.tscn")
+		else:
+			get_tree().change_scene_to_file("res://scenes/start.tscn")
 
 func change_currency(value):
 	global.change_currency(global.currency + value)
@@ -86,11 +89,14 @@ func change_room():
 	change_stamina(5)
 	global.progress += 1
 	$Giant.refresh_shield()
-	get_tree().reload_current_scene()
+	
+	if global.progress < 8:
+		get_tree().reload_current_scene()
+	else:
+		get_tree().change_scene_to_file("res://scenes/ending.tscn")
 # 
 
 func spawn_artifact():
-	var x= 0
 	modules.shuffle()
 	modules[0].spawn_artifact()
 

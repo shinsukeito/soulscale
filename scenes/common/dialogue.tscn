@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://wvt2suixd2jw"]
+
+[ext_resource type="Script" path="res://scripts/dialogue.gd" id="1_1m13x"]
+[ext_resource type="PackedScene" uid="uid://bw0pi7yomytnh" path="res://scenes/common/dialoguebox.tscn" id="2_kxe6f"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_03jv6"]
+load_path = "res://.godot/imported/Game_Jam_Charas_-_PC.png-fbf84f4a2b531477cc7bdac391c01abe.ctex"
+
+[node name="Dialogue" type="CanvasLayer"]
+script = ExtResource("1_1m13x")
+
+[node name="DialogueBox" parent="." instance=ExtResource("2_kxe6f")]
+visible = false
+
+[node name="Companion" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1628, 801)
+scale = Vector2(1.20957, 1.20957)
+texture = SubResource("CompressedTexture2D_03jv6")
+flip_h = true
+
+[connection signal="finished_speaking" from="DialogueBox" to="." method="_on_dialogue_box_finished_speaking"]
+[connection signal="no" from="DialogueBox" to="." method="_on_dialogue_box_no"]
+[connection signal="yes" from="DialogueBox" to="." method="_on_dialogue_box_yes"]

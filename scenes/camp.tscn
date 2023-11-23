@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://clwhmw7sft4nb"]
 
 [ext_resource type="Script" path="res://scripts/camp.gd" id="1_kq6gs"]
-[ext_resource type="PackedScene" uid="uid://bwkwtaue0x3yi" path="res://scenes/camera.tscn" id="2_m64bq"]
-[ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/climb/debugger.tscn" id="3_wvro7"]
-[ext_resource type="PackedScene" uid="uid://wvt2suixd2jw" path="res://scenes/camp/dialogue.tscn" id="4_5sa2l"]
+[ext_resource type="PackedScene" uid="uid://bwkwtaue0x3yi" path="res://scenes/common/camera.tscn" id="2_m64bq"]
+[ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/common/debugger.tscn" id="3_wvro7"]
+[ext_resource type="PackedScene" uid="uid://wvt2suixd2jw" path="res://scenes/common/dialogue.tscn" id="4_5sa2l"]
 [ext_resource type="PackedScene" uid="uid://dyid85hafptel" path="res://scenes/climb/inventory.tscn" id="4_ciltx"]
 [ext_resource type="Texture2D" uid="uid://ciru6xle4f4a0" path="res://assets/visual/Campsite.png" id="5_2dbyu"]
-[ext_resource type="PackedScene" uid="uid://wvc313jlr258" path="res://scenes/climb/giant.tscn" id="6_nc6tn"]
+[ext_resource type="PackedScene" uid="uid://wvc313jlr258" path="res://scenes/common/giant.tscn" id="6_nc6tn"]
 [ext_resource type="PackedScene" uid="uid://cg2u0as37g0b7" path="res://scenes/camp/npc.tscn" id="7_uk68a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hl6u6"]
@@ -67,9 +67,6 @@ horizontal_alignment = 1
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("4_ciltx")]
 
 [node name="Dialogue" parent="." instance=ExtResource("4_5sa2l")]
-left = true
-left_offset = Vector2(20, 476)
-right_offset = Vector2(558, 476)
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 3040.0
@@ -121,3 +118,4 @@ position = Vector2(2362, 667)
 npc_name = "Servant"
 
 [connection signal="pressed" from="CanvasLayer/SleepButton" to="." method="_on_sleep_button_pressed"]
+[connection signal="artifact_returned" from="Dialogue" to="." method="_on_dialogue_artifact_returned"]
