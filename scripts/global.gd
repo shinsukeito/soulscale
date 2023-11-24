@@ -5,6 +5,7 @@ var debug = false
 var max_stamina = 40
 var stamina = max_stamina
 var day = 1
+var day_start_progress = 0
 var progress = 0
 var currency = 0
 var artifact_map: Dictionary = {
@@ -41,6 +42,7 @@ func new_game():
 func new_day():
 	stamina = max_stamina
 	day += 1
+	day_start_progress = progress
 
 func change_stamina(value):
 	stamina = clamp(value, 0, max_stamina)

@@ -1,49 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://df2rhajes22or"]
+[gd_scene load_steps=7 format=3 uid="uid://df2rhajes22or"]
 
 [ext_resource type="Script" path="res://scripts/ending.gd" id="1_aruec"]
+[ext_resource type="PackedScene" uid="uid://b22dckdho80ey" path="res://scenes/common/transition.tscn" id="2_lyofh"]
 [ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/common/debugger.tscn" id="3_2nctk"]
 [ext_resource type="PackedScene" uid="uid://dyid85hafptel" path="res://scenes/climb/inventory.tscn" id="4_1omjn"]
 [ext_resource type="PackedScene" uid="uid://wvt2suixd2jw" path="res://scenes/common/dialogue.tscn" id="5_4hlnh"]
 [ext_resource type="Texture2D" uid="uid://c4rsed50ybawm" path="res://assets/visual/End_Judgement.png" id="5_c41ig"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_hl6u6"]
-font_size = 24
-
-[sub_resource type="LabelSettings" id="LabelSettings_h02b1"]
-font_size = 24
-
 [node name="Ending" type="Node2D"]
 script = ExtResource("1_aruec")
+
+[node name="Transition" parent="." instance=ExtResource("2_lyofh")]
+fade_in_time = 1.0
+fade_out_time = 2.0
 
 [node name="Debugger" parent="." instance=ExtResource("3_2nctk")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="DayLabel" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -34.0
-offset_top = 8.0
-offset_right = 34.0
-offset_bottom = 45.0
-grow_horizontal = 2
-text = "DAY 1"
-label_settings = SubResource("LabelSettings_hl6u6")
-horizontal_alignment = 1
-
-[node name="ProgressLabel" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -67.0
-offset_top = 37.0
-offset_right = 67.0
-offset_bottom = 74.0
-grow_horizontal = 2
-text = "PROGRESS"
-label_settings = SubResource("LabelSettings_h02b1")
-horizontal_alignment = 1
 
 [node name="Inventory" parent="CanvasLayer" instance=ExtResource("4_1omjn")]
 
@@ -59,5 +32,6 @@ metadata/_edit_lock_ = true
 wait_time = 2.0
 one_shot = true
 
+[connection signal="fade_in_completed" from="Transition" to="." method="_on_transition_fade_in_completed"]
 [connection signal="finished_speaking" from="Dialogue" to="." method="_on_dialogue_finished_speaking"]
 [connection signal="timeout" from="WeighingTimer" to="." method="_on_weighing_timer_timeout"]

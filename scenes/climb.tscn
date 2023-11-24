@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cv38awhdc6tbb"]
+[gd_scene load_steps=13 format=3 uid="uid://cv38awhdc6tbb"]
 
 [ext_resource type="Script" path="res://scripts/climb.gd" id="1_fpvvq"]
 [ext_resource type="PackedScene" uid="uid://dac50v5yr7fx6" path="res://scenes/climb/modules/module_0.tscn" id="2_di4ik"]
 [ext_resource type="PackedScene" uid="uid://beblkgsblksrl" path="res://scenes/climb/modules/module_1.tscn" id="3_nr4ll"]
 [ext_resource type="PackedScene" uid="uid://bgiqielq6ue7g" path="res://scenes/climb/modules/module_2.tscn" id="4_77qna"]
 [ext_resource type="PackedScene" uid="uid://bwkwtaue0x3yi" path="res://scenes/common/camera.tscn" id="5_gsf0x"]
+[ext_resource type="PackedScene" uid="uid://b22dckdho80ey" path="res://scenes/common/transition.tscn" id="5_vp01x"]
 [ext_resource type="PackedScene" uid="uid://cslxaxhgvxwyt" path="res://scenes/climb/gui.tscn" id="6_alj40"]
 [ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/common/debugger.tscn" id="7_ei4yj"]
 [ext_resource type="PackedScene" uid="uid://wvc313jlr258" path="res://scenes/common/giant.tscn" id="8_yerx6"]
@@ -22,6 +23,10 @@ width = 255
 position = Vector2(1, 0)
 script = ExtResource("1_fpvvq")
 room_scenes = Array[PackedScene]([ExtResource("2_di4ik"), ExtResource("3_nr4ll"), ExtResource("4_77qna")])
+
+[node name="Transition" parent="." instance=ExtResource("5_vp01x")]
+fade_in_time = 1.0
+fade_out_time = 2.0
 
 [node name="Camera" parent="." instance=ExtResource("5_gsf0x")]
 position = Vector2(960, 98)
@@ -53,6 +58,8 @@ offset_right = 1116.0
 offset_bottom = 17.0
 texture = SubResource("GradientTexture1D_6b0hr")
 
+[connection signal="fade_in_completed" from="Transition" to="." method="_on_transition_fade_in_completed"]
+[connection signal="fade_out_completed" from="Transition" to="." method="_on_transition_fade_out_completed"]
 [connection signal="artifact_collected" from="Giant" to="." method="_on_giant_artifact_collected"]
 [connection signal="currency_collected" from="Giant" to="." method="_on_giant_currency_collected"]
 [connection signal="hazard_hit" from="Giant" to="." method="_on_giant_hazard_hit"]

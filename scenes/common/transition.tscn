@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b22dckdho80ey"]
+
+[ext_resource type="Script" path="res://scripts/transition.gd" id="1_l258c"]
+
+[node name="Transition" type="CanvasLayer"]
+script = ExtResource("1_l258c")
+
+[node name="FadeTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Colour" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 0)
+polygon = PackedVector2Array(0, 0, 0, 1080, 1920, 1080, 1920, 0)
+
+[connection signal="timeout" from="FadeTimer" to="." method="_on_fade_timer_timeout"]

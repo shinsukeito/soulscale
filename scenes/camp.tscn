@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://clwhmw7sft4nb"]
+[gd_scene load_steps=12 format=3 uid="uid://clwhmw7sft4nb"]
 
 [ext_resource type="Script" path="res://scripts/camp.gd" id="1_kq6gs"]
 [ext_resource type="PackedScene" uid="uid://bwkwtaue0x3yi" path="res://scenes/common/camera.tscn" id="2_m64bq"]
+[ext_resource type="PackedScene" uid="uid://b22dckdho80ey" path="res://scenes/common/transition.tscn" id="2_tqpu7"]
 [ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/common/debugger.tscn" id="3_wvro7"]
 [ext_resource type="PackedScene" uid="uid://wvt2suixd2jw" path="res://scenes/common/dialogue.tscn" id="4_5sa2l"]
 [ext_resource type="PackedScene" uid="uid://dyid85hafptel" path="res://scenes/climb/inventory.tscn" id="4_ciltx"]
@@ -17,6 +18,10 @@ font_size = 24
 
 [node name="Camp" type="Node2D"]
 script = ExtResource("1_kq6gs")
+
+[node name="Transition" parent="." instance=ExtResource("2_tqpu7")]
+fade_in_time = 0.4
+fade_out_time = 1.0
 
 [node name="Camera" parent="." instance=ExtResource("2_m64bq")]
 
@@ -117,5 +122,7 @@ npc_name = "Cat"
 position = Vector2(2362, 667)
 npc_name = "Servant"
 
+[connection signal="fade_in_completed" from="Transition" to="." method="_on_transition_fade_in_completed"]
+[connection signal="fade_out_completed" from="Transition" to="." method="_on_transition_fade_out_completed"]
 [connection signal="pressed" from="CanvasLayer/SleepButton" to="." method="_on_sleep_button_pressed"]
 [connection signal="artifact_returned" from="Dialogue" to="." method="_on_dialogue_artifact_returned"]

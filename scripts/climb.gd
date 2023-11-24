@@ -6,9 +6,11 @@ var global: Global
 
 var rng = RandomNumberGenerator.new()
 
-var modules = []
+var modules = [] 
 var screen_size
 var map_size
+
+var starting = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -28,11 +30,19 @@ func _ready():
 		spawn_artifact()
 	
 	$GUI.update_stamina()
+	
+	if global.day_start_progress != global.progress:
+		$Transition.fade_in_time = 0.2
+	
+	$Transition.fade(true)
+	$Giant.frozen = true
 
 # Called every frame. 'delta' is the elapsed time since the previ ous frame.
 func _process(delta):
 	if Input.is_action_pressed("menu"):
 		get_tree().change_scene_to_file("res://scenes/start.tscn")
+		
+	if starting || global.stamina <= 0: return
 		
 	change_stamina(-delta)
 	
@@ -72,14 +82,13 @@ func generate_module(value, offset):
 	return offset + Vector2(new_room.width(), -new_room.height_difference())
 
 func change_stamina(value):
+	if !$Transition/FadeTimer.is_stopped(): return
+	
 	global.change_stamina(global.stamina + value)
 	$GUI.update_stamina()
 	
 	if global.stamina <= 0:
-		if global.day < 8:
-			get_tree().change_scene_to_file("res://scenes/camp.tscn")
-		else:
-			get_tree().change_scene_to_file("res://scenes/start.tscn")
+		$Transition.fade(false)
 
 func change_currency(value):
 	global.change_currency(global.currency + value)
@@ -114,3 +123,15 @@ func _on_giant_potion_collected(amount):
 func _on_giant_artifact_collected():
 	global.artifact_collected()
 	$GUI.update_inventory()
+
+
+func _on_transition_fade_in_completed():
+	$Giant.frozen = false
+	starting = false
+
+
+func _on_transition_fade_out_completed():
+	if global.day < 8:
+		get_tree().change_scene_to_file("res://scenes/camp.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/start.tscn")

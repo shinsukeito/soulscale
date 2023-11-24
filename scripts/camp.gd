@@ -19,6 +19,9 @@ func _ready():
 	$Camera.clamp_area = Area.new(
 		screen_size.x / 2, screen_size.x / 2 + 1120, screen_size.y / 2, screen_size.y / 2
 	)
+	
+	$Transition.fade(true)
+	$Giant.frozen = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -57,8 +60,7 @@ func talk_to_npc():
 
 
 func _on_sleep_button_pressed():
-	global.new_day()
-	get_tree().change_scene_to_file("res://scenes/climb.tscn")
+	$Transition.fade(false)
 
 
 func _on_dialogue_artifact_returned(value: bool):
@@ -67,3 +69,11 @@ func _on_dialogue_artifact_returned(value: bool):
 
 	var artifact = global.artifact_map[current_npc] as Artifact
 	artifact.returned = value
+
+
+func _on_transition_fade_in_completed():
+	$Giant.frozen = false
+
+func _on_transition_fade_out_completed():
+	global.new_day()
+	get_tree().change_scene_to_file("res://scenes/climb.tscn")

@@ -11,7 +11,7 @@ func _ready():
 	count = global.artifacts_returned()
 	weighed = false
 	
-	$Dialogue.show_messages(Anubis.dialogue.initial_messages)
+	$Transition.fade(true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -40,3 +40,7 @@ func _on_weighing_timer_timeout():
 		$Dialogue.show_messages(Anubis.dialogue.win_messages)
 	elif count == 8:
 		$Dialogue.show_messages(Anubis.dialogue.big_win_messages)
+
+
+func _on_transition_fade_in_completed():
+	$Dialogue.show_messages(Anubis.dialogue.initial_messages)
