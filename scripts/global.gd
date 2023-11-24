@@ -35,6 +35,10 @@ func new_game():
 	progress = 0
 	currency = 0
 	
+	for a in artifact_list as Array[Artifact]:
+		a.collected = false
+		a.returned = null
+			
 	# Shuffle artifacts:
 	artifact_list = artifact_map.values()
 	artifact_list.shuffle()

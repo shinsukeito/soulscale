@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cu4327i1xtung"]
+[gd_scene load_steps=4 format=3 uid="uid://lwpo3kct1g1p"]
 
 [ext_resource type="Script" path="res://scripts/collectible.gd" id="1_rumau"]
 [ext_resource type="Texture2D" uid="uid://blu80mmyfy6g3" path="res://assets/visual/trophy.png" id="2_4knvn"]

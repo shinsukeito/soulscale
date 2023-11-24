@@ -2,7 +2,7 @@ extends Node2D
 
 class_name Camp
 
-var global
+var global: Global
 
 var current_npc = ""
 
@@ -69,11 +69,20 @@ func _on_dialogue_artifact_returned(value: bool):
 
 	var artifact = global.artifact_map[current_npc] as Artifact
 	artifact.returned = value
+	
+	var npc = find_child(current_npc)
+	npc.hide_marker()
+	
+	$CanvasLayer/Inventory.refresh()
 
 
 func _on_transition_fade_in_completed():
-	$Giant.frozen = false
+	$Giant.frozen = false 
 
 func _on_transition_fade_out_completed():
 	global.new_day()
-	get_tree().change_scene_to_file("res://scenes/climb.tscn")
+	
+	if global.day < 8 && global.progress < 7:
+		get_tree().change_scene_to_file("res://scenes/climb.tscn")
+	else:
+		get_tree().change_scene_to_file("res://scenes/ending.tscn")

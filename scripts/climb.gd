@@ -17,7 +17,7 @@ func _ready():
 	global = get_node("/root/Global")
 	
 	screen_size = get_viewport_rect().size
-	map_size = generate_room(1920 +  global.progress * 200)
+	map_size = generate_room(1920 + global.progress * 200)
 	
 	$Camera.clamp_area = Area.new(
 		screen_size.x / 2,
@@ -48,7 +48,7 @@ func _process(delta):
 	
 	# TODO: Remove this
 	if Input.is_action_pressed("jump") && Input.is_action_pressed("shield") && Input.is_action_just_pressed("left"):
-		change_stamina(-20)
+		change_stamina(-1000)
 	if Input.is_action_pressed("jump") && Input.is_action_pressed("shield") && Input.is_action_just_pressed("right"):
 		change_room()
 	
@@ -95,14 +95,14 @@ func change_currency(value):
 	$GUI.update_currency()
 		
 func change_room():
+	if global.progress == 7:
+		get_tree().change_scene_to_file("res://scenes/camp.tscn")
+		return
+		
 	change_stamina(5)
 	global.progress += 1
 	$Giant.refresh_shield()
-	
-	if global.progress < 8:
-		get_tree().reload_current_scene()
-	else:
-		get_tree().change_scene_to_file("res://scenes/ending.tscn")
+	get_tree().reload_current_scene()
 # 
 
 func spawn_artifact():
@@ -131,7 +131,4 @@ func _on_transition_fade_in_completed():
 
 
 func _on_transition_fade_out_completed():
-	if global.day < 8:
-		get_tree().change_scene_to_file("res://scenes/camp.tscn")
-	else:
-		get_tree().change_scene_to_file("res://scenes/start.tscn")
+	get_tree().change_scene_to_file("res://scenes/camp.tscn")

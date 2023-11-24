@@ -89,38 +89,31 @@ polygon = PackedVector2Array(-80, 1132, -74, -81, 69, -78, 104, 764, 237, 780, 8
 [node name="Giant" parent="." instance=ExtResource("6_nc6tn")]
 position = Vector2(562, 735)
 scale = Vector2(2.1, 2.1)
-speed = 120
+speed = 160
 
 [node name="Mercenary" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(365, 680)
 
 [node name="Dad" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(809, 769)
-npc_name = "Dad"
 
 [node name="Girl" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(93, 767)
-npc_name = "Girl"
 
 [node name="Grandma" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(1332, 727)
-npc_name = "Grandma"
 
 [node name="Teen" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(1533, 728)
-npc_name = "Teen"
 
 [node name="Boy" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(2035, 776)
-npc_name = "Boy"
 
 [node name="Cat" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(1765, 785)
-npc_name = "Cat"
 
 [node name="Servant" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(2362, 667)
-npc_name = "Servant"
 
 [connection signal="fade_in_completed" from="Transition" to="." method="_on_transition_fade_in_completed"]
 [connection signal="fade_out_completed" from="Transition" to="." method="_on_transition_fade_out_completed"]

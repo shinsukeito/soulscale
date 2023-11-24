@@ -13,7 +13,7 @@ func refresh():
 			set_collected(a.name)
 		
 		if a.returned:
-			pass
+			set_returned(a.name)
 
 func set_collected(name):
 		match name:
@@ -33,3 +33,22 @@ func set_collected(name):
 				$Jewellery/Artifact.visible = true
 			"Chalice":
 				$Chalice/Artifact.visible = true
+
+func set_returned(name):
+		match name:
+			"Oil Lamp":
+				$Lamp/Tick.visible = true
+			"Flint Knife":
+				$Knife/Tick.visible = true
+			"Menat":
+				$Menat/Tick.visible = true
+			"Bust of a God":
+				$Bust/Tick.visible = true
+			"Mirror":
+				$Mirror/Tick.visible = true
+			"Amulet":
+				$Amulet/Tick.visible = true
+			"Jewellery":
+				$Jewellery/Tick.visible = true
+			"Chalice":
+				$Chalice/Tick.visible = true
