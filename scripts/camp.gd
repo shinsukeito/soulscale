@@ -74,6 +74,7 @@ func _on_dialogue_artifact_returned(value: bool):
 	npc.hide_marker()
 	
 	$CanvasLayer/Inventory.refresh()
+	global.calculate_artifact_power($Giant)
 
 
 func _on_transition_fade_in_completed():

@@ -5,6 +5,8 @@ signal currency_collected
 signal potion_collected
 signal artifact_collected
 
+var global
+	
 @export var speed = 90
 @export var friction = 0.7
 @export var jump = 400
@@ -14,6 +16,8 @@ signal artifact_collected
 @export var flinch_length = 0.05
 @export var flinch_force = 5
 
+var armor = 0
+
 var flinching =  false
 var shielding =  false
 var cooldown = false
@@ -22,6 +26,9 @@ var frozen = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	global = get_node("/root/Global")
+	global.calculate_artifact_power(self)
+	
 	$ShieldTimer.wait_time = shield_length
 	$ShieldTimer.wait_time = shield_cooldown
 
@@ -70,8 +77,9 @@ func on_hazard(hazard):
 	
 	var posDiff = hazard.global_position - global_position
 	velocity = Vector2(-flinch_force * posDiff.x, -flinch_force * posDiff.y)
-		
-	hazard_hit.emit(-5)
+	
+	var dmg = min(0, -5 + armor)
+	hazard_hit.emit(dmg)
 	set_flinch(true)
 
 func on_currency(collectible):
@@ -82,6 +90,7 @@ func on_potion(collectible):
 	
 func on_artifact(collectible):
 	artifact_collected.emit()
+	global.calculate_artifact_power(self)
 	
 func refresh_shield():
 	shielding = false

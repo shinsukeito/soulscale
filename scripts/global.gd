@@ -9,16 +9,43 @@ var day_start_progress = 0
 var progress = 0
 var currency = 0
 var artifact_map: Dictionary = {
-	"Mercenary": Artifact.new("Flint Knife"),
-	"Dad": Artifact.new("Menat"),
-	"Girl": Artifact.new("Oil Lamp"),
-	"Grandma": Artifact.new("Bust of a God"),
-	"Teen": Artifact.new("Mirror"),
-	"Boy": Artifact.new("Amulet"),
-	"Cat": Artifact.new("Jewellery"),
-	"Servant": Artifact.new("Chalice"),
+	"Mercenary": Artifact.new(
+		"Flint Knife", 
+		Power.new(5, 60, 0, 0, 0)
+	),
+	"Dad": Artifact.new(
+		"Menat",
+		Power.new(5, 30, 0.1, 0, 0)
+	),
+	"Girl": Artifact.new(
+		"Oil Lamp",
+		Power.new(5, 30, 0, 10, 0)
+	),
+	"Grandma": Artifact.new(
+		"Bust of a God",
+		Power.new(5, 20, 0.5, 5, 0)
+	),
+	"Teen": Artifact.new(
+		"Mirror",
+		Power.new(5, 20, 0.1, 5, 2)
+	),
+	"Boy": Artifact.new(
+		"Amulet",
+		Power.new(5, 20, 0, 5, 3)
+	),
+	"Cat": Artifact.new(
+		"Jewellery",
+		Power.new(5, 30, 0, 10, 0)
+	),
+	"Servant": Artifact.new(
+		"Chalice",
+		Power.new(5, 0, 0, 20, 0)
+	),
 }
 var artifact_list = []
+
+var base_power: Power = Power.new(90, 400, 0.2, 40, 0)
+var current_power
 
 # Called when the node enters the scene tree for the first time. 
 func _ready():
@@ -68,3 +95,28 @@ func artifacts_returned():
 			count += 1
 
 	return count
+
+func calculate_artifact_power(giant):
+	var cumulative_power = Power.new(
+		base_power.speed,
+		base_power.jump,
+		base_power.shield_length,
+		base_power.max_stamina,
+		base_power.armor,
+	)
+	
+	for a in artifact_list as Array[Artifact]:
+		if a.returned == null:
+			if a.collected:
+				cumulative_power.add(a.power)
+		else:
+			if a.returned == false:
+				cumulative_power.add(a.power)
+				
+	giant.speed = cumulative_power.speed
+	giant.jump = cumulative_power.jump
+	giant.shield_length = cumulative_power.shield_length
+	max_stamina = cumulative_power.max_stamina
+	giant.armor = cumulative_power.armor
+	
+	current_power = cumulative_power

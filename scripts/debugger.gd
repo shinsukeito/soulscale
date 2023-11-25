@@ -26,6 +26,13 @@ func _process(_delta):
 			text += a.name
 		text += " - Collected: " + str(a.collected) + "; Returned: " + str(a.returned) + ";\n"
 	
+	text += "POWERS \n"
+	text += " -speed: " + str(global.current_power.speed) + " \n"
+	text += " -jump: " + str(global.current_power.jump) + " \n"
+	text += " -shield: " + str(global.current_power.shield_length) + " \n"
+	text += " -stamina: " + str(global.current_power.max_stamina) + " \n"
+	text += " -armor: " + str(global.current_power.armor) + " \n"
+		
 	$Label.text = text
 
 func _toggle():
