@@ -1,18 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://bw0pi7yomytnh"]
+[gd_scene load_steps=10 format=3 uid="uid://bw0pi7yomytnh"]
 
 [ext_resource type="Texture2D" uid="uid://3ho3y6rpoabo" path="res://assets/visual/Dialogue_Box.png" id="2_anfb0"]
 [ext_resource type="Script" path="res://scripts/dialoguebox.gd" id="2_u0jlr"]
 [ext_resource type="FontFile" uid="uid://bk5q15y1568n4" path="res://assets/fonts/Cabin-Bold.ttf" id="3_uao7r"]
 [ext_resource type="FontFile" uid="uid://c8fyntb63m1u7" path="res://assets/fonts/Cabin-BoldItalic.ttf" id="4_wghwg"]
+[ext_resource type="Script" path="res://scripts/blink.gd" id="5_aaari"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_uxohg"]
-action = &"jump"
+action = &"shield"
 
 [sub_resource type="Shortcut" id="Shortcut_xwc0n"]
 events = [SubResource("InputEventAction_uxohg")]
 
 [sub_resource type="InputEventAction" id="InputEventAction_k41q7"]
-action = &"shield"
+action = &"jump"
 
 [sub_resource type="Shortcut" id="Shortcut_uyny8"]
 events = [SubResource("InputEventAction_k41q7")]
@@ -65,6 +66,17 @@ shortcut = SubResource("Shortcut_uyny8")
 text = "NO
 "
 
+[node name="Indicator" type="Polygon2D" parent="."]
+visible = false
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(1114, 461, 1136, 488, 1160, 457)
+script = ExtResource("5_aaari")
+
+[node name="IndicatorTimer" type="Timer" parent="Indicator"]
+wait_time = 0.4
+autostart = true
+
 [connection signal="timeout" from="LetterTimer" to="." method="_on_letter_timer_timeout"]
 [connection signal="pressed" from="Answers/YesButton" to="." method="_on_yes_button_pressed"]
 [connection signal="pressed" from="Answers/NoButton" to="." method="_on_no_button_pressed"]
+[connection signal="timeout" from="Indicator/IndicatorTimer" to="Indicator" method="_on_indicator_timer_timeout"]

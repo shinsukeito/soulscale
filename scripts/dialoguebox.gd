@@ -13,6 +13,7 @@ func say(msg):
 	index = 0
 	message = msg
 	$LetterTimer.start()
+	$Indicator.appear(false)
 	
 func skip(): 
 	$Message.text = message
@@ -39,6 +40,7 @@ func _on_letter_timer_timeout():
 			$LetterTimer.start(0.02)
 	elif index == message.length() - 1:
 		finished_speaking.emit()
+		$Indicator.appear(true)
 			
 	index += 1 
 
