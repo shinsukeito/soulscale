@@ -15,18 +15,6 @@ var questioning = false
 
 var message_queue = []
 
-var portrait_map = {
-	"Mercenary": preload("res://assets/visual/Characters/Mercenary.png"),
-	"Dad": preload("res://assets/visual/Characters/Dad.png"),
-	"Girl": preload("res://assets/visual/Characters/Girl.png"),
-	"Grandma": preload("res://assets/visual/Characters/Grandma.png"),
-	"Teen": preload("res://assets/visual/Characters/Teen.png"),
-	"Cat": preload("res://assets/visual/Characters/Cat.png"),
-	"Boy": preload("res://assets/visual/Characters/Boy.png"),
-	"Servant": preload("res://assets/visual/Characters/Servant.png"),
-	"Anubis": preload("res://assets/visual/Characters/Anubis.png"),
-}
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	global = get_node("/root/Global")
@@ -48,7 +36,11 @@ func show_messages(companion, messages):
 	_show_dialogue_box(true)
 	_show_next_message()
 	
-	$Companion.texture = portrait_map[companion]
+	for p in $Portraits.get_children():
+		if p.name == companion:
+			p.visible = true
+		else:
+			p.visible = false
 
 
 func _show_next_message():
@@ -74,11 +66,11 @@ func trigger():
 func _show_dialogue_box(show):
 	if show:
 		$DialogueBox.visible = true
-		$Companion.visible = true
+		$Portraits.visible = true
 		if giant: giant.frozen = true
 	else:
 		$DialogueBox.visible = false
-		$Companion.visible = false
+		$Portraits.visible = false
 		if giant: giant.frozen = false
 
 
