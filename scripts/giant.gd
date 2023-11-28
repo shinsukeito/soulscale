@@ -72,10 +72,10 @@ func set_flinch(value):
 	else:
 		$Sprite2D.set_modulate(Color(1, 1, 1, 1))
 
-func on_hazard(hazard):
+func on_hazard(projectile):
 	if shielding || flinching: return
 	
-	var posDiff = hazard.global_position - global_position
+	var posDiff = projectile.global_position - global_position
 	velocity = Vector2(-flinch_force * posDiff.x, -flinch_force * posDiff.y)
 	
 	var dmg = min(0, -5 + armor)

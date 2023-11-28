@@ -1,14 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dac50v5yr7fx6"]
+[gd_scene load_steps=6 format=3 uid="uid://dac50v5yr7fx6"]
 
 [ext_resource type="Script" path="res://scripts/module.gd" id="1_5lpg2"]
 [ext_resource type="TileSet" uid="uid://dotegxn6gb77k" path="res://tilesets/terrain.tres" id="3_m27un"]
 [ext_resource type="PackedScene" uid="uid://3m6h6oty2lln" path="res://scenes/climb/collectibles/currency.tscn" id="4_efjhy"]
-
-[sub_resource type="Curve2D" id="Curve2D_1dy5m"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 240, 521, 0, 0, 0, 0, 360, 522)
-}
-point_count = 2
+[ext_resource type="PackedScene" uid="uid://limn1c3pscoj" path="res://scenes/climb/hazards/spinner.tscn" id="4_nmyqf"]
+[ext_resource type="PackedScene" uid="uid://cyyx2m4g5r3l3" path="res://scenes/climb/hazards/shooter.tscn" id="5_6gcd2"]
 
 [node name="Module" type="Node2D"]
 script = ExtResource("1_5lpg2")
@@ -18,13 +14,6 @@ tile_set = ExtResource("3_m27un")
 cell_quadrant_size = 32
 format = 2
 layer_0/tile_data = PackedInt32Array(1114112, 3, 0, 1179648, 3, 0, 1245184, 3, 0, 1114113, 3, 0, 1179649, 3, 0, 1245185, 3, 0, 1114114, 3, 0, 1179650, 3, 0, 1245186, 3, 0, 1114115, 3, 0, 1179651, 3, 0, 1245187, 3, 0, 1114116, 3, 0, 1179652, 3, 0, 1245188, 3, 0, 1114117, 3, 0, 1179653, 3, 0, 1245189, 3, 0, 1114118, 3, 0, 1179654, 3, 0, 1245190, 3, 0, 1179655, 3, 0, 1245191, 3, 0, 1179656, 3, 0, 1245192, 3, 0, 1179657, 3, 0, 1245193, 3, 0, 1179658, 3, 0, 1245194, 3, 0, 1179659, 3, 0, 1245195, 3, 0, 1179660, 3, 0, 1245196, 3, 0, 1179661, 3, 0, 1245197, 3, 0, 1114121, 3, 0, 1114122, 3, 0, 1114123, 3, 0, 1114124, 3, 0, 1048589, 3, 0, 1114125, 3, 0, 1048590, 3, 0, 1114126, 3, 0, 1179662, 3, 0, 1245198, 3, 0, 1048591, 3, 0, 1114127, 3, 0, 1179663, 3, 0, 1245199, 3, 0, 1048592, 3, 0, 1114128, 3, 0, 1179664, 3, 0, 1245200, 3, 0, 1048593, 3, 0, 1114129, 3, 0, 1179665, 3, 0, 1245201, 3, 0, 1048594, 3, 0, 1114130, 3, 0, 1179666, 3, 0, 1245202, 3, 0, 1048595, 3, 0, 1114131, 3, 0, 1179667, 3, 0, 1245203, 3, 0, 983055, 0, 0, 983056, 3, 0, 983057, 3, 0, 983058, 3, 0, 983059, 3, 0, 917521, 0, 0, 917522, 3, 0, 917523, 3, 0, 851987, 0, 0, 1310720, 3, 0, 1376256, 3, 0, 1441792, 3, 0, 1507328, 3, 0, 1310721, 3, 0, 1376257, 3, 0, 1441793, 3, 0, 1507329, 3, 0, 1310722, 3, 0, 1376258, 3, 0, 1441794, 3, 0, 1507330, 3, 0, 1310723, 3, 0, 1376259, 3, 0, 1441795, 3, 0, 1507331, 3, 0, 1310724, 3, 0, 1376260, 3, 0, 1441796, 3, 0, 1507332, 3, 0, 1310725, 3, 0, 1376261, 3, 0, 1441797, 3, 0, 1507333, 3, 0, 1310726, 3, 0, 1376262, 3, 0, 1441798, 3, 0, 1507334, 3, 0, 1310727, 3, 0, 1376263, 3, 0, 1441799, 3, 0, 1507335, 3, 0, 1310728, 3, 0, 1376264, 3, 0, 1441800, 3, 0, 1507336, 3, 0, 1310729, 3, 0, 1376265, 3, 0, 1441801, 3, 0, 1507337, 3, 0, 1310730, 3, 0, 1376266, 3, 0, 1441802, 3, 0, 1507338, 3, 0, 1310731, 3, 0, 1376267, 3, 0, 1441803, 3, 0, 1507339, 3, 0, 1310732, 3, 0, 1376268, 3, 0, 1441804, 3, 0, 1507340, 3, 0, 1310733, 3, 0, 1376269, 3, 0, 1441805, 3, 0, 1507341, 3, 0, 1310734, 3, 0, 1376270, 3, 0, 1441806, 3, 0, 1507342, 3, 0, 1310735, 3, 0, 1376271, 3, 0, 1441807, 3, 0, 1507343, 3, 0, 1310736, 3, 0, 1376272, 3, 0, 1441808, 3, 0, 1507344, 3, 0, 1310737, 3, 0, 1376273, 3, 0, 1441809, 3, 0, 1507345, 3, 0, 1310738, 3, 0, 1376274, 3, 0, 1441810, 3, 0, 1507346, 3, 0, 1310739, 3, 0, 1376275, 3, 0, 1441811, 3, 0, 1507347, 3, 0, 851975, 3, 0, 786439, 0, 0, 786440, 3, 0, 786441, 3, 0, 851977, 3, 0, 851976, 3, 0, 786442, 3, 0, 851978, 3, 0, 851979, 3, 0, 786443, 0, 65536)
-
-[node name="HazardPath" type="Path2D" parent="."]
-curve = SubResource("Curve2D_1dy5m")
-
-[node name="HazardSampler" type="PathFollow2D" parent="HazardPath"]
-position = Vector2(240, 521)
-rotation = 0.00833314
 
 [node name="Currency" parent="." instance=ExtResource("4_efjhy")]
 position = Vector2(453, 500)
@@ -42,3 +31,13 @@ position = Vector2(275, 364)
 
 [node name="SpawnPoint1" type="Node2D" parent="ArtifactSpawner"]
 position = Vector2(306, 324)
+
+[node name="Spinner" parent="." instance=ExtResource("4_nmyqf")]
+position = Vector2(241, 428)
+
+[node name="Shooter" parent="." instance=ExtResource("5_6gcd2")]
+position = Vector2(308, 205)
+shoot_frequency = 4
+projectile_speed = 150
+projectile_homing = true
+targeting = true

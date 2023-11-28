@@ -1,11 +1,11 @@
 
 extends Node2D
 
+var artifact_scene: PackedScene = load("res://scenes/climb/collectibles/artifact.tscn")
+
 @export var tile_size = 32
 @export var start_height = 17
 @export var end_height = 13
-@export var hazard_scene: PackedScene = load("res://scenes/climb/hazard.tscn")
-@export var artifact_scene: PackedScene = load("res://scenes/climb/collectibles/artifact.tscn")
 
 var area: Area
 
@@ -26,22 +26,10 @@ func _ready():
 			a.y_max = cell.x
 	
 	area = a
-	
-	for n in 2:
-		create_hazards()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
-
-func create_hazards():
-	var hazard = hazard_scene.instantiate()
-	var spawn_path = get_node("HazardPath/HazardSampler")
-	spawn_path.progress_ratio = randf()
-	
-	hazard.position = spawn_path.position
-	
-	add_child(hazard)
 	
 func spawn_artifact():
 	if $ArtifactSpawner == null: return
