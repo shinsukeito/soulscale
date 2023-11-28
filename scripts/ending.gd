@@ -35,12 +35,12 @@ func _on_dialogue_finished_speaking():
 func _on_weighing_timer_timeout():
 	weighed = true
 	if count < 4:
-		$Dialogue.show_messages(Anubis.dialogue.lose_messages)
+		$Dialogue.show_messages("Anubis", Anubis.dialogue.lose_messages)
 	elif count < 8:
-		$Dialogue.show_messages(Anubis.dialogue.win_messages)
+		$Dialogue.show_messages("Anubis", Anubis.dialogue.win_messages)
 	elif count == 8:
-		$Dialogue.show_messages(Anubis.dialogue.big_win_messages)
+		$Dialogue.show_messages("Anubis", Anubis.dialogue.big_win_messages)
 
 
 func _on_transition_fade_in_completed():
-	$Dialogue.show_messages(Anubis.dialogue.initial_messages)
+	$Dialogue.show_messages("Anubis", Anubis.dialogue.initial_messages)

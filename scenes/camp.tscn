@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/common/debugger.tscn" id="3_wvro7"]
 [ext_resource type="PackedScene" uid="uid://wvt2suixd2jw" path="res://scenes/common/dialogue.tscn" id="4_5sa2l"]
 [ext_resource type="PackedScene" uid="uid://dyid85hafptel" path="res://scenes/climb/inventory.tscn" id="4_ciltx"]
-[ext_resource type="Texture2D" uid="uid://ciru6xle4f4a0" path="res://assets/visual/Campsite.png" id="5_2dbyu"]
+[ext_resource type="Texture2D" uid="uid://dc2froo2edjis" path="res://assets/visual/Campsite.png" id="5_2dbyu"]
 [ext_resource type="PackedScene" uid="uid://wvc313jlr258" path="res://scenes/common/giant.tscn" id="6_nc6tn"]
 [ext_resource type="PackedScene" uid="uid://cg2u0as37g0b7" path="res://scenes/camp/npc.tscn" id="7_uk68a"]
 
@@ -91,10 +91,10 @@ position = Vector2(562, 735)
 scale = Vector2(2.1, 2.1)
 
 [node name="Mercenary" parent="." instance=ExtResource("7_uk68a")]
-position = Vector2(365, 680)
+position = Vector2(2366, 646)
 
 [node name="Dad" parent="." instance=ExtResource("7_uk68a")]
-position = Vector2(809, 769)
+position = Vector2(363, 661)
 
 [node name="Girl" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(93, 767)
@@ -103,7 +103,7 @@ position = Vector2(93, 767)
 position = Vector2(1332, 727)
 
 [node name="Teen" parent="." instance=ExtResource("7_uk68a")]
-position = Vector2(1533, 728)
+position = Vector2(795, 739)
 
 [node name="Boy" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(2035, 776)
@@ -112,7 +112,7 @@ position = Vector2(2035, 776)
 position = Vector2(1765, 785)
 
 [node name="Servant" parent="." instance=ExtResource("7_uk68a")]
-position = Vector2(2362, 667)
+position = Vector2(1526, 720)
 
 [connection signal="fade_in_completed" from="Transition" to="." method="_on_transition_fade_in_completed"]
 [connection signal="fade_out_completed" from="Transition" to="." method="_on_transition_fade_out_completed"]

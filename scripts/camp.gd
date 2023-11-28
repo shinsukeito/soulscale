@@ -50,13 +50,13 @@ func talk_to_npc():
 
 	if artifact.collected:
 		if artifact.returned == null:
-			$Dialogue.show_messages(Companions.dialogue[current_npc].found_messages[0])
+			$Dialogue.show_messages(current_npc, Companions.dialogue[current_npc].found_messages[0])
 		elif artifact.returned:
-			$Dialogue.show_messages(Companions.dialogue[current_npc].after_messages[0])
+			$Dialogue.show_messages(current_npc, Companions.dialogue[current_npc].after_messages[0])
 		else:
-			$Dialogue.show_messages(Companions.dialogue[current_npc].after_messages[1])
+			$Dialogue.show_messages(current_npc, Companions.dialogue[current_npc].after_messages[1])
 	else:
-		$Dialogue.show_messages(Companions.dialogue[current_npc].daily_messages[global.day - 1])
+		$Dialogue.show_messages(current_npc, Companions.dialogue[current_npc].daily_messages[global.day - 1])
 
 
 func _on_sleep_button_pressed():

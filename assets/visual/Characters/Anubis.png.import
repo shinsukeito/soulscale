@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc2froo2edjis"
-path="res://.godot/imported/Campsite.png-51b334df6529b404b50d52d322a9d132.ctex"
+uid="uid://vuaife4o5ogh"
+path="res://.godot/imported/Anubis.png-e472d93ce2e02f9b9c8de69cd7827caa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/Campsite.png"
-dest_files=["res://.godot/imported/Campsite.png-51b334df6529b404b50d52d322a9d132.ctex"]
+source_file="res://assets/visual/Characters/Anubis.png"
+dest_files=["res://.godot/imported/Anubis.png-e472d93ce2e02f9b9c8de69cd7827caa.ctex"]
 
 [params]
 

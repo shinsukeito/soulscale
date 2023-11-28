@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc2froo2edjis"
-path="res://.godot/imported/Campsite.png-51b334df6529b404b50d52d322a9d132.ctex"
+uid="uid://dkyil7h2wuesx"
+path="res://.godot/imported/Dad.png-0bf9d4e43c38d59a7501b90c4eb0915b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/Campsite.png"
-dest_files=["res://.godot/imported/Campsite.png-51b334df6529b404b50d52d322a9d132.ctex"]
+source_file="res://assets/visual/Characters/Dad.png"
+dest_files=["res://.godot/imported/Dad.png-0bf9d4e43c38d59a7501b90c4eb0915b.ctex"]
 
 [params]
 

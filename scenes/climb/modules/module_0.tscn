@@ -41,3 +41,4 @@ shoot_frequency = 4
 projectile_speed = 150
 projectile_homing = true
 targeting = true
+detect_radius = 500

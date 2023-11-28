@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc2froo2edjis"
-path="res://.godot/imported/Campsite.png-51b334df6529b404b50d52d322a9d132.ctex"
+uid="uid://hv6aips3efub"
+path="res://.godot/imported/Grandma.png-563177d29fc8902898c7fa49be7e4bd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/Campsite.png"
-dest_files=["res://.godot/imported/Campsite.png-51b334df6529b404b50d52d322a9d132.ctex"]
+source_file="res://assets/visual/Characters/Grandma.png"
+dest_files=["res://.godot/imported/Grandma.png-563177d29fc8902898c7fa49be7e4bd6.ctex"]
 
 [params]
 
