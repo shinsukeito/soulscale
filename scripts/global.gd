@@ -44,6 +44,17 @@ var artifact_map: Dictionary = {
 }
 var artifact_list = []
 
+var artifact_textures = {
+	"Amulet": preload("res://assets/visual/Trinkets/amulet.png"),
+	"Bust of a God": preload("res://assets/visual/Trinkets/bust.png"),
+	"Chalice": preload("res://assets/visual/Trinkets/chalice.png"),
+	"Flint Knife": preload("res://assets/visual/Trinkets/flint knife.png"),
+	"Jewellery": preload("res://assets/visual/Trinkets/jewellery.png"),
+	"Menat": preload("res://assets/visual/Trinkets/menat_rattle.png"),
+	"Mirror": preload("res://assets/visual/Trinkets/mirror.png"),
+	"Oil Lamp": preload("res://assets/visual/Trinkets/oil lamp.png"),
+}
+
 var base_power: Power = Power.new(90, 400, 0.2, 40, 0)
 var current_power
 
@@ -80,6 +91,9 @@ func change_stamina(value):
 	
 func change_currency(value):
 	currency = max(value, 0)
+
+func current_artifact_texture():
+	return artifact_textures[artifact_list[progress].name]
 
 func artifact_collected():
 	artifact_list[progress].collected = true

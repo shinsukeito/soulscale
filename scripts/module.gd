@@ -1,6 +1,8 @@
 
 extends Node2D
 
+var global
+
 var artifact_scene: PackedScene = load("res://scenes/climb/collectibles/artifact.tscn")
 
 @export var tile_size = 32
@@ -13,6 +15,7 @@ var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	global = get_node("/root/Global")
 	var cells = $Terrain.get_used_cells(0)
 	var a = Area.new(0, 0, 0, 0)
 	for cell in cells:
@@ -35,6 +38,7 @@ func spawn_artifact():
 	if $ArtifactSpawner == null: return
 	
 	var a = artifact_scene.instantiate()
+	a.get_child(0).texture = global.current_artifact_texture()
 	
 	if $ArtifactSpawner.get_children().size() > 1:
 		$ArtifactSpawner.get_children().shuffle()

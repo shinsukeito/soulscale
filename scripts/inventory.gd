@@ -5,6 +5,16 @@ var global
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	global = get_node("/root/Global")
+	
+	$Lamp/Artifact.texture = global.artifact_textures["Oil Lamp"]
+	$Knife/Artifact.texture = global.artifact_textures["Flint Knife"]
+	$Menat/Artifact.texture = global.artifact_textures["Menat"]
+	$Bust/Artifact.texture = global.artifact_textures["Bust of a God"]
+	$Mirror/Artifact.texture = global.artifact_textures["Mirror"]
+	$Amulet/Artifact.texture = global.artifact_textures["Amulet"]
+	$Jewellery/Artifact.texture = global.artifact_textures["Jewellery"]
+	$Chalice/Artifact.texture = global.artifact_textures["Chalice"]
+	
 	refresh()
 
 func refresh():

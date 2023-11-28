@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://djwb5srmqnfcg"]
 
 [ext_resource type="Texture2D" uid="uid://bojwht70i7v1f" path="res://assets/visual/ring.png" id="1_a1ntj"]
-[ext_resource type="Texture2D" uid="uid://blu80mmyfy6g3" path="res://assets/visual/trophy.png" id="2_li60m"]
+[ext_resource type="Texture2D" uid="uid://cq6jajgno4a3w" path="res://assets/visual/Trinkets/amulet.png" id="2_mqg33"]
 
 [node name="Slot" type="Node2D"]
 
@@ -14,8 +14,8 @@ texture = ExtResource("1_a1ntj")
 [node name="Artifact" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(19.5, 19.5)
-scale = Vector2(1.79167, 1.79167)
-texture = ExtResource("2_li60m")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_mqg33")
 
 [node name="Tick" type="Polygon2D" parent="."]
 visible = false
