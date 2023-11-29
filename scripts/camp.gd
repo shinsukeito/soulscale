@@ -70,7 +70,7 @@ func _on_dialogue_artifact_returned(value: bool):
 	var artifact = global.artifact_map[current_npc] as Artifact
 	artifact.returned = value
 	
-	var npc = find_child(current_npc)
+	var npc = find_child(current_npc, false)
 	npc.hide_marker()
 	
 	$CanvasLayer/Inventory.refresh()

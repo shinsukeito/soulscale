@@ -8,7 +8,7 @@ signal artifact_collected
 var global
 	
 @export var speed = 90
-@export var friction = 0.7
+@export var friction = 0.6
 @export var jump = 400
 @export var gravity = 20
 @export var shield_length = 0.2
@@ -31,6 +31,11 @@ func _ready():
 	
 	$ShieldTimer.wait_time = shield_length
 	$ShieldTimer.wait_time = shield_cooldown
+	
+	$Sprite2D/AnimationPlayer.play("idle")
+
+func _process(delta):
+	update_animation()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):	
@@ -40,10 +45,10 @@ func _physics_process(_delta):
 	if !flinching && !frozen:
 		if Input.is_action_pressed("right"):
 			velocity.x += speed
-			$Sprite2D.flip_h = false
+			$Sprite2D.scale.x = abs($Sprite2D.scale.x)
 		if Input.is_action_pressed("left"):
 			velocity.x -= speed
-			$Sprite2D.flip_h = true
+			$Sprite2D.scale.x = -abs($Sprite2D.scale.x)
 
 		if Input.is_action_pressed("jump") && is_on_floor():
 			velocity.y = -jump
@@ -108,3 +113,64 @@ func _on_shield_cooldown_timer_timeout():
 
 func _on_flinch_timer_timeout():
 	set_flinch(false)
+
+# ANIMATIONS
+
+enum State {
+	IDLE,
+	RUN,
+	JUMP,
+	FALL,
+	LAND,
+}
+
+var state = State.IDLE
+	
+func update_animation():
+	match(state):
+		State.IDLE:
+			if abs(velocity.x) > 10:
+				$Sprite2D/AnimationPlayer.play("run")
+				state = State.RUN
+			if velocity.y < 0:
+				$Sprite2D/AnimationPlayer.play("jump")
+				state = State.JUMP
+			if velocity.y > 0:
+				$Sprite2D/AnimationPlayer.play("fall")
+				state = State.FALL
+		State.RUN:
+			if abs(velocity.x) < 10:
+				$Sprite2D/AnimationPlayer.play("idle")
+				state = State.IDLE
+			if velocity.y < 0:
+				$Sprite2D/AnimationPlayer.play("jump")
+				state = State.JUMP
+			if velocity.y > 0:
+				$Sprite2D/AnimationPlayer.play("fall")
+				state = State.FALL
+		State.JUMP:
+			if is_on_floor():
+				$Sprite2D/AnimationPlayer.play("land")
+				state = State.LAND
+			else:
+				if velocity.y > 0:
+					$Sprite2D/AnimationPlayer.play("fall")
+					state = State.FALL
+		State.FALL:
+			if is_on_floor():
+				if  Input.is_action_pressed("jump"):
+					$Sprite2D/AnimationPlayer.play("jump")
+					state = State.JUMP
+				else:
+					$Sprite2D/AnimationPlayer.play("land")
+					state = State.LAND
+
+func _on_animation_player_animation_finished(anim_name):
+	match(anim_name):
+		"land":
+			if abs(velocity.x) > 10:
+				$Sprite2D/AnimationPlayer.play("run")
+				state = State.RUN
+			else:
+				$Sprite2D/AnimationPlayer.play("idle")
+				state = State.IDLE
