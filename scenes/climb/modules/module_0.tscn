@@ -22,6 +22,12 @@ position = Vector2(652, 657)
 [node name="Currency2" parent="." instance=ExtResource("4_efjhy")]
 position = Vector2(543, 626)
 
+[node name="Currency5" parent="." instance=ExtResource("4_efjhy")]
+position = Vector2(458, 965)
+
+[node name="Currency6" parent="." instance=ExtResource("4_efjhy")]
+position = Vector2(410, 964)
+
 [node name="Currency3" parent="." instance=ExtResource("4_efjhy")]
 position = Vector2(514, 629)
 
@@ -35,11 +41,11 @@ position = Vector2(522, 566)
 
 [node name="Spinner" parent="." instance=ExtResource("4_nmyqf")]
 position = Vector2(521, 731)
+radius = 250
+projectile_count = 14
 
 [node name="Shooter" parent="." instance=ExtResource("5_6gcd2")]
 position = Vector2(522, 436)
-shoot_frequency = 4
-projectile_speed = 150
 projectile_homing = true
 targeting = true
 detect_radius = 500

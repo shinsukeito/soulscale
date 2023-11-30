@@ -4,10 +4,10 @@ var projectile_scene: PackedScene = load("res://scenes/climb/hazards/projectile.
 
 var giant
 
-@export var shoot_frequency = 1
+@export var shoot_frequency = 1.35
 @export var t = 0
 
-@export var projectile_speed = 70
+@export var projectile_speed = 160
 @export var projectile_homing = false
 
 @export var targeting = false

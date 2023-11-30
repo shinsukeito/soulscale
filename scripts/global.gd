@@ -9,37 +9,38 @@ var day_start_progress = 0
 var progress = 0
 var currency = 0
 var artifact_map: Dictionary = {
+	# speed, jump, shield length, max stamina, armor
 	"Mercenary": Artifact.new(
 		"Flint Knife", 
-		Power.new(5, 60, 0, 0, 0)
+		Power.new(20, 80, 0, 0, 0)
 	),
 	"Dad": Artifact.new(
 		"Menat",
-		Power.new(5, 30, 0.1, 0, 0)
+		Power.new(15, 50, 0.3, 0, 0)
 	),
 	"Girl": Artifact.new(
 		"Oil Lamp",
-		Power.new(5, 30, 0, 10, 0)
+		Power.new(10, 30, 0, 20, 0)
 	),
 	"Grandma": Artifact.new(
 		"Bust of a God",
-		Power.new(5, 20, 0.5, 5, 0)
+		Power.new(10, 30, 0.5, 5, 0)
 	),
 	"Teen": Artifact.new(
 		"Mirror",
-		Power.new(5, 20, 0.1, 5, 2)
+		Power.new(10, 20, 1.7, 5, 3)
 	),
 	"Boy": Artifact.new(
 		"Amulet",
-		Power.new(5, 20, 0, 5, 3)
+		Power.new(10, 40, 0, 5, 5)
 	),
 	"Cat": Artifact.new(
 		"Jewellery",
-		Power.new(5, 30, 0, 10, 0)
+		Power.new(10, 40, 0, 10, 0)
 	),
 	"Servant": Artifact.new(
 		"Chalice",
-		Power.new(5, 0, 0, 20, 0)
+		Power.new(10, 0, 0, 20, 0)
 	),
 }
 var artifact_list = []
@@ -54,8 +55,8 @@ var artifact_textures = {
 	"Mirror": preload("res://assets/visual/Trinkets/mirror.png"),
 	"Oil Lamp": preload("res://assets/visual/Trinkets/oil lamp.png"),
 }
-
-var base_power: Power = Power.new(150, 750, 1, 40, 0)
+# speed, jump, shield length, max stamina, armor
+var base_power: Power = Power.new(160, 800, 1, 40, 0)
 var current_power
 
 # Called when the node enters the scene tree for the first time. 

@@ -109,7 +109,7 @@ position = Vector2(795, 739)
 position = Vector2(2035, 776)
 
 [node name="Cat" parent="." instance=ExtResource("7_uk68a")]
-position = Vector2(1765, 785)
+position = Vector2(1760, 746)
 
 [node name="Servant" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(1526, 720)

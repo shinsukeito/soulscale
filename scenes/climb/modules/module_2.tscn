@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgiqielq6ue7g"]
+[gd_scene load_steps=7 format=3 uid="uid://bgiqielq6ue7g"]
 
 [ext_resource type="Script" path="res://scripts/module.gd" id="1_kqs26"]
 [ext_resource type="TileSet" uid="uid://c1ybfv2peomy1" path="res://tilesets/tileset.tres" id="2_kgken"]
 [ext_resource type="PackedScene" uid="uid://3m6h6oty2lln" path="res://scenes/climb/collectibles/currency.tscn" id="4_cldj8"]
 [ext_resource type="PackedScene" uid="uid://ba1gvbrsvyaeq" path="res://scenes/climb/collectibles/potion.tscn" id="5_3q3c6"]
 [ext_resource type="PackedScene" uid="uid://cyyx2m4g5r3l3" path="res://scenes/climb/hazards/shooter.tscn" id="5_aqgbn"]
+[ext_resource type="PackedScene" uid="uid://limn1c3pscoj" path="res://scenes/climb/hazards/spinner.tscn" id="6_ucdnb"]
 
 [node name="Room" type="Node2D"]
 script = ExtResource("1_kqs26")
@@ -31,6 +32,54 @@ position = Vector2(1173, 556)
 [node name="Currency5" parent="." instance=ExtResource("4_cldj8")]
 position = Vector2(1296, 596)
 
+[node name="Currency6" parent="." instance=ExtResource("4_cldj8")]
+position = Vector2(1626, 993)
+
+[node name="Currency16" parent="." instance=ExtResource("4_cldj8")]
+position = Vector2(1312, 1024)
+
+[node name="Currency19" parent="." instance=ExtResource("4_cldj8")]
+position = Vector2(768, 960)
+
+[node name="Currency21" parent="." instance=ExtResource("4_cldj8")]
+position = Vector2(816, 936)
+
+[node name="Currency20" parent="." instance=ExtResource("4_cldj8")]
+position = Vector2(856, 960)
+
+[node name="Currency17" parent="." instance=ExtResource("4_cldj8")]
+position = Vector2(400, 680)
+
+[node name="Currency18" parent="." instance=ExtResource("4_cldj8")]
+position = Vector2(368, 728)
+
+[node name="Currency7" parent="." instance=ExtResource("4_cldj8")]
+position = Vector2(1679, 1054)
+
+[node name="Currency11" parent="." instance=ExtResource("4_cldj8")]
+position = Vector2(2048, 1040)
+
+[node name="Currency13" parent="." instance=ExtResource("4_cldj8")]
+position = Vector2(2208, 1232)
+
+[node name="Currency14" parent="." instance=ExtResource("4_cldj8")]
+position = Vector2(2176, 1184)
+
+[node name="Currency15" parent="." instance=ExtResource("4_cldj8")]
+position = Vector2(2240, 1184)
+
+[node name="Currency12" parent="." instance=ExtResource("4_cldj8")]
+position = Vector2(2080, 920)
+
+[node name="Currency8" parent="." instance=ExtResource("4_cldj8")]
+position = Vector2(2048, 976)
+
+[node name="Currency9" parent="." instance=ExtResource("4_cldj8")]
+position = Vector2(2016, 920)
+
+[node name="Currency10" parent="." instance=ExtResource("4_cldj8")]
+position = Vector2(2048, 864)
+
 [node name="Potion" parent="." instance=ExtResource("5_3q3c6")]
 position = Vector2(326, 299)
 
@@ -40,13 +89,18 @@ position = Vector2(326, 299)
 position = Vector2(256, 293)
 
 [node name="SpawnPoint2" type="Node2D" parent="ArtifactSpawner"]
-position = Vector2(1149, 687)
+position = Vector2(524, 571)
 
 [node name="Shooter" parent="." instance=ExtResource("5_aqgbn")]
 position = Vector2(811, 561)
 rotation = 3.14159
-shoot_frequency = 2
 
 [node name="Shooter2" parent="." instance=ExtResource("5_aqgbn")]
 position = Vector2(190, 297)
-shoot_frequency = 2
+
+[node name="Spinner" parent="." instance=ExtResource("6_ucdnb")]
+position = Vector2(816, 1016)
+radius = 300
+projectile_count = 12
+frequency = 4
+clockwise = true
