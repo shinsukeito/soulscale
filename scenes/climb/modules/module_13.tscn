@@ -39,7 +39,7 @@ position = Vector2(1624, 1104)
 position = Vector2(1672, 712)
 
 [node name="Currency16" parent="." instance=ExtResource("3_a5504")]
-position = Vector2(1120, 1064)
+position = Vector2(1120, 1072)
 
 [node name="Currency32" parent="." instance=ExtResource("3_a5504")]
 position = Vector2(1152, 1024)
@@ -113,10 +113,12 @@ position = Vector2(224, 560)
 position = Vector2(1345, 1065)
 rotation = 3.14159
 shoot_frequency = 1.6
+detect_radius = 500
 
 [node name="Shooter2" parent="." instance=ExtResource("5_208vm")]
 position = Vector2(186, 1126)
 shoot_frequency = 1.6
+detect_radius = 500
 
 [node name="Spinner" parent="." instance=ExtResource("6_vp7d1")]
 position = Vector2(1664, 864)
@@ -127,21 +129,21 @@ clockwise = true
 
 [node name="Spinner2" parent="." instance=ExtResource("6_vp7d1")]
 position = Vector2(1016, 792)
-radius = 90
+radius = 120
 projectile_count = 5
-frequency = 3
+frequency = 2
 clockwise = true
 
 [node name="Spinner3" parent="." instance=ExtResource("6_vp7d1")]
 position = Vector2(792, 744)
-radius = 90
+radius = 120
 projectile_count = 5
-frequency = 3
+frequency = 2
 clockwise = true
 
 [node name="Spinner4" parent="." instance=ExtResource("6_vp7d1")]
 position = Vector2(576, 792)
-radius = 90
+radius = 120
 projectile_count = 5
-frequency = 3
+frequency = 2
 clockwise = true

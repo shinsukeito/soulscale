@@ -49,7 +49,7 @@ projectile_count = 5
 frequency = 2
 
 [node name="Shooter" parent="." instance=ExtResource("5_xa5ih")]
-position = Vector2(1071, 657)
+position = Vector2(1026, 652)
 shoot_frequency = 3.0
 projectile_speed = 300
 projectile_homing = true
@@ -57,15 +57,13 @@ targeting = true
 detect_radius = 800
 
 [node name="Shooter2" parent="." instance=ExtResource("5_xa5ih")]
-position = Vector2(289, 1016)
+position = Vector2(348, 1018)
 shoot_frequency = 0.5
 projectile_speed = 300
 detect_radius = 300
 
 [node name="Shooter3" parent="." instance=ExtResource("5_xa5ih")]
-position = Vector2(289, 961)
+position = Vector2(348, 963)
 shoot_frequency = 0.5
 projectile_speed = 300
-projectile_homing = true
-targeting = true
 detect_radius = 300
