@@ -176,7 +176,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5633"]
-size = Vector2(25, 83)
+size = Vector2(27.916, 83)
 
 [node name="Giant" type="CharacterBody2D"]
 collision_mask = 15
@@ -186,7 +186,7 @@ script = ExtResource("1_ja3nj")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 2
 z_as_relative = false
-position = Vector2(0, -55)
+position = Vector2(2.542, 14.56)
 scale = Vector2(0.124, 0.124)
 texture = ExtResource("16_j464g")
 offset = Vector2(-80, -120)
@@ -198,7 +198,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.5, -41.5)
+position = Vector2(-0.958, 28.06)
 shape = SubResource("RectangleShape2D_x5633")
 
 [node name="ShieldTimer" type="Timer" parent="."]

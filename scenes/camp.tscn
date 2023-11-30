@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://clwhmw7sft4nb"]
+[gd_scene load_steps=14 format=3 uid="uid://clwhmw7sft4nb"]
 
 [ext_resource type="Script" path="res://scripts/camp.gd" id="1_kq6gs"]
 [ext_resource type="PackedScene" uid="uid://bwkwtaue0x3yi" path="res://scenes/common/camera.tscn" id="2_m64bq"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dawdx71pww6hm" path="res://assets/visual/Campsite - ground (moved cat).png" id="7_8oix5"]
 [ext_resource type="PackedScene" uid="uid://cg2u0as37g0b7" path="res://scenes/camp/npc.tscn" id="7_uk68a"]
 [ext_resource type="Texture2D" uid="uid://cnp5g3pa6a8ve" path="res://assets/visual/Campsite - background.png" id="8_t8jwt"]
+[ext_resource type="PackedScene" uid="uid://cnw2gbjjeen28" path="res://scenes/camp/tent.tscn" id="11_v0u8t"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hl6u6"]
 font_size = 24
@@ -29,20 +30,6 @@ fade_out_time = 1.0
 [node name="Debugger" parent="." instance=ExtResource("3_wvro7")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="SleepButton" type="Button" parent="CanvasLayer"]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -120.0
-offset_top = -53.0
-offset_right = -19.0
-offset_bottom = -16.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "SLEEP"
 
 [node name="DayLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = 5
@@ -95,7 +82,7 @@ position = Vector2(1520, 540)
 texture = ExtResource("8_t8jwt")
 
 [node name="Giant" parent="." instance=ExtResource("6_nc6tn")]
-position = Vector2(562, 735)
+position = Vector2(571, 640)
 scale = Vector2(2.1, 2.1)
 
 [node name="Mercenary" parent="." instance=ExtResource("7_uk68a")]
@@ -117,12 +104,14 @@ position = Vector2(795, 739)
 position = Vector2(2040, 757)
 
 [node name="Cat" parent="." instance=ExtResource("7_uk68a")]
-position = Vector2(1868, 793)
+position = Vector2(1868, 803)
 
 [node name="Servant" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(1526, 720)
 
+[node name="Tent" parent="." instance=ExtResource("11_v0u8t")]
+position = Vector2(1710, 649)
+
 [connection signal="fade_in_completed" from="Transition" to="." method="_on_transition_fade_in_completed"]
 [connection signal="fade_out_completed" from="Transition" to="." method="_on_transition_fade_out_completed"]
-[connection signal="pressed" from="CanvasLayer/SleepButton" to="." method="_on_sleep_button_pressed"]
 [connection signal="artifact_returned" from="Dialogue" to="." method="_on_dialogue_artifact_returned"]

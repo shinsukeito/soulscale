@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://3m6h6oty2lln"]
+[gd_scene load_steps=5 format=3 uid="uid://3m6h6oty2lln"]
 
 [ext_resource type="Script" path="res://scripts/collectible.gd" id="1_ee8m8"]
 [ext_resource type="Texture2D" uid="uid://nf2i8f0aobw4" path="res://assets/visual/Objects/Coin.png" id="2_mlbbk"]
+[ext_resource type="Texture2D" uid="uid://c2u8v31d2dr8f" path="res://assets/visual/glow.png" id="3_ug1x1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wg3jn"]
 radius = 16.0
@@ -12,10 +13,22 @@ collision_mask = 3
 script = ExtResource("1_ee8m8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(1, 0)
 scale = Vector2(0.0844444, 0.0844445)
 texture = ExtResource("2_mlbbk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_wg3jn")
 
+[node name="Glow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0.698039, 0.631373)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("3_ug1x1")
+
+[node name="CollectTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="CollectTimer" to="." method="_on_collect_timer_timeout"]

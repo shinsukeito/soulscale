@@ -10,8 +10,8 @@ var current_npc = ""
 # Called when the node enters the scene tree for t he first time.
 func _ready():
 	global = get_node("/root/Global")
-	$CanvasLayer/DayLabel.text = "NIGHT " + str(global.day)
-	$CanvasLayer/ProgressLabel.text = "PROGRESS " + str(global.progress)
+	$CanvasLayer/DayLabel.text = "NIGHT " + str(global.day) + "/8"
+	$CanvasLayer/ProgressLabel.text = "PROGRESS " + str(global.progress + 1) + "/8"
 
 	var screen_size = get_viewport_rect().size
 	var screen_offset = screen_size / 2
@@ -46,6 +46,15 @@ func on_npc_leave():
 
 
 func talk_to_npc():
+	if current_npc == "Tent":
+		for a in global.artifact_list:
+			if a.collected && a.returned == null:
+				$Dialogue.show_messages(current_npc, ["[i]I can't go to sleep yet. Some people still want to talk to me."])
+				return
+		
+		$Transition.fade(false)
+		return
+	
 	var artifact: Artifact = global.artifact_map[current_npc]
 
 	if artifact.collected:
@@ -59,10 +68,6 @@ func talk_to_npc():
 		$Dialogue.show_messages(current_npc, Companions.dialogue[current_npc].daily_messages[global.day - 1])
 
 
-func _on_sleep_button_pressed():
-	$Transition.fade(false)
-
-
 func _on_dialogue_artifact_returned(value: bool):
 	if current_npc == "":
 		return
@@ -72,6 +77,8 @@ func _on_dialogue_artifact_returned(value: bool):
 	
 	var npc = find_child(current_npc, false)
 	npc.hide_marker()
+	
+	$Tent.refresh_marker()
 	
 	$CanvasLayer/Inventory.refresh()
 	global.calculate_artifact_power($Giant)

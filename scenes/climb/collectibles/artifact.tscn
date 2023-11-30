@@ -1,11 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://c33m2saaecdsn"]
+[gd_scene load_steps=7 format=3 uid="uid://c33m2saaecdsn"]
 
 [ext_resource type="Script" path="res://scripts/collectible.gd" id="1_nt4iw"]
 [ext_resource type="Texture2D" uid="uid://bvibgasmbtj7w" path="res://assets/visual/Trinkets/chalice.png" id="2_rsc4y"]
+[ext_resource type="Texture2D" uid="uid://c2u8v31d2dr8f" path="res://assets/visual/glow.png" id="3_wh1ms"]
+[ext_resource type="Script" path="res://scripts/glow.gd" id="4_0edpa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y3rfg"]
 radius = 24.0
 height = 48.0
+
+[sub_resource type="Gradient" id="Gradient_iojg2"]
+colors = PackedColorArray(0.972144, 0.968477, 0.827013, 1, 1, 0.917647, 0.870588, 1)
 
 [node name="Artifact" type="Area2D"]
 collision_layer = 8
@@ -15,10 +20,29 @@ type = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0.721569, 1, 1)
+z_index = 2
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_rsc4y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_y3rfg")
 
+[node name="Glow" type="Sprite2D" parent="." node_paths=PackedStringArray("timer")]
+modulate = Color(1, 0.847059, 0.803922, 1)
+z_index = 1
+scale = Vector2(0.853333, 0.853333)
+texture = ExtResource("3_wh1ms")
+script = ExtResource("4_0edpa")
+gradient = SubResource("Gradient_iojg2")
+timer = NodePath("PulseTimer")
+
+[node name="PulseTimer" type="Timer" parent="Glow"]
+wait_time = 2.0
+autostart = true
+
+[node name="CollectTimer" type="Timer" parent="."]
+wait_time = 0.8
+one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="CollectTimer" to="." method="_on_collect_timer_timeout"]

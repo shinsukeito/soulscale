@@ -5,8 +5,8 @@ var global
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	global = get_node("/root/Global")
-	$DayLabel.text = "DAY " + str(global.day)
-	$ProgressLabel.text = "PROGRESS " + str(global.progress)
+	$DayLabel.text = "DAY " + str(global.day) + "/8"
+	$ProgressLabel.text = "PROGRESS " + str(global.progress + 1) + "/8"
 	$StaminaBar.max_value = global.max_stamina
 	$CurrencyLabel.text = str(global.currency)
 

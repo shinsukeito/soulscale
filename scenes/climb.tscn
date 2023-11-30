@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/common/debugger.tscn" id="7_ei4yj"]
 [ext_resource type="PackedScene" uid="uid://dmb6eo8mbvh1g" path="res://scenes/climb/modules/module_6.tscn" id="8_unvid"]
 [ext_resource type="PackedScene" uid="uid://wvc313jlr258" path="res://scenes/common/giant.tscn" id="8_yerx6"]
-[ext_resource type="TileSet" uid="uid://dotegxn6gb77k" path="res://tilesets/terrain.tres" id="9_jepj3"]
 [ext_resource type="PackedScene" uid="uid://bq7kio7o4s6hk" path="res://scenes/climb/modules/module_7.tscn" id="9_o05i1"]
 [ext_resource type="PackedScene" uid="uid://bsachn57k1fn7" path="res://scenes/climb/modules/module_8.tscn" id="10_hyrjk"]
 [ext_resource type="PackedScene" uid="uid://c48lkfycgmf56" path="res://scenes/climb/modules/module_9.tscn" id="11_43jo1"]
@@ -26,15 +25,12 @@
 [ext_resource type="PackedScene" uid="uid://r4jjxblbvv02" path="res://scenes/climb/modules/module_16.tscn" id="18_vnera"]
 [ext_resource type="PackedScene" uid="uid://dtav2i2wlyjq5" path="res://scenes/climb/modules/module_17.tscn" id="19_5oi3g"]
 [ext_resource type="PackedScene" uid="uid://vflfuqfla3bd" path="res://scenes/climb/modules/module_18.tscn" id="20_kiq34"]
+[ext_resource type="Texture2D" uid="uid://cv6h10wng21us" path="res://assets/visual/gameplay - sky.png" id="26_wwtm5"]
+[ext_resource type="Texture2D" uid="uid://cwgqlkryu73c7" path="res://assets/visual/gameplay - back mountains.png" id="27_ur2r2"]
 [ext_resource type="PackedScene" uid="uid://r21y4jxvd032" path="res://scenes/climb/modules/module_19.tscn" id="21_g1clu"]
 
-[sub_resource type="Gradient" id="Gradient_b23ys"]
-offsets = PackedFloat32Array(0, 0.510836, 1)
-colors = PackedColorArray(0.933333, 0.537255, 0.623529, 1, 0.980392, 0.631373, 0.392157, 1, 1, 0.752941, 0.478431, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_6b0hr"]
-gradient = SubResource("Gradient_b23ys")
-width = 255
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b10jr"]
+size = Vector2(118, 1986)
 
 [node name="Climb" type="Node2D"]
 position = Vector2(1, 0)
@@ -46,7 +42,6 @@ fade_in_time = 1.0
 fade_out_time = 2.0
 
 [node name="Camera" parent="." instance=ExtResource("5_gsf0x")]
-position = Vector2(960, 98)
 
 [node name="GUI" parent="." instance=ExtResource("6_alj40")]
 
@@ -57,23 +52,27 @@ position = Vector2(960, 98)
 [node name="Giant" parent="." instance=ExtResource("8_yerx6")]
 position = Vector2(85, 600)
 
-[node name="StartWall" type="TileMap" parent="."]
-tile_set = ExtResource("9_jepj3")
-format = 2
-layer_0/tile_data = PackedInt32Array(1310719, 3, 0, 1245183, 3, 0, 1179647, 3, 0, 1114111, 3, 0, 1048575, 3, 0, 983039, 3, 0, 917503, 3, 0, 851967, 3, 0, 786431, 3, 0, 720895, 3, 0, 655359, 3, 0, 589823, 3, 0, 524287, 3, 0, 458751, 3, 0, 393215, 3, 0, 327679, 3, 0, 262143, 3, 0, 196607, 3, 0, 131071, 3, 0, 65535, 3, 0)
+[node name="StartWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StartWall"]
+position = Vector2(-69, 595)
+shape = SubResource("RectangleShape2D_b10jr")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-rotation = 1.5708
-motion_scale = Vector2(0.01, 1)
+[node name="SkyLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0)
 
-[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-offset_left = -1740.01
-offset_top = -1928.99
-offset_right = 1185.99
-offset_bottom = 27.0063
-texture = SubResource("GradientTexture1D_6b0hr")
+[node name="Sky" type="Sprite2D" parent="ParallaxBackground/SkyLayer"]
+position = Vector2(1520, 540)
+texture = ExtResource("26_wwtm5")
+
+[node name="MountainsLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0)
+
+[node name="BackMountains" type="Sprite2D" parent="ParallaxBackground/MountainsLayer"]
+position = Vector2(1520, 540)
+texture = ExtResource("27_ur2r2")
 
 [connection signal="fade_in_completed" from="Transition" to="." method="_on_transition_fade_in_completed"]
 [connection signal="fade_out_completed" from="Transition" to="." method="_on_transition_fade_out_completed"]

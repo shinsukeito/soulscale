@@ -8,7 +8,7 @@ var rng = RandomNumberGenerator.new()
 
 var modules = [] 
 var screen_size
-var map_size
+var map_area = Area.new(0, 0, 0, 0)
 
 var starting = true
 
@@ -17,13 +17,13 @@ func _ready():
 	global = get_node("/root/Global")
 	
 	screen_size = get_viewport_rect().size
-	map_size = generate_room(1920 + global.progress * 200)
+	generate_room(1920 + global.progress * 200)
 	
 	$Camera.clamp_area = Area.new(
-		screen_size.x / 2,
-		map_size.x - screen_size.x / 2,
-		screen_size.y / 2 + map_size.y,
-		screen_size.y / 2
+		map_area.x_min + screen_size.x / 2,
+		map_area.x_max - screen_size.x / 2,
+		map_area.y_min + screen_size.y / 2,
+		map_area.y_max - screen_size.y / 2,
 	)
 	
 	if !global.is_artifact_collected():
@@ -46,14 +46,11 @@ func _process(delta):
 		
 	change_stamina(-delta)
 	
-	# TODO: Remove this
-	if Input.is_action_pressed("jump") && Input.is_action_pressed("shield") && Input.is_action_just_pressed("left"):
+	if $Giant.position.x >= map_area.x_max:
+		change_room()
+		
+	if $Giant.position.y >= map_area.y_max:
 		change_stamina(-1000)
-	if Input.is_action_pressed("jump") && Input.is_action_pressed("shield") && Input.is_action_just_pressed("right"):
-		change_room()
-	
-	if $Giant.position.x >= map_size.x:
-		change_room()
 
 # ROOM GENERATION:
 
@@ -64,10 +61,10 @@ func generate_room(width):
 	while offset.x < width:
 		offset = generate_module(n, offset)
 		n += 1
-		
-	return offset
 	
-func generate_module(value, offset):		
+	map_area.x_max = offset.x
+	
+func generate_module(value, offset):
 	if value in modules: return
 	
 	var index = rng.randi_range(0, room_scenes.size() - 1)
@@ -79,7 +76,13 @@ func generate_module(value, offset):
 	
 	modules.push_front(new_room)
 	
-	return offset + Vector2(new_room.width(), -new_room.height_difference())
+	var top = new_room.position.y
+	var bot = new_room.position.y + new_room.height()
+	
+	if bot > map_area.y_max: map_area.y_max = bot
+	if top < map_area.y_min: map_area.y_min = top
+	
+	return offset + Vector2(new_room.width(), new_room.height_difference())
 
 func change_stamina(value):
 	if !$Transition/FadeTimer.is_stopped(): return

@@ -87,13 +87,13 @@ func on_hazard(projectile):
 	hazard_hit.emit(dmg)
 	set_flinch(true)
 
-func on_currency(collectible):
+func on_currency(_collectible):
 	currency_collected.emit(1)
 
-func on_potion(collectible):
+func on_potion(_collectible):
 	potion_collected.emit(8)
 	
-func on_artifact(collectible):
+func on_artifact(_collectible):
 	artifact_collected.emit()
 	global.calculate_artifact_power(self)
 	

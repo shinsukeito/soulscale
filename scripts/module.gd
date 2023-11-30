@@ -24,9 +24,9 @@ func _ready():
 		if cell.x > a.x_max:
 			a.x_max = cell.x
 		if cell.y < a.y_min:
-			a.y_min = cell.x
+			a.y_min = cell.y
 		if cell.y > a.y_max:
-			a.y_max = cell.x
+			a.y_max = cell.y
 	
 	area = a
 
@@ -47,7 +47,10 @@ func spawn_artifact():
 	add_child(a)
 	
 func height_difference():
-	return (start_height - end_height) * tile_size
+	return (end_height - start_height) * tile_size
 
+func height():
+	return (area.y_max - area.y_min) * tile_size
+	
 func width():
 	return (area.x_max - area.x_min) * tile_size

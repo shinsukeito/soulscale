@@ -32,7 +32,6 @@ func _process(delta):
 		look_at(giant.position)
 
 func shoot():
-	print('shoot')
 	var projectile = projectile_scene.instantiate() as Projectile
 	var velocity = Vector2(cos(rotation), sin(rotation)) * projectile_speed
 	
