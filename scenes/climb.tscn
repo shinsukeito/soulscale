@@ -39,7 +39,6 @@ position = Vector2(960, 98)
 
 [node name="Giant" parent="." instance=ExtResource("8_yerx6")]
 position = Vector2(85, 516)
-shield_length = 2
 
 [node name="StartWall" type="TileMap" parent="."]
 tile_set = ExtResource("9_jepj3")

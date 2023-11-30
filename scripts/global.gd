@@ -55,7 +55,7 @@ var artifact_textures = {
 	"Oil Lamp": preload("res://assets/visual/Trinkets/oil lamp.png"),
 }
 
-var base_power: Power = Power.new(120, 400, 0.2, 40, 0)
+var base_power: Power = Power.new(150, 750, 1, 40, 0)
 var current_power
 
 # Called when the node enters the scene tree for the first time. 
