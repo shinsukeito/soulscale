@@ -5,7 +5,7 @@ var global
 
 var artifact_scene: PackedScene = load("res://scenes/climb/collectibles/artifact.tscn")
 
-@export var tile_size = 32
+@export var tile_size = 54.9
 @export var start_height = 17
 @export var end_height = 13
 
