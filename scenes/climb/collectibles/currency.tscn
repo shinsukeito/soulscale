@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://nf2i8f0aobw4" path="res://assets/visual/Objects/Coin.png" id="2_mlbbk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wg3jn"]
-radius = 9.0
+radius = 16.0
 
 [node name="Currency" type="Area2D"]
 collision_layer = 8

@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bghhdmwwc0sug" path="res://assets/visual/Objects/Medicine.png" id="2_jeftv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y3rfg"]
-radius = 8.0
-height = 26.0
+radius = 16.0
+height = 48.0
 
 [node name="Potion" type="Area2D"]
 collision_layer = 8

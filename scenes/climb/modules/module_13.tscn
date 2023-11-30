@@ -112,15 +112,14 @@ position = Vector2(224, 560)
 [node name="Shooter" parent="." instance=ExtResource("5_208vm")]
 position = Vector2(1345, 1065)
 rotation = 3.14159
-shoot_frequency = 1.8
-projectile_speed = 100
-detect_radius = 1000
+shoot_frequency = 1.5
+projectile_speed = 140
+detect_radius = 1500
 
 [node name="Shooter2" parent="." instance=ExtResource("5_208vm")]
 position = Vector2(186, 1126)
-shoot_frequency = 1.5
-projectile_speed = 100
-detect_radius = 800
+shoot_frequency = 1.7
+detect_radius = 1100
 
 [node name="Spinner" parent="." instance=ExtResource("6_vp7d1")]
 position = Vector2(1664, 864)

@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bvibgasmbtj7w" path="res://assets/visual/Trinkets/chalice.png" id="2_rsc4y"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y3rfg"]
-radius = 8.0
-height = 26.0
+radius = 24.0
+height = 48.0
 
 [node name="Artifact" type="Area2D"]
 collision_layer = 8
