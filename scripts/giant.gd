@@ -12,7 +12,7 @@ var global
 @export var jump = 1000
 @export var gravity = 35
 @export var shield_length = 2
-@export var shield_cooldown = 4
+@export var shield_cooldown = 2
 @export var flinch_length = 0.05
 @export var flinch_force = 5
 
