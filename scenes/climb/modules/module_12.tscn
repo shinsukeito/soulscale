@@ -8,7 +8,7 @@
 
 [node name="Module" type="Node2D"]
 script = ExtResource("1_8oviv")
-end_height = 16
+end_height = 17
 
 [node name="Terrain" type="TileMap" parent="."]
 scale = Vector2(0.122, 0.122)
