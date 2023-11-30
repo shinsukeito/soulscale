@@ -16,102 +16,93 @@ scale = Vector2(0.122, 0.122)
 tile_set = ExtResource("2_h4out")
 cell_quadrant_size = 32
 format = 2
-layer_0/tile_data = PackedInt32Array(1114112, 65537, 0, 1114113, 65537, 0, 1114114, 393217, 2, 1179648, 65537, 1, 1245184, 65537, 1, 1310720, 65537, 1, 1376256, 65537, 1, 1179649, 65537, 1, 1245185, 65537, 1, 1310721, 65537, 1, 1376257, 65537, 1, 1179650, 262145, 0, 1245186, 65537, 1, 1310722, 65537, 1, 1376258, 65537, 1, 1179651, 65537, 0, 1245187, 65537, 1, 1310723, 65537, 1, 1376259, 65537, 1, 1179652, 65537, 0, 1245188, 65537, 1, 1310724, 65537, 1, 1376260, 65537, 1, 1179653, 65537, 0, 1245189, 65537, 1, 1310725, 65537, 1, 1376261, 65537, 1, 1179654, 65537, 0, 1245190, 65537, 1, 1310726, 65537, 1, 1376262, 65537, 1, 1179655, 65537, 0, 1245191, 65537, 1, 1310727, 65537, 1, 1376263, 65537, 1, 1179656, 65537, 0, 1245192, 65537, 1, 1310728, 65537, 1, 1376264, 65537, 1, 1179657, 65537, 0, 1245193, 65537, 1, 1310729, 65537, 1, 1376265, 65537, 1, 1179658, 65537, 0, 1245194, 65537, 1, 1310730, 65537, 1, 1376266, 65537, 1, 1179659, 65537, 0, 1245195, 65537, 1, 1310731, 65537, 1, 1376267, 65537, 1, 1179660, 65537, 0, 1245196, 65537, 1, 1310732, 65537, 1, 1376268, 65537, 1, 1179661, 65537, 0, 1245197, 65537, 1, 1310733, 65537, 1, 1376269, 65537, 1, 1179662, 393217, 0, 1245198, 65537, 1, 1310734, 65537, 1, 1376270, 65537, 1, 1179663, 65537, 1, 1245199, 65537, 1, 1310735, 65537, 1, 1376271, 65537, 1, 1114127, 65537, 0, 917507, 262145, 3, 917517, 458753, 3, 1114126, 327681, 2, 1114128, 65537, 0, 1179664, 65537, 1, 1245200, 65537, 1, 1310736, 65537, 1, 1376272, 65537, 1, 917508, 65537, 3, 917509, 65537, 3, 917510, 65537, 0, 917511, 65537, 0, 917512, 65537, 0, 917513, 65537, 0, 917514, 65537, 0, 917515, 65537, 3, 917516, 65537, 3, 983046, 65537, 2, 983047, 65537, 2, 983048, 65537, 2, 983049, 65537, 2, 983050, 65537, 2, 983045, 1, 2, 983051, 131073, 2, 720906, 262145, 3, 720900, 262145, 3, 720908, 458753, 3, 720902, 458753, 3, 720901, 65537, 3, 720907, 65537, 3, 524295, 262145, 3, 524297, 458753, 3, 524296, 65537, 3)
+layer_0/tile_data = PackedInt32Array(1114112, 65537, 0, 1114113, 65537, 0, 1179648, 65537, 1, 1245184, 65537, 1, 1310720, 65537, 1, 1376256, 65537, 1, 1179649, 65537, 1, 1245185, 65537, 1, 1310721, 65537, 1, 1376257, 65537, 1, 1048579, 1, 3, 1048580, 65537, 3, 1048581, 65537, 3, 983046, 327681, 2, 917511, 327681, 2, 851976, 327681, 2, 786441, 327681, 2, 786435, 1, 3, 786436, 65537, 3, 786437, 458753, 3, 786433, 196609, 2, 589825, 196609, 1, 655361, 196609, 1, 720897, 196609, 1, 458753, 196609, 0, 524289, 196609, 1, 458755, 1, 1, 524291, 1, 2, 458756, 65537, 1, 524292, 65537, 2, 524293, 131073, 2, 393219, 1, 0, 393220, 65537, 0, 393221, 131073, 0, 458757, 131073, 1, 1048582, 393217, 1, 983047, 393217, 0, 917512, 393217, 0, 851977, 393217, 0, 786443, 393217, 2, 786442, 65537, 0, 851978, 65537, 1, 917514, 65537, 2, 1179658, 1, 1, 1245194, 393217, 0, 851979, 131073, 1, 917515, 131073, 2, 1114123, 65537, 0, 1179659, 65537, 1, 1245195, 65537, 1, 1245186, 65537, 0, 1310722, 65537, 1, 1376258, 65537, 1, 1245187, 65537, 0, 1310723, 65537, 1, 1376259, 65537, 1, 1245188, 65537, 0, 1310724, 65537, 1, 1376260, 65537, 1, 1245189, 65537, 0, 1310725, 65537, 1, 1376261, 65537, 1, 1245190, 65537, 0, 1310726, 65537, 1, 1376262, 65537, 1, 1245191, 65537, 0, 1310727, 65537, 1, 1376263, 65537, 1, 1245192, 65537, 0, 1310728, 65537, 1, 1376264, 65537, 1, 1245193, 65537, 0, 1310729, 65537, 1, 1376265, 65537, 1, 1310730, 65537, 1, 1376266, 65537, 1, 1310731, 65537, 1, 1376267, 65537, 1, 1048583, 327681, 1, 1048584, 131073, 2, 983048, 131073, 1, 917513, 65537, 2, 1114122, 327681, 2)
 
 [node name="Currency" parent="." instance=ExtResource("3_8dqm7")]
-position = Vector2(304, 568)
+position = Vector2(312, 632)
 
 [node name="Currency15" parent="." instance=ExtResource("3_8dqm7")]
-position = Vector2(360, 464)
+position = Vector2(248, 632)
 rotation = 3.11572
 
 [node name="Currency2" parent="." instance=ExtResource("3_8dqm7")]
-position = Vector2(336, 752)
+position = Vector2(344, 792)
 
 [node name="Currency3" parent="." instance=ExtResource("3_8dqm7")]
-position = Vector2(272, 752)
+position = Vector2(144, 1016)
 
 [node name="Currency4" parent="." instance=ExtResource("3_8dqm7")]
-position = Vector2(672, 744)
+position = Vector2(216, 520)
 
 [node name="Currency5" parent="." instance=ExtResource("3_8dqm7")]
-position = Vector2(464, 656)
+position = Vector2(392, 752)
 
 [node name="Currency6" parent="." instance=ExtResource("3_8dqm7")]
-position = Vector2(464, 744)
+position = Vector2(512, 1000)
 
 [node name="Currency8" parent="." instance=ExtResource("3_8dqm7")]
-position = Vector2(464, 704)
+position = Vector2(440, 712)
 
 [node name="Currency17" parent="." instance=ExtResource("3_8dqm7")]
-position = Vector2(632, 568)
+position = Vector2(488, 672)
 
 [node name="Currency18" parent="." instance=ExtResource("3_8dqm7")]
-position = Vector2(584, 744)
+position = Vector2(280, 520)
 
 [node name="Currency7" parent="." instance=ExtResource("3_8dqm7")]
-position = Vector2(584, 464)
+position = Vector2(184, 632)
 
 [node name="Potion" parent="." instance=ExtResource("4_hynpi")]
-position = Vector2(464, 400)
+position = Vector2(136, 536)
 
 [node name="ArtifactSpawner" type="Node2D" parent="."]
 
 [node name="SpawnPoint1" type="Node2D" parent="ArtifactSpawner"]
-position = Vector2(464, 336)
-
-[node name="SpawnPoint2" type="Node2D" parent="ArtifactSpawner"]
-position = Vector2(464, 552)
+position = Vector2(136, 488)
 
 [node name="Shooter" parent="." instance=ExtResource("5_huird")]
-position = Vector2(464, 584)
+position = Vector2(440, 488)
 rotation = 3.14159
-shoot_frequency = 1.6
+shoot_frequency = 3.0
 projectile_homing = true
 targeting = true
-detect_radius = 300
+detect_radius = 500
 
 [node name="Shooter3" parent="." instance=ExtResource("5_huird")]
-position = Vector2(904, 704)
-rotation = 3.14159
-shoot_frequency = 1.6
-projectile_speed = 100
-targeting = true
-detect_radius = 400
+position = Vector2(136, 408)
+rotation = -4.71239
+shoot_frequency = 0.3
+projectile_speed = 200
+detect_radius = 800
 
 [node name="Shooter2" parent="." instance=ExtResource("5_huird")]
 position = Vector2(24, 720)
 shoot_frequency = 3.0
+projectile_speed = 100
 projectile_homing = true
 targeting = true
-
-[node name="Spinner" parent="." instance=ExtResource("6_8cx0k")]
-position = Vector2(464, 472)
-radius = 300
-projectile_count = 12
+detect_radius = 500
 
 [node name="Spinner2" parent="." instance=ExtResource("6_8cx0k")]
-position = Vector2(304, 632)
-radius = 120
-projectile_count = 5
-frequency = 4
-
-[node name="Spinner5" parent="." instance=ExtResource("6_8cx0k")]
-position = Vector2(464, 1008)
-radius = 120
-projectile_count = 5
-frequency = 1
-
-[node name="Spinner3" parent="." instance=ExtResource("6_8cx0k")]
-position = Vector2(632, 632)
+position = Vector2(264, 688)
 radius = 120
 projectile_count = 5
 frequency = 3
 clockwise = true
 
-[node name="Spinner4" parent="." instance=ExtResource("6_8cx0k")]
-position = Vector2(656, 816)
+[node name="Spinner5" parent="." instance=ExtResource("6_8cx0k")]
+position = Vector2(448, 800)
 radius = 120
 projectile_count = 5
+frequency = 1
+
+[node name="Spinner3" parent="." instance=ExtResource("6_8cx0k")]
+position = Vector2(240, 408)
+radius = 120
+projectile_count = 6
 frequency = 2
-clockwise = true
+
+[node name="Spinner4" parent="." instance=ExtResource("6_8cx0k")]
+position = Vector2(656, 816)
+radius = 160
+projectile_count = 8
