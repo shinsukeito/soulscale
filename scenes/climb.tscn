@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cv38awhdc6tbb"]
+[gd_scene load_steps=24 format=3 uid="uid://cv38awhdc6tbb"]
 
 [ext_resource type="Script" path="res://scripts/climb.gd" id="1_fpvvq"]
 [ext_resource type="PackedScene" uid="uid://dac50v5yr7fx6" path="res://scenes/climb/modules/module_0.tscn" id="2_di4ik"]
@@ -18,6 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://dyblh1inc50nb" path="res://scenes/climb/modules/module_8.tscn" id="10_hyrjk"]
 [ext_resource type="PackedScene" uid="uid://c48lkfycgmf56" path="res://scenes/climb/modules/module_9.tscn" id="11_43jo1"]
 [ext_resource type="PackedScene" uid="uid://cm08axi2xr0um" path="res://scenes/climb/modules/module_10.tscn" id="12_28pup"]
+[ext_resource type="PackedScene" uid="uid://cjlkfej6riwn3" path="res://scenes/climb/modules/module_11.tscn" id="13_mxnyw"]
+[ext_resource type="PackedScene" uid="uid://bp4n24wto2qe4" path="res://scenes/climb/modules/module_12.tscn" id="14_5dnbw"]
+[ext_resource type="PackedScene" uid="uid://d2ienrfr2lh8g" path="res://scenes/climb/modules/module_13.tscn" id="15_243d7"]
 
 [sub_resource type="Gradient" id="Gradient_b23ys"]
 offsets = PackedFloat32Array(0, 0.510836, 1)
@@ -30,7 +33,7 @@ width = 255
 [node name="Climb" type="Node2D"]
 position = Vector2(1, 0)
 script = ExtResource("1_fpvvq")
-room_scenes = Array[PackedScene]([ExtResource("2_di4ik"), ExtResource("3_nr4ll"), ExtResource("4_77qna"), ExtResource("5_b5moe"), ExtResource("6_osg45"), ExtResource("7_8jtlw"), ExtResource("8_unvid"), ExtResource("9_o05i1"), ExtResource("10_hyrjk"), ExtResource("11_43jo1"), ExtResource("12_28pup")])
+room_scenes = Array[PackedScene]([ExtResource("2_di4ik"), ExtResource("3_nr4ll"), ExtResource("4_77qna"), ExtResource("5_b5moe"), ExtResource("6_osg45"), ExtResource("7_8jtlw"), ExtResource("8_unvid"), ExtResource("9_o05i1"), ExtResource("10_hyrjk"), ExtResource("11_43jo1"), ExtResource("12_28pup"), ExtResource("13_mxnyw"), ExtResource("14_5dnbw"), ExtResource("15_243d7")])
 
 [node name="Transition" parent="." instance=ExtResource("5_vp01x")]
 fade_in_time = 1.0
