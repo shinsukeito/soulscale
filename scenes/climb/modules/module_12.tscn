@@ -56,6 +56,9 @@ position = Vector2(360, 328)
 [node name="Currency16" parent="." instance=ExtResource("3_0n2uq")]
 position = Vector2(288, 448)
 
+[node name="Currency25" parent="." instance=ExtResource("3_0n2uq")]
+position = Vector2(264, 472)
+
 [node name="Currency12" parent="." instance=ExtResource("3_0n2uq")]
 position = Vector2(336, 536)
 
@@ -67,6 +70,9 @@ position = Vector2(384, 464)
 
 [node name="Currency15" parent="." instance=ExtResource("3_0n2uq")]
 position = Vector2(432, 448)
+
+[node name="Currency26" parent="." instance=ExtResource("3_0n2uq")]
+position = Vector2(456, 464)
 
 [node name="Currency10" parent="." instance=ExtResource("3_0n2uq")]
 position = Vector2(392, 632)
@@ -102,22 +108,22 @@ frequency = 2
 [node name="Shooter" parent="." instance=ExtResource("5_wablj")]
 position = Vector2(360, 360)
 shoot_frequency = 3.0
-projectile_speed = 400
+projectile_speed = 500
 targeting = true
-detect_radius = 800
+detect_radius = 2000
 
 [node name="Shooter2" parent="." instance=ExtResource("5_wablj")]
 position = Vector2(464, 496)
-shoot_frequency = 0.8
+shoot_frequency = 1.0
 projectile_speed = 300
 projectile_homing = true
 targeting = true
-detect_radius = 100
+detect_radius = 350
 
 [node name="Shooter3" parent="." instance=ExtResource("5_wablj")]
 position = Vector2(256, 496)
-shoot_frequency = 0.7
+shoot_frequency = 1.0
 projectile_speed = 300
 projectile_homing = true
 targeting = true
-detect_radius = 100
+detect_radius = 350

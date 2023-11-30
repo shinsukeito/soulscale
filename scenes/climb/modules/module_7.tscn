@@ -37,12 +37,12 @@ position = Vector2(232, 960)
 [node name="ArtifactSpawner" type="Node2D" parent="."]
 
 [node name="SpawnPoint2" type="Node2D" parent="ArtifactSpawner"]
-position = Vector2(168, 616)
+position = Vector2(168, 627)
 
 [node name="Shooter" parent="." instance=ExtResource("4_cdxd2")]
 position = Vector2(166, 733)
 rotation = 3.14159
-shoot_frequency = 2.0
-projectile_speed = 300
+shoot_frequency = 3.0
+projectile_speed = 700
 targeting = true
-detect_radius = 800
+detect_radius = 1250

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bsachn57k1fn7"]
+[gd_scene load_steps=7 format=3 uid="uid://bsachn57k1fn7"]
 
 [ext_resource type="Script" path="res://scripts/module.gd" id="1_1athw"]
 [ext_resource type="TileSet" uid="uid://c1ybfv2peomy1" path="res://tilesets/tileset.tres" id="2_63bj0"]
 [ext_resource type="PackedScene" uid="uid://3m6h6oty2lln" path="res://scenes/climb/collectibles/currency.tscn" id="3_mqo6u"]
 [ext_resource type="PackedScene" uid="uid://cyyx2m4g5r3l3" path="res://scenes/climb/hazards/shooter.tscn" id="4_8430u"]
 [ext_resource type="PackedScene" uid="uid://limn1c3pscoj" path="res://scenes/climb/hazards/spinner.tscn" id="5_hxhdv"]
+[ext_resource type="PackedScene" uid="uid://ba1gvbrsvyaeq" path="res://scenes/climb/collectibles/potion.tscn" id="6_rdf5f"]
 
 [node name="Room" type="Node2D"]
 script = ExtResource("1_1athw")
@@ -22,7 +23,7 @@ layer_0/tile_data = PackedInt32Array(720899, 262145, 3, 655364, 327681, 2, 58982
 position = Vector2(334, 746)
 
 [node name="Currency5" parent="." instance=ExtResource("3_mqo6u")]
-position = Vector2(417, 633)
+position = Vector2(413, 682)
 
 [node name="Currency6" parent="." instance=ExtResource("3_mqo6u")]
 position = Vector2(363, 685)
@@ -57,3 +58,6 @@ position = Vector2(359, 636)
 
 [node name="Spinner2" parent="." instance=ExtResource("5_hxhdv")]
 position = Vector2(449, 784)
+
+[node name="Potion" parent="." instance=ExtResource("6_rdf5f")]
+position = Vector2(411, 621)

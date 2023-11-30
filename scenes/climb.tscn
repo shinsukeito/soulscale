@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cv38awhdc6tbb"]
+[gd_scene load_steps=30 format=3 uid="uid://cv38awhdc6tbb"]
 
 [ext_resource type="Script" path="res://scripts/climb.gd" id="1_fpvvq"]
 [ext_resource type="PackedScene" uid="uid://dac50v5yr7fx6" path="res://scenes/climb/modules/module_0.tscn" id="2_di4ik"]
@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://r4jjxblbvv02" path="res://scenes/climb/modules/module_16.tscn" id="18_vnera"]
 [ext_resource type="PackedScene" uid="uid://dtav2i2wlyjq5" path="res://scenes/climb/modules/module_17.tscn" id="19_5oi3g"]
 [ext_resource type="PackedScene" uid="uid://vflfuqfla3bd" path="res://scenes/climb/modules/module_18.tscn" id="20_kiq34"]
+[ext_resource type="PackedScene" uid="uid://r21y4jxvd032" path="res://scenes/climb/modules/module_19.tscn" id="21_g1clu"]
 
 [sub_resource type="Gradient" id="Gradient_b23ys"]
 offsets = PackedFloat32Array(0, 0.510836, 1)
@@ -38,7 +39,7 @@ width = 255
 [node name="Climb" type="Node2D"]
 position = Vector2(1, 0)
 script = ExtResource("1_fpvvq")
-room_scenes = Array[PackedScene]([ExtResource("2_di4ik"), ExtResource("3_nr4ll"), ExtResource("4_77qna"), ExtResource("5_b5moe"), ExtResource("6_osg45"), ExtResource("7_8jtlw"), ExtResource("8_unvid"), ExtResource("9_o05i1"), ExtResource("10_hyrjk"), ExtResource("11_43jo1"), ExtResource("12_28pup"), ExtResource("13_mxnyw"), ExtResource("14_5dnbw"), ExtResource("15_243d7"), ExtResource("16_fq2wy"), ExtResource("17_vqjlu"), ExtResource("18_vnera"), ExtResource("19_5oi3g"), ExtResource("20_kiq34")])
+room_scenes = Array[PackedScene]([ExtResource("2_di4ik"), ExtResource("3_nr4ll"), ExtResource("4_77qna"), ExtResource("5_b5moe"), ExtResource("6_osg45"), ExtResource("7_8jtlw"), ExtResource("8_unvid"), ExtResource("9_o05i1"), ExtResource("10_hyrjk"), ExtResource("11_43jo1"), ExtResource("12_28pup"), ExtResource("13_mxnyw"), ExtResource("14_5dnbw"), ExtResource("15_243d7"), ExtResource("16_fq2wy"), ExtResource("17_vqjlu"), ExtResource("18_vnera"), ExtResource("19_5oi3g"), ExtResource("20_kiq34"), ExtResource("21_g1clu")])
 
 [node name="Transition" parent="." instance=ExtResource("5_vp01x")]
 fade_in_time = 1.0

@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dac50v5yr7fx6"]
+[gd_scene load_steps=7 format=3 uid="uid://dac50v5yr7fx6"]
 
 [ext_resource type="Script" path="res://scripts/module.gd" id="1_5lpg2"]
 [ext_resource type="TileSet" uid="uid://c1ybfv2peomy1" path="res://tilesets/tileset.tres" id="2_kw111"]
 [ext_resource type="PackedScene" uid="uid://3m6h6oty2lln" path="res://scenes/climb/collectibles/currency.tscn" id="4_efjhy"]
 [ext_resource type="PackedScene" uid="uid://limn1c3pscoj" path="res://scenes/climb/hazards/spinner.tscn" id="4_nmyqf"]
 [ext_resource type="PackedScene" uid="uid://cyyx2m4g5r3l3" path="res://scenes/climb/hazards/shooter.tscn" id="5_6gcd2"]
+[ext_resource type="PackedScene" uid="uid://ba1gvbrsvyaeq" path="res://scenes/climb/collectibles/potion.tscn" id="6_vl5fy"]
 
 [node name="Module" type="Node2D"]
 script = ExtResource("1_5lpg2")
@@ -46,6 +47,11 @@ projectile_count = 14
 
 [node name="Shooter" parent="." instance=ExtResource("5_6gcd2")]
 position = Vector2(522, 436)
+shoot_frequency = 1.25
+projectile_speed = 200
 projectile_homing = true
 targeting = true
-detect_radius = 500
+detect_radius = 1100
+
+[node name="Potion" parent="." instance=ExtResource("6_vl5fy")]
+position = Vector2(521, 499)

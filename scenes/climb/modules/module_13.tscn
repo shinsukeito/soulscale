@@ -123,28 +123,28 @@ detect_radius = 1100
 
 [node name="Spinner" parent="." instance=ExtResource("6_vp7d1")]
 position = Vector2(1664, 864)
-radius = 300
+radius = 350
 projectile_count = 12
 frequency = 3
 clockwise = true
 
 [node name="Spinner2" parent="." instance=ExtResource("6_vp7d1")]
 position = Vector2(1016, 792)
-radius = 120
+radius = 150
 projectile_count = 5
 frequency = 2
 clockwise = true
 
 [node name="Spinner3" parent="." instance=ExtResource("6_vp7d1")]
 position = Vector2(792, 744)
-radius = 120
+radius = 150
 projectile_count = 5
 frequency = 2
 clockwise = true
 
 [node name="Spinner4" parent="." instance=ExtResource("6_vp7d1")]
 position = Vector2(576, 792)
-radius = 120
+radius = 150
 projectile_count = 5
 frequency = 2
 clockwise = true

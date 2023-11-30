@@ -41,9 +41,9 @@ position = Vector2(136, 824)
 position = Vector2(168, 760)
 rotation = 3.14159
 shoot_frequency = 1.9
-projectile_speed = 300
+projectile_speed = 400
 targeting = true
-detect_radius = 800
+detect_radius = 1000
 
 [node name="Shooter2" parent="." instance=ExtResource("5_l52lf")]
 position = Vector2(96, 760)
@@ -51,4 +51,4 @@ rotation = 3.14159
 shoot_frequency = 1.5
 projectile_speed = 300
 targeting = true
-detect_radius = 800
+detect_radius = 1000

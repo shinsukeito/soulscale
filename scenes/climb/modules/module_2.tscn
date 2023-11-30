@@ -122,6 +122,7 @@ position = Vector2(1688, 824)
 [node name="Shooter" parent="." instance=ExtResource("5_aqgbn")]
 position = Vector2(1752, 280)
 rotation = 3.14159
+detect_radius = 400
 
 [node name="Shooter2" parent="." instance=ExtResource("5_aqgbn")]
 position = Vector2(134, 1068)
@@ -195,3 +196,6 @@ position = Vector2(1000, 1192)
 radius = 150
 projectile_count = 8
 frequency = 4
+
+[node name="Potion4" parent="." instance=ExtResource("5_3q3c6")]
+position = Vector2(1632, 816)

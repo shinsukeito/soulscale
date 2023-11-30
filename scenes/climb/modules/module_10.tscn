@@ -94,9 +94,12 @@ position = Vector2(524, 571)
 [node name="Shooter" parent="." instance=ExtResource("5_t0l54")]
 position = Vector2(811, 561)
 rotation = 3.14159
+projectile_homing = true
+detect_radius = 300
 
 [node name="Shooter2" parent="." instance=ExtResource("5_t0l54")]
 position = Vector2(190, 297)
+detect_radius = 500
 
 [node name="Spinner" parent="." instance=ExtResource("6_4ku7y")]
 position = Vector2(816, 1016)

@@ -71,7 +71,7 @@ position = Vector2(527, 230)
 [node name="Shooter" parent="." instance=ExtResource("5_1grpr")]
 position = Vector2(822, 294)
 rotation = 3.14159
-shoot_frequency = 2.0
+shoot_frequency = 1.0
 projectile_speed = 100
 targeting = true
 detect_radius = 400
@@ -79,16 +79,16 @@ detect_radius = 400
 [node name="Shooter2" parent="." instance=ExtResource("5_1grpr")]
 position = Vector2(400, 160)
 shoot_frequency = 2.5
-projectile_speed = 100
+projectile_speed = 500
 targeting = true
-detect_radius = 800
+detect_radius = 1000
 
 [node name="Shooter3" parent="." instance=ExtResource("5_1grpr")]
 position = Vector2(1224, 168)
 shoot_frequency = 2.5
-projectile_speed = 100
+projectile_speed = 500
 targeting = true
-detect_radius = 850
+detect_radius = 1000
 
 [node name="Spinner" parent="." instance=ExtResource("6_h6ass")]
 position = Vector2(349, 948)

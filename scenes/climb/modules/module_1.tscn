@@ -127,3 +127,6 @@ projectile_speed = 500
 projectile_homing = true
 targeting = true
 detect_radius = 400
+
+[node name="Potion2" parent="." instance=ExtResource("5_7cgt2")]
+position = Vector2(984, 46)

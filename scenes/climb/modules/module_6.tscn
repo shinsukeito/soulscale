@@ -103,7 +103,7 @@ detect_radius = 400
 [node name="Shooter2" parent="." instance=ExtResource("4_h5q4t")]
 position = Vector2(770, 382)
 rotation = 3.14159
-shoot_frequency = 2.0
+shoot_frequency = 1.7
 projectile_speed = 300
 targeting = true
 detect_radius = 400

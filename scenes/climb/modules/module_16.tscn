@@ -78,7 +78,7 @@ position = Vector2(1312, 896)
 rotation = 3.14159
 shoot_frequency = 1.6
 targeting = true
-detect_radius = 450
+detect_radius = 600
 
 [node name="Shooter3" parent="." instance=ExtResource("5_whf1v")]
 position = Vector2(2072, 424)
@@ -86,13 +86,13 @@ rotation = 3.14159
 shoot_frequency = 1.6
 projectile_speed = 100
 targeting = true
-detect_radius = 400
+detect_radius = 700
 
 [node name="Shooter2" parent="." instance=ExtResource("5_whf1v")]
 position = Vector2(552, 896)
 shoot_frequency = 2.0
 targeting = true
-detect_radius = 450
+detect_radius = 600
 
 [node name="Spinner" parent="." instance=ExtResource("6_olr5s")]
 position = Vector2(1704, 824)
@@ -111,47 +111,28 @@ radius = 120
 projectile_count = 5
 frequency = 1
 
-[node name="Spinner17" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(776, 1448)
-radius = 300
-projectile_count = 20
-frequency = 1
-
-[node name="Spinner18" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1064, 1448)
-rotation = 0.262925
-radius = 300
-projectile_count = 20
-frequency = 1
-
-[node name="Spinner24" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(344, 1376)
-radius = 300
-projectile_count = 20
-frequency = 1
-
 [node name="Spinner25" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(520, 1320)
+position = Vector2(648, 1424)
 radius = 300
 projectile_count = 20
 frequency = 1
 clockwise = true
 
 [node name="Spinner26" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(680, 1312)
+position = Vector2(680, 1296)
 radius = 300
 projectile_count = 20
 frequency = 1
 
 [node name="Spinner27" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(968, 1312)
+position = Vector2(560, 1424)
 rotation = 0.262925
 radius = 300
 projectile_count = 20
 frequency = 1
 
 [node name="Spinner28" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1120, 1320)
+position = Vector2(1176, 1416)
 rotation = 0.262925
 radius = 300
 projectile_count = 20
@@ -165,108 +146,22 @@ radius = 300
 projectile_count = 20
 frequency = 1
 
-[node name="Spinner30" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1560, 1304)
-rotation = 0.262925
-radius = 300
-projectile_count = 20
-frequency = 1
-clockwise = true
-
 [node name="Spinner31" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1728, 1344)
+position = Vector2(1656, 1408)
 rotation = 0.262925
-radius = 300
-projectile_count = 20
-frequency = 1
-
-[node name="Spinner32" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(816, 1320)
-rotation = 2.43564
-radius = 300
-projectile_count = 20
-frequency = 1
-clockwise = true
-
-[node name="Spinner33" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(312, 1376)
 radius = 300
 projectile_count = 20
 frequency = 1
 
 [node name="Spinner34" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(312, 1312)
+position = Vector2(856, 1408)
 radius = 300
 projectile_count = 20
 frequency = 1
 clockwise = true
-
-[node name="Spinner35" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(480, 1440)
-radius = 300
-projectile_count = 20
-frequency = 1
-
-[node name="Spinner36" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(768, 1440)
-rotation = 0.262925
-radius = 300
-projectile_count = 20
-frequency = 1
-
-[node name="Spinner37" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(920, 1448)
-rotation = 0.262925
-radius = 300
-projectile_count = 20
-frequency = 1
-clockwise = true
-
-[node name="Spinner38" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1088, 1448)
-rotation = 0.262925
-radius = 300
-projectile_count = 20
-frequency = 1
-
-[node name="Spinner39" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1272, 1448)
-rotation = 0.262925
-radius = 300
-projectile_count = 20
-frequency = 1
-clockwise = true
-
-[node name="Spinner40" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1472, 1448)
-rotation = 0.262925
-radius = 300
-projectile_count = 20
-frequency = 1
-
-[node name="Spinner41" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(616, 1448)
-rotation = 2.43564
-radius = 300
-projectile_count = 20
-frequency = 1
-clockwise = true
-
-[node name="Spinner44" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(984, 1448)
-radius = 300
-projectile_count = 20
-frequency = 1
-
-[node name="Spinner45" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1272, 1448)
-rotation = 0.262925
-radius = 300
-projectile_count = 20
-frequency = 1
 
 [node name="Spinner132" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(320, 1480)
+position = Vector2(328, 1440)
 rotation = -1.90828
 radius = 300
 projectile_count = 20
@@ -280,60 +175,8 @@ projectile_count = 20
 frequency = 1
 clockwise = true
 
-[node name="Spinner134" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(576, 1392)
-rotation = -1.90828
-radius = 300
-projectile_count = 20
-frequency = 1
-
-[node name="Spinner135" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(864, 1392)
-rotation = -1.64535
-radius = 300
-projectile_count = 20
-frequency = 1
-
-[node name="Spinner136" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1040, 1440)
-rotation = -1.64535
-radius = 300
-projectile_count = 20
-frequency = 1
-clockwise = true
-
-[node name="Spinner137" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1208, 1440)
-rotation = -1.64535
-radius = 300
-projectile_count = 20
-frequency = 1
-
-[node name="Spinner138" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1392, 1440)
-rotation = -1.64535
-radius = 300
-projectile_count = 20
-frequency = 1
-clockwise = true
-
-[node name="Spinner139" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1664, 1416)
-rotation = -1.64535
-radius = 300
-projectile_count = 20
-frequency = 1
-
-[node name="Spinner140" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(736, 1440)
-rotation = 0.527361
-radius = 300
-projectile_count = 20
-frequency = 1
-clockwise = true
-
 [node name="Spinner168" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(408, 1304)
+position = Vector2(456, 1392)
 rotation = -1.90828
 radius = 300
 projectile_count = 20
@@ -355,14 +198,14 @@ projectile_count = 20
 frequency = 1
 
 [node name="Spinner171" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(776, 1304)
+position = Vector2(744, 1368)
 rotation = -1.64535
 radius = 300
 projectile_count = 20
 frequency = 1
 
 [node name="Spinner172" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(928, 1304)
+position = Vector2(1040, 1424)
 rotation = -1.64535
 radius = 300
 projectile_count = 20
@@ -377,7 +220,7 @@ projectile_count = 20
 frequency = 1
 
 [node name="Spinner174" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1280, 1304)
+position = Vector2(1272, 1416)
 rotation = -1.64535
 radius = 300
 projectile_count = 20
@@ -385,26 +228,19 @@ frequency = 1
 clockwise = true
 
 [node name="Spinner175" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1480, 1304)
+position = Vector2(1376, 1424)
 rotation = -1.64535
 radius = 300
 projectile_count = 20
 frequency = 1
 
 [node name="Spinner176" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(624, 1304)
+position = Vector2(592, 1336)
 rotation = 0.527361
 radius = 300
 projectile_count = 20
 frequency = 1
 clockwise = true
-
-[node name="Spinner204" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(640, 1320)
-rotation = -1.90828
-radius = 300
-projectile_count = 20
-frequency = 1
 
 [node name="Spinner205" parent="." instance=ExtResource("6_olr5s")]
 position = Vector2(848, 1320)
@@ -421,15 +257,8 @@ radius = 300
 projectile_count = 20
 frequency = 1
 
-[node name="Spinner207" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1296, 1312)
-rotation = -1.64535
-radius = 300
-projectile_count = 20
-frequency = 1
-
 [node name="Spinner208" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1448, 1320)
+position = Vector2(1416, 1328)
 rotation = -1.64535
 radius = 300
 projectile_count = 20
@@ -437,45 +266,22 @@ frequency = 1
 clockwise = true
 
 [node name="Spinner209" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1616, 1320)
+position = Vector2(1584, 1336)
 rotation = -1.64535
 radius = 300
 projectile_count = 20
 frequency = 1
-
-[node name="Spinner210" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1728, 1400)
-rotation = -1.64535
-radius = 300
-projectile_count = 20
-frequency = 1
-clockwise = true
 
 [node name="Spinner211" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1736, 1520)
+position = Vector2(1792, 1392)
 rotation = -1.64535
 radius = 300
 projectile_count = 20
 frequency = 1
 
 [node name="Spinner212" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1144, 1320)
+position = Vector2(400, 1376)
 rotation = 0.527361
-radius = 300
-projectile_count = 20
-frequency = 1
-clockwise = true
-
-[node name="Spinner213" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(512, 1392)
-rotation = -1.90828
-radius = 300
-projectile_count = 20
-frequency = 1
-
-[node name="Spinner214" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(720, 1392)
-rotation = -1.90828
 radius = 300
 projectile_count = 20
 frequency = 1
@@ -495,23 +301,8 @@ radius = 300
 projectile_count = 20
 frequency = 1
 
-[node name="Spinner217" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1320, 1392)
-rotation = -1.64535
-radius = 300
-projectile_count = 20
-frequency = 1
-clockwise = true
-
-[node name="Spinner218" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1488, 1392)
-rotation = -1.64535
-radius = 300
-projectile_count = 20
-frequency = 1
-
 [node name="Spinner219" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1704, 1336)
+position = Vector2(1488, 1408)
 rotation = -1.64535
 radius = 300
 projectile_count = 20
@@ -524,14 +315,6 @@ rotation = -1.64535
 radius = 300
 projectile_count = 20
 frequency = 1
-
-[node name="Spinner221" parent="." instance=ExtResource("6_olr5s")]
-position = Vector2(1016, 1392)
-rotation = 0.527361
-radius = 300
-projectile_count = 20
-frequency = 1
-clockwise = true
 
 [node name="Spinner3" parent="." instance=ExtResource("6_olr5s")]
 position = Vector2(792, 632)

@@ -75,7 +75,7 @@ rotation = 3.14159
 shoot_frequency = 3.0
 projectile_homing = true
 targeting = true
-detect_radius = 500
+detect_radius = 700
 
 [node name="Shooter3" parent="." instance=ExtResource("5_huird")]
 position = Vector2(136, 408)
@@ -90,7 +90,7 @@ shoot_frequency = 3.0
 projectile_speed = 100
 projectile_homing = true
 targeting = true
-detect_radius = 500
+detect_radius = 700
 
 [node name="Spinner2" parent="." instance=ExtResource("6_8cx0k")]
 position = Vector2(264, 688)
@@ -114,3 +114,6 @@ frequency = 4
 position = Vector2(656, 816)
 radius = 160
 projectile_count = 8
+
+[node name="Potion2" parent="." instance=ExtResource("4_hynpi")]
+position = Vector2(512, 848)
