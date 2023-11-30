@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://njxewv656fco"
-path="res://.godot/imported/Game_Jam_Charas_-_PC.png-fbf84f4a2b531477cc7bdac391c01abe.ctex"
+uid="uid://nf2i8f0aobw4"
+path="res://.godot/imported/Coin.png-3f09b11661f253968ee7fe9d3fbca4e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/Game_Jam_Charas_-_PC.png"
-dest_files=["res://.godot/imported/Game_Jam_Charas_-_PC.png-fbf84f4a2b531477cc7bdac391c01abe.ctex"]
+source_file="res://assets/visual/Objects/Coin.png"
+dest_files=["res://.godot/imported/Coin.png-3f09b11661f253968ee7fe9d3fbca4e2.ctex"]
 
 [params]
 

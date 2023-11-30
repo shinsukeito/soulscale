@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://clwhmw7sft4nb"]
+[gd_scene load_steps=13 format=3 uid="uid://clwhmw7sft4nb"]
 
 [ext_resource type="Script" path="res://scripts/camp.gd" id="1_kq6gs"]
 [ext_resource type="PackedScene" uid="uid://bwkwtaue0x3yi" path="res://scenes/common/camera.tscn" id="2_m64bq"]
@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/common/debugger.tscn" id="3_wvro7"]
 [ext_resource type="PackedScene" uid="uid://wvt2suixd2jw" path="res://scenes/common/dialogue.tscn" id="4_5sa2l"]
 [ext_resource type="PackedScene" uid="uid://dyid85hafptel" path="res://scenes/climb/inventory.tscn" id="4_ciltx"]
-[ext_resource type="Texture2D" uid="uid://dc2froo2edjis" path="res://assets/visual/Campsite.png" id="5_2dbyu"]
 [ext_resource type="PackedScene" uid="uid://wvc313jlr258" path="res://scenes/common/giant.tscn" id="6_nc6tn"]
+[ext_resource type="Texture2D" uid="uid://dawdx71pww6hm" path="res://assets/visual/Campsite - ground (moved cat).png" id="7_8oix5"]
 [ext_resource type="PackedScene" uid="uid://cg2u0as37g0b7" path="res://scenes/camp/npc.tscn" id="7_uk68a"]
+[ext_resource type="Texture2D" uid="uid://cnp5g3pa6a8ve" path="res://assets/visual/Campsite - background.png" id="8_t8jwt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hl6u6"]
 font_size = 24
@@ -73,11 +74,9 @@ horizontal_alignment = 1
 
 [node name="Dialogue" parent="." instance=ExtResource("4_5sa2l")]
 
-[node name="Background" type="TextureRect" parent="."]
-offset_right = 3040.0
-offset_bottom = 1080.0
-texture = ExtResource("5_2dbyu")
-metadata/_edit_lock_ = true
+[node name="CampsiteGround" type="Sprite2D" parent="."]
+position = Vector2(1520, 540)
+texture = ExtResource("7_8oix5")
 
 [node name="Ground" type="StaticBody2D" parent="."]
 metadata/_edit_lock_ = true
@@ -85,6 +84,15 @@ metadata/_edit_lock_ = true
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
 position = Vector2(1, 0)
 polygon = PackedVector2Array(-80, 1132, -74, -81, 69, -78, 104, 764, 237, 780, 822, 817, 1169, 776, 1721, 796, 2380, 794, 2690, 776, 2764, 653, 2768, -78, 3053, -59, 3066, 1107)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1520, 540)
+texture = ExtResource("8_t8jwt")
 
 [node name="Giant" parent="." instance=ExtResource("6_nc6tn")]
 position = Vector2(562, 735)
@@ -97,19 +105,19 @@ position = Vector2(2366, 646)
 position = Vector2(363, 661)
 
 [node name="Girl" parent="." instance=ExtResource("7_uk68a")]
-position = Vector2(93, 767)
+position = Vector2(93, 757)
 
 [node name="Grandma" parent="." instance=ExtResource("7_uk68a")]
-position = Vector2(1332, 727)
+position = Vector2(1333, 715)
 
 [node name="Teen" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(795, 739)
 
 [node name="Boy" parent="." instance=ExtResource("7_uk68a")]
-position = Vector2(2035, 776)
+position = Vector2(2040, 757)
 
 [node name="Cat" parent="." instance=ExtResource("7_uk68a")]
-position = Vector2(1760, 746)
+position = Vector2(1868, 793)
 
 [node name="Servant" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(1526, 720)

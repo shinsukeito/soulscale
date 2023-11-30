@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bl1jtm7qsdh1o"]
+[gd_scene load_steps=5 format=3 uid="uid://bq7kio7o4s6hk"]
 
 [ext_resource type="Script" path="res://scripts/module.gd" id="1_txmom"]
 [ext_resource type="TileSet" uid="uid://c1ybfv2peomy1" path="res://tilesets/tileset.tres" id="2_iqls8"]
@@ -23,7 +23,7 @@ position = Vector2(120, 776)
 position = Vector2(216, 776)
 
 [node name="Currency3" parent="." instance=ExtResource("3_b226l")]
-position = Vector2(168, 728)
+position = Vector2(168, 677)
 
 [node name="Currency7" parent="." instance=ExtResource("3_b226l")]
 position = Vector2(96, 960)
@@ -37,7 +37,7 @@ position = Vector2(232, 960)
 position = Vector2(168, 616)
 
 [node name="Shooter" parent="." instance=ExtResource("4_cdxd2")]
-position = Vector2(168, 672)
+position = Vector2(166, 733)
 rotation = 3.14159
 shoot_frequency = 2.0
 projectile_speed = 300

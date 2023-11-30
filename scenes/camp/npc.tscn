@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_jpxmk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5kusp"]
-size = Vector2(136, 196)
+size = Vector2(90, 196)
 
 [node name="NPC" type="Area2D"]
 script = ExtResource("1_jpxmk")

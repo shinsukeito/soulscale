@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg0g883hynmyg"]
+
+[ext_resource type="Script" path="res://scripts/blade.gd" id="1_tbor2"]
+[ext_resource type="Texture2D" uid="uid://cofmhaew8pn4f" path="res://assets/visual/Objects/Circular spike (spin trap).png" id="2_k647s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wg3jn"]
+radius = 15.0
+
+[node name="Blade" type="Area2D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_tbor2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.102222, 0.102222)
+texture = ExtResource("2_k647s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wg3jn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

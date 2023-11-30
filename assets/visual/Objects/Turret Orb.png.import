@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ciemdldwedl6o"
-path="res://.godot/imported/ball_sm.png-2edaa4683b05045957fc64b0285ea1af.ctex"
+uid="uid://bx1dps3jpmmb3"
+path="res://.godot/imported/Turret Orb.png-ecf50f200bcd925d1b0edd194623ac7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/ball_sm.png"
-dest_files=["res://.godot/imported/ball_sm.png-2edaa4683b05045957fc64b0285ea1af.ctex"]
+source_file="res://assets/visual/Objects/Turret Orb.png"
+dest_files=["res://.godot/imported/Turret Orb.png-ecf50f200bcd925d1b0edd194623ac7f.ctex"]
 
 [params]
 

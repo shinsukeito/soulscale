@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ba1gvbrsvyaeq"]
 
 [ext_resource type="Script" path="res://scripts/collectible.gd" id="1_11v66"]
-[ext_resource type="Texture2D" uid="uid://jafgkfo8givq" path="res://assets/visual/bottle.png" id="2_j06ct"]
+[ext_resource type="Texture2D" uid="uid://bghhdmwwc0sug" path="res://assets/visual/Objects/Medicine.png" id="2_jeftv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y3rfg"]
 radius = 8.0
@@ -14,7 +14,8 @@ script = ExtResource("1_11v66")
 type = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_j06ct")
+scale = Vector2(0.111111, 0.111111)
+texture = ExtResource("2_jeftv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_y3rfg")

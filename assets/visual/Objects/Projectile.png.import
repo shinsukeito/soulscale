@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci33dihuk3kah"
-path="res://.godot/imported/shadow.png-add41290fe95b09a41e6146d61843537.ctex"
+uid="uid://cd6jvyqoj5o0e"
+path="res://.godot/imported/Projectile.png-29c8c94c532267decb15303187118a76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/shadow.png"
-dest_files=["res://.godot/imported/shadow.png-add41290fe95b09a41e6146d61843537.ctex"]
+source_file="res://assets/visual/Objects/Projectile.png"
+dest_files=["res://.godot/imported/Projectile.png-29c8c94c532267decb15303187118a76.ctex"]
 
 [params]
 

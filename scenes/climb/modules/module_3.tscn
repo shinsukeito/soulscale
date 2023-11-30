@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://3m6h6oty2lln" path="res://scenes/climb/collectibles/currency.tscn" id="3_tuvky"]
 [ext_resource type="PackedScene" uid="uid://cyyx2m4g5r3l3" path="res://scenes/climb/hazards/shooter.tscn" id="5_l52lf"]
 
-[node name="Room" type="Node2D"]
+[node name="Room2" type="Node2D"]
 script = ExtResource("1_x5sqj")
 start_height = 16
 end_height = 16

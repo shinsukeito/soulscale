@@ -1,6 +1,6 @@
 extends Node2D
 
-var projectile_scene: PackedScene = load("res://scenes/climb/hazards/projectile.tscn")
+var projectile_scene: PackedScene = load("res://scenes/climb/hazards/blade.tscn")
 
 @export var radius = 100
 @export var projectile_count = 9
@@ -8,7 +8,7 @@ var projectile_scene: PackedScene = load("res://scenes/climb/hazards/projectile.
 @export var t = 0
 @export var clockwise = false
 
-var projectiles: Array[Projectile] = []
+var projectiles: Array[Blade] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,7 +38,7 @@ func _process(delta):
 
 func create_projectiles():
 	for i in projectile_count:
-		var projectile = projectile_scene.instantiate() as Projectile
+		var projectile = projectile_scene.instantiate() as Blade
 		var ratio = (i + 1 / projectile_count) * radius
 		projectile.position = Vector2(0, ratio)
 		projectiles.push_front(projectile)

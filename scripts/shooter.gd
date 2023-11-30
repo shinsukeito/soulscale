@@ -1,4 +1,4 @@
-extends Node2D
+extends StaticBody2D
 
 var projectile_scene: PackedScene = load("res://scenes/climb/hazards/projectile.tscn")
 

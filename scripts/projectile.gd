@@ -24,6 +24,7 @@ func _process(delta):
 	if giant == null: return
 
 	position += velocity * delta
+	rotation = velocity.angle()
 	
 	if homing:
 		home()

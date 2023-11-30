@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uoqg4jyt20qh"
-path="res://.godot/imported/spikes.png-fa5a457a3ab4a93f5422fd657c0ee4c1.ctex"
+uid="uid://cofmhaew8pn4f"
+path="res://.godot/imported/Circular spike (spin trap).png-fb7599398bbc3844fdc1b1b77c192868.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/spikes.png"
-dest_files=["res://.godot/imported/spikes.png-fa5a457a3ab4a93f5422fd657c0ee4c1.ctex"]
+source_file="res://assets/visual/Objects/Circular spike (spin trap).png"
+dest_files=["res://.godot/imported/Circular spike (spin trap).png-fb7599398bbc3844fdc1b1b77c192868.ctex"]
 
 [params]
 

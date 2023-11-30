@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://limn1c3pscoj" path="res://scenes/climb/hazards/spinner.tscn" id="5_m4w0d"]
 [ext_resource type="PackedScene" uid="uid://ba1gvbrsvyaeq" path="res://scenes/climb/collectibles/potion.tscn" id="6_4lbx3"]
 
-[node name="Room" type="Node2D"]
+[node name="Room2" type="Node2D"]
 script = ExtResource("1_ncvms")
 end_height = 2
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm5et15ywlm6d"
-path="res://.godot/imported/ball.png-8084c3e04f3288316b134c77c3984780.ctex"
+uid="uid://dawdx71pww6hm"
+path="res://.godot/imported/Campsite - ground (moved cat).png-a14c07890b17f4850195254e5f92ffc2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/ball.png"
-dest_files=["res://.godot/imported/ball.png-8084c3e04f3288316b134c77c3984780.ctex"]
+source_file="res://assets/visual/Campsite - ground (moved cat).png"
+dest_files=["res://.godot/imported/Campsite - ground (moved cat).png-a14c07890b17f4850195254e5f92ffc2.ctex"]
 
 [params]
 

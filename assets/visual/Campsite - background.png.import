@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blu80mmyfy6g3"
-path="res://.godot/imported/trophy.png-6372d1f77c39ba94e37a34629b3212fb.ctex"
+uid="uid://cnp5g3pa6a8ve"
+path="res://.godot/imported/Campsite - background.png-9866b06cdb84b99570c3aeea6108da30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/trophy.png"
-dest_files=["res://.godot/imported/trophy.png-6372d1f77c39ba94e37a34629b3212fb.ctex"]
+source_file="res://assets/visual/Campsite - background.png"
+dest_files=["res://.godot/imported/Campsite - background.png-9866b06cdb84b99570c3aeea6108da30.ctex"]
 
 [params]
 
