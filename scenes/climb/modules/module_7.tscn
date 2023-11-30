@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://bl1jtm7qsdh1o"]
+
+[ext_resource type="Script" path="res://scripts/module.gd" id="1_txmom"]
+[ext_resource type="TileSet" uid="uid://c1ybfv2peomy1" path="res://tilesets/tileset.tres" id="2_iqls8"]
+[ext_resource type="PackedScene" uid="uid://3m6h6oty2lln" path="res://scenes/climb/collectibles/currency.tscn" id="3_b226l"]
+[ext_resource type="PackedScene" uid="uid://cyyx2m4g5r3l3" path="res://scenes/climb/hazards/shooter.tscn" id="4_cdxd2"]
+
+[node name="Room" type="Node2D"]
+script = ExtResource("1_txmom")
+end_height = 17
+
+[node name="Terrain" type="TileMap" parent="."]
+scale = Vector2(0.122, 0.122)
+tile_set = ExtResource("2_iqls8")
+cell_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(1114112, 65537, 0, 1179648, 262145, 0, 1245184, 65537, 1, 1310720, 65537, 1, 1376256, 65537, 1, 1441792, 65537, 1, 1179649, 65537, 0, 1245185, 65537, 1, 1310721, 65537, 1, 1376257, 65537, 1, 1441793, 65537, 1, 1179650, 65537, 0, 1179651, 65537, 0, 1179652, 65537, 0, 1179653, 393217, 0, 1245186, 65537, 1, 1310722, 65537, 1, 1376258, 65537, 1, 1441794, 65537, 1, 1245187, 65537, 1, 1310723, 65537, 1, 1376259, 65537, 1, 1441795, 65537, 1, 1245188, 65537, 1, 1310724, 65537, 1, 1376260, 65537, 1, 1441796, 65537, 1, 1245189, 65537, 1, 1310725, 65537, 1, 1376261, 65537, 1, 1441797, 65537, 1, 1114117, 1, 0, 917506, 262145, 3, 917507, 458753, 3)
+
+[node name="Currency" parent="." instance=ExtResource("3_b226l")]
+position = Vector2(120, 776)
+
+[node name="Currency2" parent="." instance=ExtResource("3_b226l")]
+position = Vector2(216, 776)
+
+[node name="Currency3" parent="." instance=ExtResource("3_b226l")]
+position = Vector2(168, 728)
+
+[node name="Currency7" parent="." instance=ExtResource("3_b226l")]
+position = Vector2(96, 960)
+
+[node name="Currency4" parent="." instance=ExtResource("3_b226l")]
+position = Vector2(232, 960)
+
+[node name="ArtifactSpawner" type="Node2D" parent="."]
+
+[node name="SpawnPoint2" type="Node2D" parent="ArtifactSpawner"]
+position = Vector2(168, 616)
+
+[node name="Shooter" parent="." instance=ExtResource("4_cdxd2")]
+position = Vector2(168, 672)
+rotation = 3.14159
+shoot_frequency = 2.0
+projectile_speed = 300
+targeting = true
+detect_radius = 800

@@ -1,0 +1,82 @@
+[gd_scene load_steps=7 format=3 uid="uid://chbdg7hrqjtjt"]
+
+[ext_resource type="Script" path="res://scripts/module.gd" id="1_imdx6"]
+[ext_resource type="TileSet" uid="uid://c1ybfv2peomy1" path="res://tilesets/tileset.tres" id="2_xrmxc"]
+[ext_resource type="PackedScene" uid="uid://3m6h6oty2lln" path="res://scenes/climb/collectibles/currency.tscn" id="3_e1dc8"]
+[ext_resource type="PackedScene" uid="uid://cyyx2m4g5r3l3" path="res://scenes/climb/hazards/shooter.tscn" id="4_h5q4t"]
+[ext_resource type="PackedScene" uid="uid://limn1c3pscoj" path="res://scenes/climb/hazards/spinner.tscn" id="5_2s3rj"]
+[ext_resource type="PackedScene" uid="uid://ba1gvbrsvyaeq" path="res://scenes/climb/collectibles/potion.tscn" id="6_lh6nm"]
+
+[node name="Room" type="Node2D"]
+script = ExtResource("1_imdx6")
+end_height = 1
+
+[node name="Terrain" type="TileMap" parent="."]
+scale = Vector2(0.122, 0.122)
+tile_set = ExtResource("2_xrmxc")
+cell_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(1114112, 65537, 0, 1310720, 65537, 2, 1310721, 65537, 2, 1310722, 65537, 2, 1310723, 65537, 2, 1310724, 65537, 2, 1310725, 65537, 2, 1179648, 65537, 1, 1245184, 65537, 1, 1179649, 65537, 1, 1245185, 65537, 1, 1179650, 65537, 1, 1245186, 65537, 1, 1179651, 65537, 1, 1245187, 65537, 1, 1179652, 131073, 1, 1245188, 65537, 1, 1245189, 65537, 0, 1114113, 393217, 0, 1114114, 65537, 1, 1114115, 65537, 1, 1114116, 131073, 1, 1048577, 327681, 2, 983042, 327681, 2, 983043, 65537, 0, 917508, 1, 0, 851973, 1, 0, 1048578, 393217, 0, 983044, 393217, 0, 917509, 131073, 1, 851974, 393217, 1, 786439, 393217, 0, 786438, 1, 0, 720903, 1, 0, 589832, 327681, 2, 655368, 1, 1, 720904, 393217, 0, 786440, 65537, 1, 851976, 65537, 2, 851975, 65537, 2, 851977, 65537, 2, 851978, 65537, 2, 655369, 65537, 1, 720905, 65537, 1, 786441, 65537, 1, 655370, 65537, 1, 720906, 65537, 1, 786442, 65537, 1, 655371, 65537, 1, 720907, 65537, 1, 786443, 65537, 1, 851979, 65537, 1, 917515, 1, 1, 1048579, 65537, 1, 1048580, 65537, 1, 1048581, 131073, 2, 1245190, 393217, 0, 1245191, 262145, 0, 1245192, 65537, 0, 1245193, 131073, 0, 983045, 131073, 1, 983051, 1, 1, 1048587, 393217, 0, 1114123, 1, 2, 1310726, 65537, 2, 1310727, 65537, 2, 1310728, 65537, 2, 1310729, 65537, 2, 1310730, 65537, 3, 1310731, 65537, 3, 458761, 1, 0, 524297, 1, 1, 589833, 393217, 0, 131083, 1, 0, 131084, 65537, 0, 262154, 262145, 3, 458763, 131073, 0, 458762, 65537, 0, 196620, 65537, 1, 589836, 131073, 0, 655372, 131073, 1, 720908, 131073, 1, 786444, 65537, 1, 851980, 131073, 1, 917516, 131073, 1, 983052, 131073, 1, 1048588, 262145, 0, 196619, 1, 1, 262155, 393217, 1, 524298, 65537, 1, 589834, 65537, 1, 524299, 131073, 1, 589835, 65537, 1, 1114124, 131073, 2, 1310732, 65537, 3, 131085, 393217, 2, 131087, 327681, 2, 65552, 327681, 2, 65553, 65537, 0, 131088, 393217, 0, 196624, 65537, 1, 262160, 65537, 1, 327696, 1, 1, 393232, 1, 1, 458768, 1, 1, 524304, 1, 1, 589840, 1, 1, 655376, 1, 1, 720912, 1, 1, 131089, 65537, 1, 196625, 65537, 1, 262161, 65537, 1, 327697, 65537, 1, 393233, 65537, 1, 458769, 65537, 1, 524305, 65537, 1, 589841, 65537, 1, 655377, 65537, 1, 720913, 65537, 1, 196622, 65537, 0, 196623, 393217, 0, 196621, 262145, 0, 262156, 65537, 2, 262157, 65537, 2, 262158, 65537, 2, 262159, 65537, 2, 786448, 1, 1, 851984, 1, 1, 917520, 1, 2, 65554, 65537, 0, 65555, 65537, 0, 131090, 65537, 1, 196626, 65537, 1, 262162, 65537, 1, 327698, 65537, 1, 393234, 65537, 1, 458770, 65537, 1, 524306, 65537, 1, 589842, 65537, 1, 655378, 65537, 1, 720914, 65537, 1, 786450, 65537, 1, 851986, 65537, 1, 917522, 65537, 2, 131091, 65537, 1, 196627, 65537, 1, 262163, 65537, 1, 327699, 65537, 1, 393235, 65537, 1, 458771, 65537, 1, 524307, 65537, 1, 589843, 65537, 1, 655379, 65537, 1, 720915, 65537, 1, 786451, 65537, 1, 851987, 65537, 1, 917523, 65537, 1, 786449, 65537, 1, 851985, 65537, 1, 917521, 65537, 2, 1310733, 65537, 3, 1310734, 65537, 3, 1310735, 393217, 0, 1310736, 262145, 0, 1310737, 65537, 3, 1310738, 65537, 3, 1310739, 65537, 2, 983059, 1, 1, 1048595, 1, 1, 1114131, 1, 1, 1179667, 1, 1, 1245203, 1, 1, 1048589, 458753, 3, 1245200, 393217, 2, 1245199, 327681, 2, 917519, 262145, 3, 786445, 458753, 3, 655375, 262145, 3, 1048586, 262145, 3, 1179655, 458753, 3, 1179654, 262145, 3)
+
+[node name="Currency" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(683, 462)
+
+[node name="Currency5" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(966, 1071)
+
+[node name="Currency6" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(1018, 1012)
+
+[node name="Currency8" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(572, 1012)
+
+[node name="Currency9" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(572, 960)
+
+[node name="Currency2" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(835, 769)
+
+[node name="Currency3" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(762, 883)
+
+[node name="Currency7" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(759, 659)
+
+[node name="Currency4" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(843, 542)
+
+[node name="ArtifactSpawner" type="Node2D" parent="."]
+
+[node name="SpawnPoint2" type="Node2D" parent="ArtifactSpawner"]
+position = Vector2(571, 852)
+
+[node name="SpawnPoint3" type="Node2D" parent="ArtifactSpawner"]
+position = Vector2(1018, 933)
+
+[node name="Shooter" parent="." instance=ExtResource("4_h5q4t")]
+position = Vector2(878, 940)
+rotation = 3.14159
+shoot_frequency = 2.0
+projectile_speed = 300
+targeting = true
+detect_radius = 400
+
+[node name="Shooter2" parent="." instance=ExtResource("4_h5q4t")]
+position = Vector2(770, 382)
+rotation = 3.14159
+shoot_frequency = 2.0
+projectile_speed = 300
+targeting = true
+detect_radius = 400
+
+[node name="Spinner" parent="." instance=ExtResource("5_2s3rj")]
+position = Vector2(471, 904)
+radius = 150
+frequency = 6
+clockwise = true
+
+[node name="Potion" parent="." instance=ExtResource("6_lh6nm")]
+position = Vector2(299, 1010)
+
+[node name="Potion2" parent="." instance=ExtResource("6_lh6nm")]
+position = Vector2(1015, 1062)

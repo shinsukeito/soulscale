@@ -7,39 +7,48 @@
 
 [node name="Room" type="Node2D"]
 script = ExtResource("1_x5sqj")
-end_height = 17
+start_height = 16
+end_height = 16
 
 [node name="Terrain" type="TileMap" parent="."]
 scale = Vector2(0.122, 0.122)
 tile_set = ExtResource("2_jnk1l")
 cell_quadrant_size = 32
 format = 2
-layer_0/tile_data = PackedInt32Array(1114112, 65537, 0, 1179648, 262145, 0, 1245184, 65537, 1, 1310720, 65537, 1, 1376256, 65537, 1, 1441792, 65537, 1, 1179649, 65537, 0, 1245185, 65537, 1, 1310721, 65537, 1, 1376257, 65537, 1, 1441793, 65537, 1, 1179650, 65537, 0, 1179651, 65537, 0, 1179652, 65537, 0, 1179653, 393217, 0, 1245186, 65537, 1, 1310722, 65537, 1, 1376258, 65537, 1, 1441794, 65537, 1, 1245187, 65537, 1, 1310723, 65537, 1, 1376259, 65537, 1, 1441795, 65537, 1, 1245188, 65537, 1, 1310724, 65537, 1, 1376260, 65537, 1, 1441796, 65537, 1, 1245189, 65537, 1, 1310725, 65537, 1, 1376261, 65537, 1, 1441797, 65537, 1, 1114117, 1, 0, 917506, 262145, 3, 917507, 458753, 3)
+layer_0/tile_data = PackedInt32Array(1048576, 1, 0, 1048580, 131073, 0, 1048577, 393217, 2, 1048579, 327681, 2, 1114114, 65537, 0, 1114112, 65537, 1, 1179648, 65537, 1, 1245184, 65537, 1, 1310720, 65537, 1, 1114113, 262145, 0, 1179649, 65537, 1, 1245185, 65537, 1, 1310721, 65537, 1, 1179650, 65537, 1, 1245186, 65537, 1, 1310722, 65537, 1, 1114115, 393217, 0, 1179651, 65537, 1, 1245187, 65537, 1, 1310723, 65537, 1, 1114116, 65537, 1, 1179652, 65537, 1, 1245188, 65537, 1, 1310724, 65537, 1)
 
 [node name="Currency" parent="." instance=ExtResource("3_tuvky")]
-position = Vector2(120, 776)
+position = Vector2(80, 872)
 
 [node name="Currency2" parent="." instance=ExtResource("3_tuvky")]
-position = Vector2(216, 776)
+position = Vector2(192, 872)
 
 [node name="Currency3" parent="." instance=ExtResource("3_tuvky")]
-position = Vector2(168, 728)
+position = Vector2(136, 888)
 
 [node name="Currency7" parent="." instance=ExtResource("3_tuvky")]
-position = Vector2(96, 960)
+position = Vector2(40, 824)
 
 [node name="Currency4" parent="." instance=ExtResource("3_tuvky")]
-position = Vector2(232, 960)
+position = Vector2(232, 824)
 
 [node name="ArtifactSpawner" type="Node2D" parent="."]
 
 [node name="SpawnPoint2" type="Node2D" parent="ArtifactSpawner"]
-position = Vector2(524, 571)
+position = Vector2(136, 824)
 
 [node name="Shooter" parent="." instance=ExtResource("5_l52lf")]
-position = Vector2(168, 672)
+position = Vector2(168, 760)
 rotation = 3.14159
-shoot_frequency = 2.0
+shoot_frequency = 1.9
+projectile_speed = 300
+targeting = true
+detect_radius = 800
+
+[node name="Shooter2" parent="." instance=ExtResource("5_l52lf")]
+position = Vector2(96, 760)
+rotation = 3.14159
+shoot_frequency = 1.5
 projectile_speed = 300
 targeting = true
 detect_radius = 800

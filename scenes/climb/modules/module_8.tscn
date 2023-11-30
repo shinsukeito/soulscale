@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://dyblh1inc50nb"]
+
+[ext_resource type="Script" path="res://scripts/module.gd" id="1_1athw"]
+[ext_resource type="TileSet" uid="uid://c1ybfv2peomy1" path="res://tilesets/tileset.tres" id="2_63bj0"]
+[ext_resource type="PackedScene" uid="uid://3m6h6oty2lln" path="res://scenes/climb/collectibles/currency.tscn" id="3_mqo6u"]
+[ext_resource type="PackedScene" uid="uid://cyyx2m4g5r3l3" path="res://scenes/climb/hazards/shooter.tscn" id="4_8430u"]
+[ext_resource type="PackedScene" uid="uid://limn1c3pscoj" path="res://scenes/climb/hazards/spinner.tscn" id="5_hxhdv"]
+
+[node name="Room" type="Node2D"]
+script = ExtResource("1_1athw")
+start_height = 15
+end_height = 7
+
+[node name="Terrain" type="TileMap" parent="."]
+scale = Vector2(0.122, 0.122)
+tile_set = ExtResource("2_63bj0")
+cell_quadrant_size = 32
+format = 2
+layer_0/tile_data = PackedInt32Array(720899, 262145, 3, 655364, 327681, 2, 589829, 327681, 2, 458758, 327681, 2, 524294, 1, 1, 458759, 65537, 0, 458760, 131073, 0, 917506, 65537, 0, 917507, 65537, 0, 917508, 65537, 0, 917509, 65537, 0, 917510, 65537, 0, 917511, 65537, 0, 917512, 393217, 0, 524296, 131073, 1, 589832, 131073, 1, 655368, 1, 1, 720904, 1, 1, 786440, 1, 1, 851976, 1, 1, 524295, 65537, 1, 589831, 65537, 2, 589830, 393217, 0, 655365, 393217, 0, 720900, 393217, 1, 655366, 131073, 1, 720902, 131073, 2, 720901, 65537, 2, 917505, 327681, 2, 983040, 327681, 2, 983041, 393217, 0, 983042, 65537, 1, 1048578, 65537, 1, 1114114, 65537, 1, 983043, 65537, 1, 1048579, 65537, 1, 1114115, 65537, 1, 983044, 65537, 1, 1048580, 65537, 1, 1114116, 65537, 1, 983045, 65537, 1, 1048581, 65537, 1, 1114117, 65537, 1, 983046, 65537, 1, 1048582, 65537, 1, 1114118, 65537, 1, 983047, 65537, 1, 1048583, 65537, 1, 1114119, 65537, 1, 983048, 65537, 1, 1048584, 65537, 1, 1114120, 65537, 1, 1048576, 65537, 1, 1114112, 65537, 1, 1048577, 65537, 1, 1114113, 65537, 1)
+
+[node name="Currency" parent="." instance=ExtResource("3_mqo6u")]
+position = Vector2(334, 746)
+
+[node name="Currency2" parent="." instance=ExtResource("3_mqo6u")]
+position = Vector2(291, 747)
+
+[node name="Currency3" parent="." instance=ExtResource("3_mqo6u")]
+position = Vector2(246, 748)
+
+[node name="Currency7" parent="." instance=ExtResource("3_mqo6u")]
+position = Vector2(203, 749)
+
+[node name="Currency4" parent="." instance=ExtResource("3_mqo6u")]
+position = Vector2(161, 750)
+
+[node name="ArtifactSpawner" type="Node2D" parent="."]
+
+[node name="SpawnPoint2" type="Node2D" parent="ArtifactSpawner"]
+position = Vector2(413, 579)
+
+[node name="Shooter" parent="." instance=ExtResource("4_8430u")]
+position = Vector2(420, 746)
+rotation = 3.14159
+shoot_frequency = 2.0
+projectile_speed = 300
+targeting = true
+detect_radius = 800
+
+[node name="Spinner" parent="." instance=ExtResource("5_hxhdv")]
+position = Vector2(359, 636)
+
+[node name="Spinner2" parent="." instance=ExtResource("5_hxhdv")]
+position = Vector2(449, 784)

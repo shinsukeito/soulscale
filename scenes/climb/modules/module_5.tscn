@@ -1,45 +1,65 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5qiq18hr2n5y"]
+[gd_scene load_steps=7 format=3 uid="uid://b5qiq18hr2n5y"]
 
 [ext_resource type="Script" path="res://scripts/module.gd" id="1_ncvms"]
 [ext_resource type="TileSet" uid="uid://c1ybfv2peomy1" path="res://tilesets/tileset.tres" id="2_fawxo"]
 [ext_resource type="PackedScene" uid="uid://3m6h6oty2lln" path="res://scenes/climb/collectibles/currency.tscn" id="3_c5wka"]
 [ext_resource type="PackedScene" uid="uid://cyyx2m4g5r3l3" path="res://scenes/climb/hazards/shooter.tscn" id="4_r0enk"]
+[ext_resource type="PackedScene" uid="uid://limn1c3pscoj" path="res://scenes/climb/hazards/spinner.tscn" id="5_m4w0d"]
+[ext_resource type="PackedScene" uid="uid://ba1gvbrsvyaeq" path="res://scenes/climb/collectibles/potion.tscn" id="6_4lbx3"]
 
 [node name="Room" type="Node2D"]
 script = ExtResource("1_ncvms")
-end_height = 17
+end_height = 2
 
 [node name="Terrain" type="TileMap" parent="."]
 scale = Vector2(0.122, 0.122)
 tile_set = ExtResource("2_fawxo")
 cell_quadrant_size = 32
 format = 2
-layer_0/tile_data = PackedInt32Array(1114112, 65537, 0, 1179648, 262145, 0, 1245184, 65537, 1, 1310720, 65537, 1, 1376256, 65537, 1, 1441792, 65537, 1, 1179649, 65537, 0, 1245185, 65537, 1, 1310721, 65537, 1, 1376257, 65537, 1, 1441793, 65537, 1, 1179650, 65537, 0, 1179651, 65537, 0, 1179652, 65537, 0, 1179653, 393217, 0, 1245186, 65537, 1, 1310722, 65537, 1, 1376258, 65537, 1, 1441794, 65537, 1, 1245187, 65537, 1, 1310723, 65537, 1, 1376259, 65537, 1, 1441795, 65537, 1, 1245188, 65537, 1, 1310724, 65537, 1, 1376260, 65537, 1, 1441796, 65537, 1, 1245189, 65537, 1, 1310725, 65537, 1, 1376261, 65537, 1, 1441797, 65537, 1, 1114117, 1, 0, 917506, 262145, 3, 917507, 458753, 3)
+layer_0/tile_data = PackedInt32Array(1114112, 65537, 0, 1310720, 65537, 2, 1310721, 65537, 2, 1310722, 65537, 2, 1310723, 65537, 2, 1310724, 65537, 2, 1310725, 65537, 2, 1179648, 65537, 1, 1245184, 65537, 1, 1179649, 65537, 1, 1245185, 65537, 1, 1179650, 65537, 1, 1245186, 65537, 1, 1179651, 65537, 0, 1245187, 65537, 1, 1179652, 131073, 0, 1245188, 65537, 1, 1245189, 65537, 0, 1114113, 131073, 0, 1114114, 393217, 2, 1245190, 393217, 0, 1245191, 65537, 1, 1245192, 65537, 1, 1245193, 65537, 1, 1310726, 65537, 2, 1310727, 65537, 2, 1310728, 65537, 1, 1310729, 65537, 1, 1310730, 65537, 2, 1179655, 393217, 2, 1179654, 327681, 2, 1048584, 1, 1, 1114120, 1, 1, 1179656, 1, 1, 1048585, 65537, 1, 1114121, 65537, 1, 1179657, 65537, 1, 983048, 327681, 2, 851973, 458753, 3, 851971, 262145, 3, 851972, 65537, 3, 655366, 262145, 3, 655369, 393217, 0, 720905, 1, 1, 786441, 1, 1, 851977, 1, 1, 917513, 1, 1, 655367, 65537, 3, 655368, 65537, 3, 983049, 65537, 1, 524292, 196609, 3, 393218, 196609, 3, 262148, 196609, 3, 196617, 1, 1, 262153, 1, 1, 327689, 1, 1, 393225, 1, 1, 458761, 1, 1, 524297, 1, 1, 589833, 1, 1, 393223, 196609, 3, 131081, 327681, 2, 131082, 65537, 0, 196618, 65537, 1, 262154, 65537, 1, 327690, 65537, 1, 393226, 65537, 1, 458762, 65537, 1, 524298, 65537, 1, 589834, 65537, 1, 655370, 65537, 1, 720906, 65537, 1, 786442, 65537, 1, 851978, 65537, 1, 917514, 65537, 1, 983050, 65537, 1, 1048586, 65537, 1, 1114122, 65537, 1, 1179658, 65537, 1, 1245194, 65537, 1, 655361, 458753, 0)
 
 [node name="Currency" parent="." instance=ExtResource("3_c5wka")]
-position = Vector2(120, 776)
+position = Vector2(247, 195)
 
 [node name="Currency2" parent="." instance=ExtResource("3_c5wka")]
-position = Vector2(216, 776)
+position = Vector2(404, 295)
 
 [node name="Currency3" parent="." instance=ExtResource("3_c5wka")]
-position = Vector2(168, 728)
+position = Vector2(171, 720)
 
 [node name="Currency7" parent="." instance=ExtResource("3_c5wka")]
-position = Vector2(96, 960)
+position = Vector2(418, 979)
 
 [node name="Currency4" parent="." instance=ExtResource("3_c5wka")]
-position = Vector2(232, 960)
+position = Vector2(139, 296)
 
 [node name="ArtifactSpawner" type="Node2D" parent="."]
 
-[node name="SpawnPoint2" type="Node2D" parent="ArtifactSpawner"]
-position = Vector2(524, 571)
+[node name="SpawnPoint1" type="Node2D" parent="ArtifactSpawner"]
+position = Vector2(48, 93)
 
 [node name="Shooter" parent="." instance=ExtResource("4_r0enk")]
-position = Vector2(168, 672)
+position = Vector2(92, 565)
 rotation = 3.14159
-shoot_frequency = 2.0
+shoot_frequency = 1.7
+projectile_speed = 100
+projectile_homing = true
+targeting = true
+detect_radius = 700
+
+[node name="Shooter2" parent="." instance=ExtResource("4_r0enk")]
+position = Vector2(23, 20)
+rotation = 3.14159
+shoot_frequency = 1.5
 projectile_speed = 300
 targeting = true
-detect_radius = 800
+detect_radius = 600
+
+[node name="Spinner" parent="." instance=ExtResource("5_m4w0d")]
+position = Vector2(471, 904)
+radius = 150
+frequency = 6
+clockwise = true
+
+[node name="Potion" parent="." instance=ExtResource("6_4lbx3")]
+position = Vector2(45, 152)
