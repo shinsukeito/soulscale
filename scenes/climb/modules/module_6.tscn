@@ -22,16 +22,55 @@ layer_0/tile_data = PackedInt32Array(1114112, 65537, 0, 1310720, 65537, 2, 13107
 position = Vector2(683, 462)
 
 [node name="Currency5" parent="." instance=ExtResource("3_e1dc8")]
-position = Vector2(966, 1071)
+position = Vector2(980, 1071)
+
+[node name="Currency15" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(981, 1023)
 
 [node name="Currency6" parent="." instance=ExtResource("3_e1dc8")]
-position = Vector2(1018, 1012)
+position = Vector2(1014, 991)
+
+[node name="Currency19" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(1021, 940)
+
+[node name="Currency16" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(938, 1039)
+
+[node name="Currency17" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(1020, 890)
+
+[node name="Currency20" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(1020, 890)
 
 [node name="Currency8" parent="." instance=ExtResource("3_e1dc8")]
 position = Vector2(572, 1012)
 
+[node name="Currency21" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(658, 1071)
+
+[node name="Currency22" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(658, 1022)
+
 [node name="Currency9" parent="." instance=ExtResource("3_e1dc8")]
 position = Vector2(572, 960)
+
+[node name="Currency11" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(475, 821)
+
+[node name="Currency10" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(536, 981)
+
+[node name="Currency14" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(401, 896)
+
+[node name="Currency13" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(577, 820)
+
+[node name="Currency18" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(578, 868)
+
+[node name="Currency12" parent="." instance=ExtResource("3_e1dc8")]
+position = Vector2(428, 846)
 
 [node name="Currency2" parent="." instance=ExtResource("3_e1dc8")]
 position = Vector2(835, 769)
@@ -48,10 +87,10 @@ position = Vector2(843, 542)
 [node name="ArtifactSpawner" type="Node2D" parent="."]
 
 [node name="SpawnPoint2" type="Node2D" parent="ArtifactSpawner"]
-position = Vector2(571, 852)
+position = Vector2(522, 795)
 
 [node name="SpawnPoint3" type="Node2D" parent="ArtifactSpawner"]
-position = Vector2(1018, 933)
+position = Vector2(297, 958)
 
 [node name="Shooter" parent="." instance=ExtResource("4_h5q4t")]
 position = Vector2(878, 940)
@@ -79,4 +118,4 @@ clockwise = true
 position = Vector2(299, 1010)
 
 [node name="Potion2" parent="." instance=ExtResource("6_lh6nm")]
-position = Vector2(1015, 1062)
+position = Vector2(1017, 1050)

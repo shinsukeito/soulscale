@@ -102,7 +102,7 @@ position = Vector2(1704, 1104)
 position = Vector2(2104, 960)
 
 [node name="Potion" parent="." instance=ExtResource("4_gumtp")]
-position = Vector2(1664, 1040)
+position = Vector2(1664, 1064)
 
 [node name="ArtifactSpawner" type="Node2D" parent="."]
 
@@ -112,13 +112,15 @@ position = Vector2(224, 560)
 [node name="Shooter" parent="." instance=ExtResource("5_208vm")]
 position = Vector2(1345, 1065)
 rotation = 3.14159
-shoot_frequency = 1.6
-detect_radius = 500
+shoot_frequency = 1.8
+projectile_speed = 100
+detect_radius = 1000
 
 [node name="Shooter2" parent="." instance=ExtResource("5_208vm")]
 position = Vector2(186, 1126)
-shoot_frequency = 1.6
-detect_radius = 500
+shoot_frequency = 1.5
+projectile_speed = 100
+detect_radius = 800
 
 [node name="Spinner" parent="." instance=ExtResource("6_vp7d1")]
 position = Vector2(1664, 864)

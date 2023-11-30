@@ -52,6 +52,15 @@ position = Vector2(280, 520)
 [node name="Currency7" parent="." instance=ExtResource("3_8dqm7")]
 position = Vector2(184, 632)
 
+[node name="Currency9" parent="." instance=ExtResource("3_8dqm7")]
+position = Vector2(136, 632)
+
+[node name="Currency10" parent="." instance=ExtResource("3_8dqm7")]
+position = Vector2(136, 688)
+
+[node name="Currency11" parent="." instance=ExtResource("3_8dqm7")]
+position = Vector2(136, 584)
+
 [node name="Potion" parent="." instance=ExtResource("4_hynpi")]
 position = Vector2(136, 536)
 
@@ -87,20 +96,19 @@ detect_radius = 500
 position = Vector2(264, 688)
 radius = 120
 projectile_count = 5
-frequency = 3
+frequency = 4
 clockwise = true
 
 [node name="Spinner5" parent="." instance=ExtResource("6_8cx0k")]
 position = Vector2(448, 800)
 radius = 120
 projectile_count = 5
-frequency = 1
 
 [node name="Spinner3" parent="." instance=ExtResource("6_8cx0k")]
 position = Vector2(240, 408)
 radius = 120
 projectile_count = 6
-frequency = 2
+frequency = 4
 
 [node name="Spinner4" parent="." instance=ExtResource("6_8cx0k")]
 position = Vector2(656, 816)

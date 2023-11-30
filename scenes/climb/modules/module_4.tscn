@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bg5du56kek2ie"]
+[gd_scene load_steps=7 format=3 uid="uid://bg5du56kek2ie"]
 
 [ext_resource type="Script" path="res://scripts/module.gd" id="1_jr5aj"]
 [ext_resource type="TileSet" uid="uid://c1ybfv2peomy1" path="res://tilesets/tileset.tres" id="2_0150f"]
 [ext_resource type="PackedScene" uid="uid://3m6h6oty2lln" path="res://scenes/climb/collectibles/currency.tscn" id="3_3irne"]
 [ext_resource type="PackedScene" uid="uid://ba1gvbrsvyaeq" path="res://scenes/climb/collectibles/potion.tscn" id="4_yl4lf"]
 [ext_resource type="PackedScene" uid="uid://cyyx2m4g5r3l3" path="res://scenes/climb/hazards/shooter.tscn" id="5_1grpr"]
+[ext_resource type="PackedScene" uid="uid://limn1c3pscoj" path="res://scenes/climb/hazards/spinner.tscn" id="6_h6ass"]
 
 [node name="Room" type="Node2D"]
 script = ExtResource("1_jr5aj")
@@ -32,6 +33,24 @@ position = Vector2(960, 368)
 [node name="Currency7" parent="." instance=ExtResource("3_3irne")]
 position = Vector2(688, 312)
 
+[node name="Currency8" parent="." instance=ExtResource("3_3irne")]
+position = Vector2(831, 134)
+
+[node name="Currency9" parent="." instance=ExtResource("3_3irne")]
+position = Vector2(1035, 269)
+
+[node name="Currency13" parent="." instance=ExtResource("3_3irne")]
+position = Vector2(1072, 282)
+
+[node name="Currency10" parent="." instance=ExtResource("3_3irne")]
+position = Vector2(1103, 216)
+
+[node name="Currency11" parent="." instance=ExtResource("3_3irne")]
+position = Vector2(1163, 203)
+
+[node name="Currency12" parent="." instance=ExtResource("3_3irne")]
+position = Vector2(1139, 238)
+
 [node name="Currency4" parent="." instance=ExtResource("3_3irne")]
 position = Vector2(960, 416)
 
@@ -47,7 +66,7 @@ position = Vector2(828, 175)
 position = Vector2(826, 101)
 
 [node name="SpawnPoint2" type="Node2D" parent="ArtifactSpawner"]
-position = Vector2(524, 571)
+position = Vector2(527, 230)
 
 [node name="Shooter" parent="." instance=ExtResource("5_1grpr")]
 position = Vector2(822, 294)
@@ -69,4 +88,12 @@ position = Vector2(1224, 168)
 shoot_frequency = 2.5
 projectile_speed = 100
 targeting = true
-detect_radius = 750
+detect_radius = 850
+
+[node name="Spinner" parent="." instance=ExtResource("6_h6ass")]
+position = Vector2(349, 948)
+radius = 150
+
+[node name="Spinner2" parent="." instance=ExtResource("6_h6ass")]
+position = Vector2(1518, 1071)
+radius = 150
