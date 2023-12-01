@@ -51,6 +51,7 @@ func show_messages(companion, messages):
 func _show_next_message():
 	var message = message_queue.pop_front() as String
 	if message.begins_with("-return"):
+		$DialogueBox.set_selection(null)
 		questioning = true
 
 	if message != null:
