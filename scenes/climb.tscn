@@ -25,9 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://r4jjxblbvv02" path="res://scenes/climb/modules/module_16.tscn" id="18_vnera"]
 [ext_resource type="PackedScene" uid="uid://dtav2i2wlyjq5" path="res://scenes/climb/modules/module_17.tscn" id="19_5oi3g"]
 [ext_resource type="PackedScene" uid="uid://vflfuqfla3bd" path="res://scenes/climb/modules/module_18.tscn" id="20_kiq34"]
+[ext_resource type="PackedScene" uid="uid://r21y4jxvd032" path="res://scenes/climb/modules/module_19.tscn" id="21_g1clu"]
 [ext_resource type="Texture2D" uid="uid://cv6h10wng21us" path="res://assets/visual/gameplay - sky.png" id="26_wwtm5"]
 [ext_resource type="Texture2D" uid="uid://cwgqlkryu73c7" path="res://assets/visual/gameplay - back mountains.png" id="27_ur2r2"]
-[ext_resource type="PackedScene" uid="uid://r21y4jxvd032" path="res://scenes/climb/modules/module_19.tscn" id="21_g1clu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b10jr"]
 size = Vector2(118, 1986)

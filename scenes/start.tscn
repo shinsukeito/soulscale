@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://0o3pe1i5d0qo"]
+[gd_scene load_steps=11 format=3 uid="uid://0o3pe1i5d0qo"]
 
 [ext_resource type="Script" path="res://scripts/start.gd" id="1_jf46d"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_spgvh"]
-font_size = 48
+[ext_resource type="FontFile" uid="uid://bk5q15y1568n4" path="res://assets/fonts/Cabin-Bold.ttf" id="2_ca5db"]
+[ext_resource type="Texture2D" uid="uid://crfnyebf7eclr" path="res://assets/visual/Game_Title_Screen.png" id="2_gk8l5"]
+[ext_resource type="PackedScene" uid="uid://b22dckdho80ey" path="res://scenes/common/transition.tscn" id="3_t66ce"]
 
 [sub_resource type="InputEventAction" id="InputEventAction_63c2w"]
 action = &"jump"
@@ -21,56 +21,62 @@ action = &"menu"
 events = [SubResource("InputEventAction_p4u7l")]
 
 [sub_resource type="LabelSettings" id="LabelSettings_x5idf"]
+font = ExtResource("2_ca5db")
+font_size = 24
 font_color = Color(0.807843, 0.8, 0.815686, 1)
 
 [node name="Start" type="Node2D"]
 script = ExtResource("1_jf46d")
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_gk8l5")
+
+[node name="Transition" parent="." instance=ExtResource("3_t66ce")]
+layer = 5
+fade_in_time = 2.0
+fade_out_time = 2.0
+
 [node name="GUI" type="CanvasLayer" parent="."]
 
-[node name="Title" type="Label" parent="GUI"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -49.5
-offset_top = -13.0
-offset_right = 49.5
-offset_bottom = 13.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "GIANT GAME"
-label_settings = SubResource("LabelSettings_spgvh")
-
 [node name="StartButton" type="Button" parent="GUI"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -54.0
-offset_top = 45.0
-offset_right = 58.0
-offset_bottom = 84.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -243.0
+offset_top = -213.0
+offset_right = -43.0
+offset_bottom = -133.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("2_ca5db")
+theme_override_font_sizes/font_size = 20
+disabled = true
 shortcut = SubResource("Shortcut_3visq")
+shortcut_in_tooltip = false
 text = "START"
 
 [node name="QuitButton" type="Button" parent="GUI"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -53.0
-offset_top = 98.0
-offset_right = 59.0
-offset_bottom = 137.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -243.0
+offset_top = -120.0
+offset_right = -43.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("2_ca5db")
+theme_override_font_sizes/font_size = 20
+disabled = true
 shortcut = SubResource("Shortcut_kmj1n")
+shortcut_in_tooltip = false
 text = "QUIT
 "
 
@@ -79,8 +85,8 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
-offset_top = -155.0
-offset_right = 626.0
+offset_top = -193.0
+offset_right = 662.0
 offset_bottom = -25.0
 grow_vertical = 0
 text = "Move Left: Left Arrow / A / Joystick Left / D-Pad Left
@@ -91,5 +97,7 @@ label_settings = SubResource("LabelSettings_x5idf")
 vertical_alignment = 1
 autowrap_mode = 2
 
+[connection signal="fade_in_completed" from="Transition" to="." method="_on_transition_fade_in_completed"]
+[connection signal="fade_out_completed" from="Transition" to="." method="_on_transition_fade_out_completed"]
 [connection signal="pressed" from="GUI/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="GUI/QuitButton" to="." method="_on_quit_button_pressed"]

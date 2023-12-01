@@ -73,6 +73,7 @@ func new_game():
 	day = 1
 	progress = 0
 	currency = 0
+	day_start_progress = 0
 	
 	for a in artifact_list as Array[Artifact]:
 		a.collected = false
