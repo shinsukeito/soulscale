@@ -1,22 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://bw0pi7yomytnh"]
+[gd_scene load_steps=8 format=3 uid="uid://bw0pi7yomytnh"]
 
 [ext_resource type="Texture2D" uid="uid://3ho3y6rpoabo" path="res://assets/visual/Dialogue_Box.png" id="2_anfb0"]
 [ext_resource type="Script" path="res://scripts/dialoguebox.gd" id="2_u0jlr"]
 [ext_resource type="FontFile" uid="uid://bk5q15y1568n4" path="res://assets/fonts/Cabin-Bold.ttf" id="3_uao7r"]
 [ext_resource type="FontFile" uid="uid://c8fyntb63m1u7" path="res://assets/fonts/Cabin-BoldItalic.ttf" id="4_wghwg"]
 [ext_resource type="Script" path="res://scripts/blink.gd" id="5_aaari"]
+[ext_resource type="Texture2D" uid="uid://c7kv3xuxaewmj" path="res://assets/visual/Button.png" id="5_qwx1n"]
 
-[sub_resource type="InputEventAction" id="InputEventAction_uxohg"]
-action = &"shield"
-
-[sub_resource type="Shortcut" id="Shortcut_xwc0n"]
-events = [SubResource("InputEventAction_uxohg")]
-
-[sub_resource type="InputEventAction" id="InputEventAction_k41q7"]
-action = &"jump"
-
-[sub_resource type="Shortcut" id="Shortcut_uyny8"]
-events = [SubResource("InputEventAction_k41q7")]
+[sub_resource type="LabelSettings" id="LabelSettings_igjtt"]
+font = ExtResource("3_uao7r")
+font_size = 48
+font_color = Color(0, 0, 0, 1)
 
 [node name="DialogueBox" type="Node2D"]
 script = ExtResource("2_u0jlr")
@@ -46,25 +40,43 @@ theme_override_font_sizes/bold_italics_font_size = 48
 bbcode_enabled = true
 
 [node name="Answers" type="Node2D" parent="."]
-visible = false
 
-[node name="YesButton" type="Button" parent="Answers"]
-offset_left = 261.0
-offset_top = 398.0
-offset_right = 552.0
-offset_bottom = 469.0
-shortcut = SubResource("Shortcut_xwc0n")
-text = "YES
-"
+[node name="BoxYes" type="Sprite2D" parent="Answers"]
+position = Vector2(432, 361.5)
+scale = Vector2(0.323986, 0.334081)
+texture = ExtResource("5_qwx1n")
 
-[node name="NoButton" type="Button" parent="Answers"]
-offset_left = 799.0
-offset_top = 398.0
-offset_right = 1090.0
-offset_bottom = 469.0
-shortcut = SubResource("Shortcut_uyny8")
-text = "NO
+[node name="BoxNo" type="Sprite2D" parent="Answers"]
+position = Vector2(914, 361.5)
+scale = Vector2(0.323986, 0.334081)
+texture = ExtResource("5_qwx1n")
+
+[node name="LabelYes" type="Label" parent="Answers"]
+offset_left = 390.0
+offset_top = 331.5
+offset_right = 460.0
+offset_bottom = 393.5
+text = "Yes"
+label_settings = SubResource("LabelSettings_igjtt")
+
+[node name="LabelNo" type="Label" parent="Answers"]
+offset_left = 872.0
+offset_top = 331.5
+offset_right = 942.0
+offset_bottom = 393.5
+text = "No
 "
+label_settings = SubResource("LabelSettings_igjtt")
+
+[node name="SelectorYes" type="Polygon2D" parent="Answers"]
+position = Vector2(10, -49.4999)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(242, 394, 243, 441, 273, 416)
+
+[node name="SelectorNo" type="Polygon2D" parent="Answers"]
+position = Vector2(495, -49.4999)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(242, 394, 243, 441, 273, 416)
 
 [node name="Indicator" type="Polygon2D" parent="."]
 visible = false
@@ -77,6 +89,4 @@ wait_time = 0.4
 autostart = true
 
 [connection signal="timeout" from="LetterTimer" to="." method="_on_letter_timer_timeout"]
-[connection signal="pressed" from="Answers/YesButton" to="." method="_on_yes_button_pressed"]
-[connection signal="pressed" from="Answers/NoButton" to="." method="_on_no_button_pressed"]
 [connection signal="timeout" from="Indicator/IndicatorTimer" to="Indicator" method="_on_indicator_timer_timeout"]

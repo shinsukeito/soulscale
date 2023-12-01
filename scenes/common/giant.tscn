@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://wvc313jlr258"]
+[gd_scene load_steps=32 format=3 uid="uid://wvc313jlr258"]
 
 [ext_resource type="Script" path="res://scripts/giant.gd" id="1_ja3nj"]
 [ext_resource type="Texture2D" uid="uid://0qdpw5ftsgqd" path="res://assets/visual/Player/Run/run 1 contact r.png" id="2_3s6wd"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://crya5syqf67jm" path="res://assets/visual/Player/Run/run 6 down l.png" id="21_dwtn0"]
 [ext_resource type="Texture2D" uid="uid://bniidlrp6fggu" path="res://assets/visual/Player/Run/run 7 passing l.png" id="22_n4r6l"]
 [ext_resource type="Texture2D" uid="uid://da8706mayjc6e" path="res://assets/visual/Player/Run/run 8 up l.png" id="23_5sebd"]
+[ext_resource type="Texture2D" uid="uid://c2u8v31d2dr8f" path="res://assets/visual/glow.png" id="24_to41y"]
 
 [sub_resource type="Animation" id="Animation_eyelu"]
 resource_name = "fall"
@@ -176,7 +177,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5633"]
-size = Vector2(23.958, 79.78)
+size = Vector2(27.916, 83)
 
 [node name="Giant" type="CharacterBody2D"]
 collision_mask = 15
@@ -198,7 +199,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 28.89)
+position = Vector2(-0.958, 28.06)
 shape = SubResource("RectangleShape2D_x5633")
 
 [node name="ShieldTimer" type="Timer" parent="."]
@@ -209,6 +210,12 @@ one_shot = true
 [node name="FlinchTimer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="Smoke" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 0.443137)
+self_modulate = Color(0.329412, 0.207843, 0.443137, 0.419608)
+texture = ExtResource("24_to41y")
 
 [connection signal="animation_finished" from="Sprite2D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="ShieldTimer" to="." method="_on_shield_timer_timeout"]

@@ -8,6 +8,8 @@ var index = 0
 var message = ""
 var pause_letters = ".,!?-"
 
+var selection = null
+
 func say(msg):
 	$Message.text = ""
 	index = 0
@@ -42,12 +44,35 @@ func _on_letter_timer_timeout():
 		finished_speaking.emit()
 		$Indicator.appear(true)
 			
-	index += 1 
+	index += 1
+	
+func select_pressed():
+	if selection == null: return
+	
+	if selection == true:
+		yes.emit()
+		$Answers.visible = false
+	else:
+		no.emit()
+		$Answers.visible = false
+	
+func left_pressed():
+	if selection == null || selection == false:
+		set_selection(true)
 
-func _on_yes_button_pressed():
-	yes.emit()
-	$Answers.visible = false
+func right_pressed():
+	if selection == null || selection == true:
+		set_selection(false)
 
-func _on_no_button_pressed():
-	no.emit()
-	$Answers.visible = false
+func set_selection(value):
+	selection = value
+	
+	if value == null:
+		$Answers/SelectorYes.visible = false
+		$Answers/SelectorNo.visible = false
+	elif value == true:
+		$Answers/SelectorYes.visible = true
+		$Answers/SelectorNo.visible = false
+	elif value == false:
+		$Answers/SelectorYes.visible = false
+		$Answers/SelectorNo.visible = true

@@ -28,7 +28,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	if !questioning: return
+	
+	if Input.is_action_just_pressed("left"):
+		$DialogueBox.left_pressed()
+	elif Input.is_action_just_pressed("right"):
+		$DialogueBox.right_pressed()
 
 
 func show_messages(companion, messages):
@@ -55,6 +60,8 @@ func _show_next_message():
 func trigger():
 	if $DialogueBox.speaking():
 		$DialogueBox.skip()
+	elif questioning:
+		$DialogueBox.select_pressed()
 	elif !questioning:
 		if message_queue.size() > 0:
 			_show_next_message()
@@ -81,18 +88,15 @@ func _on_dialogue_box_finished_speaking():
 
 func _on_dialogue_box_no():
 	_set_returned(false)
-	_show_dialogue_box(false)
 	questioning = false
 
 
 func _on_dialogue_box_yes():
 	_set_returned(true)
-	_show_dialogue_box(false)
 	questioning = false
 
 
 func _set_returned(value):
-	if !questioning:
-		return
+	if !questioning: return
 
 	artifact_returned.emit(value)

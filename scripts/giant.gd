@@ -55,18 +55,24 @@ func _physics_process(_delta):
 			
 		if Input.is_action_pressed("shield") && !cooldown:
 			set_shielding(true)
-			cooldown = true
 
 	move_and_slide()
+	
+	if shielding:
+		var pct = ($ShieldTimer.time_left / $ShieldTimer.wait_time) * 0.3 + 0.7
+		$Smoke.scale = Vector2(pct, pct)
 
 func set_shielding(value):
 	shielding = value
 	if value:
-		$Sprite2D.set_modulate(Color(0.7, 1, 0.7, 1))
+		$Sprite2D.set_modulate(Color(0.33, 0.21, 0.44, 0.5))
 		$ShieldTimer.start(shield_length)
+		$Smoke.visible = true
+		cooldown = true
 	else:
-		$Sprite2D.set_modulate(Color(0.75, 0.75, 0.75, 1))
+		$Sprite2D.set_modulate(Color(0.8, 0.8, 0.8, 1))
 		$ShieldCooldownTimer.start(shield_cooldown)
+		$Smoke.visible = false
 	
 func set_flinch(value):
 	flinching = value
@@ -105,6 +111,7 @@ func refresh_shield():
 	$ShieldTimer.stop()
 	$ShieldCooldownTimer.stop()
 	$Sprite2D.set_modulate(Color(1, 1, 1, 1))
+	$Smoke.visible = false
 
 func _on_shield_timer_timeout():
 	set_shielding(false)

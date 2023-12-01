@@ -76,8 +76,12 @@ func _on_dialogue_artifact_returned(value: bool):
 	var npc = find_child(current_npc, false)
 	npc.hide_marker()
 	
-	$Tent.refresh_marker()
+	if value:
+		$Dialogue.show_messages(current_npc, Companions.dialogue[current_npc].after_messages[0])
+	else:
+		$Dialogue.show_messages(current_npc, Companions.dialogue[current_npc].after_messages[1])
 	
+	$Tent.refresh_marker()
 	$GUI.update_inventory()
 	
 	global.calculate_artifact_power($Giant)
