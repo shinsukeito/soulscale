@@ -32,6 +32,8 @@ func _ready():
 	global = get_node("/root/Global")
 	sound = get_node("/root/Sound")
 	
+	floor_snap_length = 15
+	
 	global.calculate_artifact_power(self)
 	
 	$ShieldTimer.wait_time = shield_length
