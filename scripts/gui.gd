@@ -19,6 +19,7 @@ func update_progress_label():
 
 func update_stamina():
 	$StaminaBar.value = global.stamina
+	$StaminaBar.max_value = global.max_stamina
 	$StaminaLabel.text = str(ceil(global.stamina))
 
 func update_currency():

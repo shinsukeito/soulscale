@@ -58,6 +58,7 @@ var artifact_textures = {
 # speed, jump, shield length, max stamina, armor
 var base_power: Power = Power.new(160, 800, 1, 40, 0)
 var current_power
+var potions_collected = 0
 
 # Called when the node enters the scene tree for the first time. 
 func _ready():
@@ -74,6 +75,7 @@ func new_game():
 	progress = 0
 	currency = 0
 	day_start_progress = 0
+	potions_collected = 0
 	
 	for a in artifact_list as Array[Artifact]:
 		a.collected = false
@@ -93,6 +95,7 @@ func change_stamina(value):
 	
 func change_currency(value):
 	currency = max(value, 0)
+	
 
 func current_artifact_texture():
 	return artifact_textures[artifact_list[progress].name]
@@ -132,7 +135,9 @@ func calculate_artifact_power(giant):
 	giant.speed = cumulative_power.speed
 	giant.jump = cumulative_power.jump
 	giant.shield_length = cumulative_power.shield_length
-	max_stamina = cumulative_power.max_stamina
 	giant.armor = cumulative_power.armor
+	
+	cumulative_power.max_stamina += 5 * potions_collected	
+	max_stamina = cumulative_power.max_stamina
 	
 	current_power = cumulative_power
