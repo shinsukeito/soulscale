@@ -3,6 +3,7 @@ extends CanvasLayer
 signal finished_speaking
 signal artifact_returned
 
+var sound
 var global: Global
 
 @export var left = true
@@ -18,6 +19,7 @@ var message_queue = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	global = get_node("/root/Global")
+	sound = get_node("/root/Sound")
 	giant = get_parent().get_node("Giant")
 
 	if left:
@@ -31,8 +33,10 @@ func _process(_delta):
 	if !questioning: return
 	
 	if Input.is_action_just_pressed("left"):
+		sound.play_sound("Hover", false)
 		$DialogueBox.left_pressed()
 	elif Input.is_action_just_pressed("right"):
+		sound.play_sound("Hover", false)
 		$DialogueBox.right_pressed()
 
 
@@ -59,6 +63,7 @@ func _show_next_message():
 
 
 func trigger():
+	sound.play_sound("Click", false)
 	if $DialogueBox.speaking():
 		$DialogueBox.skip()
 	elif questioning:

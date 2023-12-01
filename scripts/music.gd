@@ -11,7 +11,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if $TransitionTimer.is_stopped(): return
-	if next_music == prev_music: return
 	
 	var pct = $TransitionTimer.time_left / $TransitionTimer.wait_time
 	
@@ -36,6 +35,8 @@ func _process(delta):
 			$MusicCamp.volume_db = -80 + (80 * pct)
 
 func switch_music(music, time):
+	if next_music == music: return
+	
 	prev_music = next_music
 	next_music = music
 	$TransitionTimer.start(time)

@@ -6,7 +6,8 @@ signal potion_collected
 signal artifact_collected
 
 var global
-	
+var sound
+
 @export var speed = 90
 @export var friction = 0.6
 @export var jump = 1000
@@ -15,6 +16,8 @@ var global
 @export var shield_cooldown = 2
 @export var flinch_length = 0.05
 @export var flinch_force = 5
+
+@export var bound = false
 
 var armor = 0
 
@@ -27,6 +30,8 @@ var frozen = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	global = get_node("/root/Global")
+	sound = get_node("/root/Sound")
+	
 	global.calculate_artifact_power(self)
 	
 	$ShieldTimer.wait_time = shield_length
@@ -52,9 +57,11 @@ func _physics_process(_delta):
 
 		if Input.is_action_pressed("jump") && is_on_floor():
 			velocity.y = -jump
+			sound.play_sound("Jump", true)
 			
-		if Input.is_action_pressed("shield") && !cooldown:
-			set_shielding(true)
+		if !bound:
+			if Input.is_action_pressed("shield") && !cooldown:
+				set_shielding(true)
 
 	move_and_slide()
 	
@@ -69,10 +76,12 @@ func set_shielding(value):
 		$ShieldTimer.start(shield_length)
 		$Smoke.visible = true
 		cooldown = true
+		sound.play_sound("Shield", false)
 	else:
 		$Sprite2D.set_modulate(Color(0.8, 0.8, 0.8, 1))
 		$ShieldCooldownTimer.start(shield_cooldown)
 		$Smoke.visible = false
+		sound.play_sound("ShieldBreak", false)
 	
 func set_flinch(value):
 	flinching = value
@@ -92,18 +101,26 @@ func on_hazard(projectile):
 	var dmg = min(0, -5 + armor)
 	hazard_hit.emit(dmg)
 	set_flinch(true)
+	
+	if shielding:
+		sound.play_sound("Dodge", true)
+	else:
+		sound.play_sound("Hit", true)
 
 func on_currency(_collectible):
 	currency_collected.emit(1)
+	sound.play_sound("Coin", true)
 
 func on_potion(_collectible):
 	global.potions_collected += 1
 	global.calculate_artifact_power(self)
 	potion_collected.emit(4)
+	sound.play_sound("Potion", true)
 	
 func on_artifact(_collectible):
 	artifact_collected.emit()
 	global.calculate_artifact_power(self)
+	sound.play_sound("Artifact", false)
 	
 func refresh_shield():
 	shielding = false
@@ -173,6 +190,7 @@ func update_animation():
 				else:
 					$Sprite2D/AnimationPlayer.play("land")
 					state = State.LAND
+					sound.play_sound("Land", true)
 
 func _on_animation_player_animation_finished(anim_name):
 	match(anim_name):

@@ -50,6 +50,7 @@ texture = ExtResource("8_t8jwt")
 [node name="Giant" parent="." instance=ExtResource("6_nc6tn")]
 position = Vector2(571, 640)
 scale = Vector2(2.1, 2.1)
+bound = true
 
 [node name="Mercenary" parent="." instance=ExtResource("7_uk68a")]
 position = Vector2(2366, 646)
