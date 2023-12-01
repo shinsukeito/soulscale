@@ -73,7 +73,7 @@ position = Vector2(240, 912)
 [node name="Shooter" parent="." instance=ExtResource("4_qc7xv")]
 position = Vector2(228, 642)
 rotation = 3.14159
-shoot_frequency = 4.0
+shoot_frequency = 3.5
 projectile_speed = 1000
 projectile_homing = true
 targeting = true

@@ -17,7 +17,7 @@ func _ready():
 	global = get_node("/root/Global")
 	
 	screen_size = get_viewport_rect().size
-	generate_room(1920 + global.progress * 200)
+	generate_room(1920 + global.progress * 350)
 	
 	$Camera.clamp_area = Area.new(
 		map_area.x_min + screen_size.x / 2,
