@@ -39,6 +39,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_pressed("menu"):
 		get_tree().change_scene_to_file("res://scenes/start.tscn")
+		get_node("/root/Music").switch_music("title", 2)
 		
 	if starting || global.stamina <= 0: return
 		
@@ -90,6 +91,7 @@ func change_stamina(value):
 	
 	if global.stamina <= 0:
 		$Transition.fade(false)
+		get_node("/root/Music").switch_music("camp", 2)
 
 func change_currency(value):
 	global.change_currency(global.currency + value)

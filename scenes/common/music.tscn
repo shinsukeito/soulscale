@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg6f7o43ttr5x"]
+
+[ext_resource type="Script" path="res://scripts/music.gd" id="1_2i7jh"]
+[ext_resource type="AudioStream" uid="uid://dibe3qutw820k" path="res://assets/audio/camp_loop_github2023_2.wav" id="1_7wbk4"]
+[ext_resource type="AudioStream" uid="uid://kjxklr7rb32f" path="res://assets/audio/climbing_loop_github2023_2.wav" id="3_somim"]
+
+[node name="Music" type="Node2D"]
+script = ExtResource("1_2i7jh")
+
+[node name="MusicCamp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_7wbk4")
+autoplay = true
+
+[node name="MusicClimb" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_somim")
+volume_db = -80.0
+autoplay = true
+
+[node name="TransitionTimer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
