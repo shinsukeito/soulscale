@@ -10,22 +10,15 @@ script = ExtResource("1_65a6m")
 [node name="Lamp" parent="." instance=ExtResource("2_tfptp")]
 
 [node name="Knife" parent="." instance=ExtResource("2_tfptp")]
-position = Vector2(52, 0)
 
 [node name="Menat" parent="." instance=ExtResource("2_tfptp")]
-position = Vector2(104, 0)
 
 [node name="Bust" parent="." instance=ExtResource("2_tfptp")]
-position = Vector2(156, 0)
 
 [node name="Mirror" parent="." instance=ExtResource("2_tfptp")]
-position = Vector2(211, 0)
 
 [node name="Jewellery" parent="." instance=ExtResource("2_tfptp")]
-position = Vector2(263, 0)
 
 [node name="Amulet" parent="." instance=ExtResource("2_tfptp")]
-position = Vector2(316, 0)
 
 [node name="Chalice" parent="." instance=ExtResource("2_tfptp")]
-position = Vector2(369, 0)

@@ -29,8 +29,6 @@ func _ready():
 	if !global.is_artifact_collected():
 		spawn_artifact()
 	
-	$GUI.update_stamina()
-	
 	if global.day_start_progress != global.progress:
 		$Transition.fade_in_time = 0.2
 	
@@ -122,6 +120,7 @@ func _on_giant_currency_collected(amount):
 
 func _on_giant_potion_collected(amount):
 	change_stamina(amount)
+	$GUI.update_potions()
 
 func _on_giant_artifact_collected():
 	global.artifact_collected()
@@ -135,3 +134,4 @@ func _on_transition_fade_in_completed():
 
 func _on_transition_fade_out_completed():
 	get_tree().change_scene_to_file("res://scenes/camp.tscn")
+	global.stamina = global.max_stamina

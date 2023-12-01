@@ -137,7 +137,7 @@ func calculate_artifact_power(giant):
 	giant.shield_length = cumulative_power.shield_length
 	giant.armor = cumulative_power.armor
 	
-	cumulative_power.max_stamina += 5 * potions_collected	
+	cumulative_power.max_stamina += 1 * potions_collected
 	max_stamina = cumulative_power.max_stamina
 	
 	current_power = cumulative_power

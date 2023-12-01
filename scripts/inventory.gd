@@ -2,6 +2,8 @@ extends Node2D
 
 var global
 
+const return_color = Color(0, 0, 0, 0.6)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	global = get_node("/root/Global")
@@ -14,6 +16,26 @@ func _ready():
 	$Amulet/Artifact.texture = global.artifact_textures["Amulet"]
 	$Jewellery/Artifact.texture = global.artifact_textures["Jewellery"]
 	$Chalice/Artifact.texture = global.artifact_textures["Chalice"]
+	
+	for i in global.artifact_list.size():
+		var a = global.artifact_list[i] as Artifact
+		match a.name:
+			"Oil Lamp":
+				$Lamp.position.x = i * 50
+			"Flint Knife":
+				$Knife.position.x = i * 50
+			"Menat":
+				$Menat.position.x = i * 50
+			"Bust of a God":
+				$Bust.position.x = i * 50
+			"Mirror":
+				$Mirror.position.x = i * 50
+			"Amulet":
+				$Amulet.position.x = i * 50
+			"Jewellery":
+				$Jewellery.position.x = i * 50
+			"Chalice":
+				$Chalice.position.x = i * 50
 	
 	refresh()
 
@@ -47,18 +69,18 @@ func set_collected(name):
 func set_returned(name):
 		match name:
 			"Oil Lamp":
-				$Lamp/Tick.visible = true
+				$Lamp/Artifact.modulate = return_color
 			"Flint Knife":
-				$Knife/Tick.visible = true
+				$Knife/Artifact.modulate = return_color
 			"Menat":
-				$Menat/Tick.visible = true
+				$Menat/Artifact.modulate = return_color
 			"Bust of a God":
-				$Bust/Tick.visible = true
+				$Bust/Artifact.modulate = return_color
 			"Mirror":
-				$Mirror/Tick.visible = true
+				$Mirror/Artifact.modulate = return_color
 			"Amulet":
-				$Amulet/Tick.visible = true
+				$Amulet/Artifact.modulate = return_color
 			"Jewellery":
-				$Jewellery/Tick.visible = true
+				$Jewellery/Artifact.modulate = return_color
 			"Chalice":
-				$Chalice/Tick.visible = true
+				$Chalice/Artifact.modulate = return_color
