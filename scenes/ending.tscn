@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://df2rhajes22or"]
+[gd_scene load_steps=6 format=3 uid="uid://df2rhajes22or"]
 
 [ext_resource type="Script" path="res://scripts/ending.gd" id="1_aruec"]
 [ext_resource type="PackedScene" uid="uid://b22dckdho80ey" path="res://scenes/common/transition.tscn" id="2_lyofh"]
-[ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/common/debugger.tscn" id="3_2nctk"]
 [ext_resource type="PackedScene" uid="uid://cslxaxhgvxwyt" path="res://scenes/common/gui.tscn" id="4_a5rnh"]
 [ext_resource type="PackedScene" uid="uid://wvt2suixd2jw" path="res://scenes/common/dialogue.tscn" id="5_4hlnh"]
 [ext_resource type="Texture2D" uid="uid://c4rsed50ybawm" path="res://assets/visual/End_Judgement.png" id="5_c41ig"]
@@ -13,8 +12,6 @@ script = ExtResource("1_aruec")
 [node name="Transition" parent="." instance=ExtResource("2_lyofh")]
 fade_in_time = 1.0
 fade_out_time = 2.0
-
-[node name="Debugger" parent="." instance=ExtResource("3_2nctk")]
 
 [node name="GUI" parent="." instance=ExtResource("4_a5rnh")]
 
