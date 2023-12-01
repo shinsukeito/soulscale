@@ -78,7 +78,7 @@ func set_shielding(value):
 		cooldown = true
 		sound.play_sound("Shield", false)
 	else:
-		$Sprite2D.set_modulate(Color(0.8, 0.8, 0.8, 1))
+		$Sprite2D.set_modulate(Color(1, 0.5, 0.5, 1))
 		$ShieldCooldownTimer.start(shield_cooldown)
 		$Smoke.visible = false
 		sound.play_sound("ShieldBreak", false)
