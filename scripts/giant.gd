@@ -93,7 +93,7 @@ func on_currency(_collectible):
 func on_potion(_collectible):
 	global.potions_collected += 1
 	global.calculate_artifact_power(self)
-	potion_collected.emit(8)
+	potion_collected.emit(4)
 	
 func on_artifact(_collectible):
 	artifact_collected.emit()
