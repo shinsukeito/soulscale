@@ -177,7 +177,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5633"]
-size = Vector2(27.916, 83)
+size = Vector2(23.958, 79.78)
 
 [node name="Giant" type="CharacterBody2D"]
 collision_mask = 15
@@ -199,7 +199,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.958, 28.06)
+position = Vector2(-1, 28.89)
 shape = SubResource("RectangleShape2D_x5633")
 
 [node name="ShieldTimer" type="Timer" parent="."]
