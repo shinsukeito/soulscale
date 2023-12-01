@@ -10,8 +10,6 @@ var current_npc = ""
 # Called when the node enters the scene tree for t he first time.
 func _ready():
 	global = get_node("/root/Global")
-	$CanvasLayer/DayLabel.text = "NIGHT " + str(global.day) + "/8"
-	$CanvasLayer/ProgressLabel.text = "PROGRESS " + str(global.progress + 1) + "/8"
 
 	var screen_size = get_viewport_rect().size
 	var screen_offset = screen_size / 2
@@ -80,7 +78,8 @@ func _on_dialogue_artifact_returned(value: bool):
 	
 	$Tent.refresh_marker()
 	
-	$CanvasLayer/Inventory.refresh()
+	$GUI.update_inventory()
+	
 	global.calculate_artifact_power($Giant)
 
 

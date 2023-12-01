@@ -1,15 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://cslxaxhgvxwyt"]
+[gd_scene load_steps=8 format=3 uid="uid://cslxaxhgvxwyt"]
 
 [ext_resource type="Script" path="res://scripts/gui.gd" id="1_p8jsj"]
 [ext_resource type="PackedScene" uid="uid://dyid85hafptel" path="res://scenes/climb/inventory.tscn" id="2_fh52s"]
+[ext_resource type="FontFile" uid="uid://bk5q15y1568n4" path="res://assets/fonts/Cabin-Bold.ttf" id="2_kbpf8"]
+[ext_resource type="Texture2D" uid="uid://nf2i8f0aobw4" path="res://assets/visual/Objects/Coin.png" id="2_rujm0"]
+[ext_resource type="Texture2D" uid="uid://bghhdmwwc0sug" path="res://assets/visual/Objects/Medicine.png" id="5_72b62"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_ns2y1"]
-font_size = 48
+[sub_resource type="LabelSettings" id="LabelSettings_3hd4r"]
+font = ExtResource("2_kbpf8")
+font_size = 56
 
 [sub_resource type="LabelSettings" id="LabelSettings_bw1if"]
-font_size = 24
-
-[sub_resource type="LabelSettings" id="LabelSettings_tatfy"]
+font = ExtResource("2_kbpf8")
 font_size = 24
 
 [node name="GUI" type="CanvasLayer"]
@@ -30,13 +32,13 @@ show_percentage = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -846.0
-offset_top = 10.0
-offset_right = -765.0
-offset_bottom = 80.0
+offset_left = -847.0
+offset_top = 9.0
+offset_right = -733.0
+offset_bottom = 90.0
 grow_horizontal = 0
 text = "100"
-label_settings = SubResource("LabelSettings_ns2y1")
+label_settings = SubResource("LabelSettings_3hd4r")
 
 [node name="DayLabel" type="Label" parent="."]
 anchors_preset = 5
@@ -61,19 +63,33 @@ offset_right = 67.0
 offset_bottom = 74.0
 grow_horizontal = 2
 text = "PROGRESS"
-label_settings = SubResource("LabelSettings_tatfy")
+label_settings = SubResource("LabelSettings_bw1if")
 horizontal_alignment = 1
 
+[node name="CurrencyIcon" type="Sprite2D" parent="."]
+position = Vector2(45, 92)
+scale = Vector2(0.0977778, 0.0977778)
+texture = ExtResource("2_rujm0")
+
 [node name="CurrencyLabel" type="Label" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -59.0
-offset_top = 89.0
-offset_right = -19.0
-offset_bottom = 115.0
-grow_horizontal = 0
+offset_left = 62.0
+offset_top = 74.0
+offset_right = 113.0
+offset_bottom = 107.0
 text = "000"
-horizontal_alignment = 2
+label_settings = SubResource("LabelSettings_bw1if")
+
+[node name="PotionIcon" type="Sprite2D" parent="."]
+position = Vector2(43, 126)
+scale = Vector2(0.106667, 0.106667)
+texture = ExtResource("5_72b62")
+
+[node name="PotionLabel" type="Label" parent="."]
+offset_left = 62.0
+offset_top = 109.0
+offset_right = 113.0
+offset_bottom = 142.0
+text = "000"
+label_settings = SubResource("LabelSettings_bw1if")
 
 [node name="Inventory" parent="." instance=ExtResource("2_fh52s")]

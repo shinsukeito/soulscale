@@ -1,6 +1,6 @@
 extends Camera2D
 
-var y_offset = -320
+var y_offset = -240
 var clamp_area: Area
 var giant: CharacterBody2D
 
