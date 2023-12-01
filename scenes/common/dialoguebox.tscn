@@ -40,6 +40,7 @@ theme_override_font_sizes/bold_italics_font_size = 48
 bbcode_enabled = true
 
 [node name="Answers" type="Node2D" parent="."]
+visible = false
 
 [node name="BoxYes" type="Sprite2D" parent="Answers"]
 position = Vector2(432, 361.5)
@@ -69,11 +70,13 @@ text = "No
 label_settings = SubResource("LabelSettings_igjtt")
 
 [node name="SelectorYes" type="Polygon2D" parent="Answers"]
+visible = false
 position = Vector2(10, -49.4999)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(242, 394, 243, 441, 273, 416)
 
 [node name="SelectorNo" type="Polygon2D" parent="Answers"]
+visible = false
 position = Vector2(495, -49.4999)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(242, 394, 243, 441, 273, 416)
