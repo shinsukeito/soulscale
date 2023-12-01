@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://bw0pi7yomytnh" path="res://scenes/common/dialoguebox.tscn" id="2_dqc62"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_03jv6"]
-load_path = "res://.godot/imported/Game_Jam_Charas_-_PC.png-fbf84f4a2b531477cc7bdac391c01abe.ctex"
 
 [node name="Dialogue" type="CanvasLayer"]
 script = ExtResource("1_gvx2q")

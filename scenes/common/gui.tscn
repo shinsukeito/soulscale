@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cslxaxhgvxwyt"]
+[gd_scene load_steps=10 format=3 uid="uid://cslxaxhgvxwyt"]
 
 [ext_resource type="Script" path="res://scripts/gui.gd" id="1_p8jsj"]
 [ext_resource type="PackedScene" uid="uid://dyid85hafptel" path="res://scenes/climb/inventory.tscn" id="2_fh52s"]
@@ -13,6 +13,14 @@ font_size = 56
 [sub_resource type="LabelSettings" id="LabelSettings_bw1if"]
 font = ExtResource("2_kbpf8")
 font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_12tuk"]
+font = ExtResource("2_kbpf8")
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_o658s"]
+font = ExtResource("2_kbpf8")
+font_size = 40
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource("1_p8jsj")
@@ -53,43 +61,41 @@ text = "DAY 1"
 label_settings = SubResource("LabelSettings_bw1if")
 horizontal_alignment = 1
 
-[node name="ProgressLabel" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -67.0
-offset_top = 37.0
-offset_right = 67.0
-offset_bottom = 74.0
-grow_horizontal = 2
-text = "PROGRESS"
-label_settings = SubResource("LabelSettings_bw1if")
-horizontal_alignment = 1
-
 [node name="CurrencyIcon" type="Sprite2D" parent="."]
-position = Vector2(45, 92)
-scale = Vector2(0.0977778, 0.0977778)
+position = Vector2(50, 155)
+scale = Vector2(0.155556, 0.155556)
 texture = ExtResource("2_rujm0")
 
 [node name="CurrencyLabel" type="Label" parent="."]
-offset_left = 62.0
-offset_top = 74.0
-offset_right = 113.0
-offset_bottom = 107.0
-text = "000"
-label_settings = SubResource("LabelSettings_bw1if")
+offset_left = 72.0
+offset_top = 134.0
+offset_right = 157.0
+offset_bottom = 176.0
+text = "x000"
+label_settings = SubResource("LabelSettings_12tuk")
+vertical_alignment = 1
 
 [node name="PotionIcon" type="Sprite2D" parent="."]
-position = Vector2(43, 126)
-scale = Vector2(0.106667, 0.106667)
+position = Vector2(47, 204)
+scale = Vector2(0.177778, 0.177778)
 texture = ExtResource("5_72b62")
 
 [node name="PotionLabel" type="Label" parent="."]
-offset_left = 62.0
-offset_top = 109.0
-offset_right = 113.0
-offset_bottom = 142.0
-text = "000"
-label_settings = SubResource("LabelSettings_bw1if")
+offset_left = 72.0
+offset_top = 186.0
+offset_right = 157.0
+offset_bottom = 228.0
+text = "x000"
+label_settings = SubResource("LabelSettings_12tuk")
+vertical_alignment = 1
 
 [node name="Inventory" parent="." instance=ExtResource("2_fh52s")]
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 27.0
+offset_top = 72.0
+offset_right = 254.0
+offset_bottom = 134.0
+text = "SCORE: 000"
+label_settings = SubResource("LabelSettings_o658s")
+vertical_alignment = 1

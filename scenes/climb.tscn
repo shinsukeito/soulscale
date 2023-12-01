@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bpahixkij5lvk" path="res://scenes/climb/modules/module_smile.tscn" id="5_2benw"]
 [ext_resource type="PackedScene" uid="uid://bwkwtaue0x3yi" path="res://scenes/common/camera.tscn" id="5_gsf0x"]
 [ext_resource type="PackedScene" uid="uid://b22dckdho80ey" path="res://scenes/common/transition.tscn" id="5_vp01x"]
-[ext_resource type="PackedScene" uid="uid://cslxaxhgvxwyt" path="res://scenes/climb/gui.tscn" id="6_alj40"]
+[ext_resource type="PackedScene" uid="uid://cslxaxhgvxwyt" path="res://scenes/common/gui.tscn" id="6_alj40"]
 [ext_resource type="PackedScene" uid="uid://bg5du56kek2ie" path="res://scenes/climb/modules/module_4.tscn" id="6_osg45"]
 [ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/common/debugger.tscn" id="7_ei4yj"]
 [ext_resource type="PackedScene" uid="uid://b5qiq18hr2n5y" path="res://scenes/climb/modules/module_cliff.tscn" id="7_ojkd8"]

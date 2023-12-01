@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b22dckdho80ey" path="res://scenes/common/transition.tscn" id="2_tqpu7"]
 [ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/common/debugger.tscn" id="3_wvro7"]
 [ext_resource type="PackedScene" uid="uid://wvt2suixd2jw" path="res://scenes/common/dialogue.tscn" id="4_5sa2l"]
-[ext_resource type="PackedScene" uid="uid://cslxaxhgvxwyt" path="res://scenes/climb/gui.tscn" id="5_i3luj"]
+[ext_resource type="PackedScene" uid="uid://cslxaxhgvxwyt" path="res://scenes/common/gui.tscn" id="5_i3luj"]
 [ext_resource type="PackedScene" uid="uid://wvc313jlr258" path="res://scenes/common/giant.tscn" id="6_nc6tn"]
 [ext_resource type="Texture2D" uid="uid://dawdx71pww6hm" path="res://assets/visual/Campsite - ground (moved cat).png" id="7_8oix5"]
 [ext_resource type="PackedScene" uid="uid://cg2u0as37g0b7" path="res://scenes/camp/npc.tscn" id="7_uk68a"]

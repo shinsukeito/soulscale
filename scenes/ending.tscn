@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/ending.gd" id="1_aruec"]
 [ext_resource type="PackedScene" uid="uid://b22dckdho80ey" path="res://scenes/common/transition.tscn" id="2_lyofh"]
 [ext_resource type="PackedScene" uid="uid://cncpw54e7xo7" path="res://scenes/common/debugger.tscn" id="3_2nctk"]
-[ext_resource type="PackedScene" uid="uid://dyid85hafptel" path="res://scenes/climb/inventory.tscn" id="4_1omjn"]
+[ext_resource type="PackedScene" uid="uid://cslxaxhgvxwyt" path="res://scenes/common/gui.tscn" id="4_a5rnh"]
 [ext_resource type="PackedScene" uid="uid://wvt2suixd2jw" path="res://scenes/common/dialogue.tscn" id="5_4hlnh"]
 [ext_resource type="Texture2D" uid="uid://c4rsed50ybawm" path="res://assets/visual/End_Judgement.png" id="5_c41ig"]
 
@@ -16,9 +16,7 @@ fade_out_time = 2.0
 
 [node name="Debugger" parent="." instance=ExtResource("3_2nctk")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Inventory" parent="CanvasLayer" instance=ExtResource("4_1omjn")]
+[node name="GUI" parent="." instance=ExtResource("4_a5rnh")]
 
 [node name="Dialogue" parent="." instance=ExtResource("5_4hlnh")]
 

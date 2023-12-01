@@ -6,7 +6,6 @@ var global
 func _ready():
 	global = get_node("/root/Global")
 	$DayLabel.text = "DAY " + str(global.day) + "/8"
-	update_progress_label()
 	update_stamina()
 	update_currency()
 	update_potions()
@@ -15,9 +14,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	pass
-	
-func update_progress_label():
-	$ProgressLabel.text = "PROGRESS " + str(global.progress + 1) + "/8"
 
 func update_stamina():
 	$StaminaBar.value = global.stamina
@@ -25,10 +21,16 @@ func update_stamina():
 	$StaminaLabel.text = str(ceil(global.stamina))
 
 func update_currency():
-	$CurrencyLabel.text = str(global.currency)
+	$CurrencyLabel.text = "x" + str(global.currency)
+	update_score()
 	
 func update_potions():
-	$PotionLabel.text = str(global.potions_collected)
+	$PotionLabel.text = "x" + str(global.potions_collected)
+	update_score()
 
 func update_inventory():
 	$Inventory.refresh()
+	update_score()
+	
+func update_score():
+	$ScoreLabel.text = "SCORE: " + str(global.calculate_score())

@@ -7,7 +7,10 @@ var stamina = max_stamina
 var day = 1
 var day_start_progress = 0
 var progress = 0
+
 var currency = 0
+var potions_collected = 0
+
 var artifact_map: Dictionary = {
 	# speed, jump, shield length, max stamina, armor
 	"Mercenary": Artifact.new(
@@ -58,7 +61,6 @@ var artifact_textures = {
 # speed, jump, shield length, max stamina, armor
 var base_power: Power = Power.new(160, 800, 1, 40, 0)
 var current_power
-var potions_collected = 0
 
 # Called when the node enters the scene tree for the first time. 
 func _ready():
@@ -115,6 +117,15 @@ func artifacts_returned():
 
 	return count
 
+func artifacts_collected():
+	var count = 0
+	
+	for a in artifact_list as Array[Artifact]:
+		if a.collected:
+			count += 1
+
+	return count
+	
 func calculate_artifact_power(giant):
 	var cumulative_power = Power.new(
 		base_power.speed,
@@ -141,3 +152,12 @@ func calculate_artifact_power(giant):
 	max_stamina = cumulative_power.max_stamina
 	
 	current_power = cumulative_power
+
+func calculate_score():
+	var score = 0
+	
+	score += currency * 7
+	score += potions_collected * 21 
+	score += artifacts_collected() * 49
+	
+	return score
