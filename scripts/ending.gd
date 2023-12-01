@@ -24,13 +24,13 @@ func _on_dialogue_finished_speaking():
 	if !weighed:
 		$WeighingTimer.start()
 	else:
+		$Transition.fade(false)
 		if count < 4:
-			global.new_game()
-			get_tree().change_scene_to_file("res://scenes/climb.tscn")
+			get_node("/root/Music").switch_music("climb", 2)
 		elif count < 8:
-			get_tree().change_scene_to_file("res://scenes/start.tscn")
+			get_node("/root/Music").switch_music("title", 2)
 		elif count == 8:
-			get_tree().change_scene_to_file("res://scenes/start.tscn")
+			get_node("/root/Music").switch_music("title", 2)
 
 func _on_weighing_timer_timeout():
 	weighed = true
@@ -44,3 +44,13 @@ func _on_weighing_timer_timeout():
 
 func _on_transition_fade_in_completed():
 	$Dialogue.show_messages("Anubis", Anubis.dialogue.initial_messages)
+
+
+func _on_transition_fade_out_completed():
+	if count < 4:
+		global.new_game()
+		get_tree().change_scene_to_file("res://scenes/climb.tscn")
+	elif count < 8:
+		get_tree().change_scene_to_file("res://scenes/start.tscn")
+	elif count == 8:
+		get_tree().change_scene_to_file("res://scenes/start.tscn")

@@ -99,7 +99,8 @@ func change_currency(value):
 		
 func change_room():
 	if global.progress == 7:
-		get_tree().change_scene_to_file("res://scenes/camp.tscn")
+		$Transition.fade(false)
+		get_node("/root/Music").switch_music("camp", 2)
 		return
 		
 	change_stamina(5)

@@ -31,5 +31,6 @@ wait_time = 2.0
 one_shot = true
 
 [connection signal="fade_in_completed" from="Transition" to="." method="_on_transition_fade_in_completed"]
+[connection signal="fade_out_completed" from="Transition" to="." method="_on_transition_fade_out_completed"]
 [connection signal="finished_speaking" from="Dialogue" to="." method="_on_dialogue_finished_speaking"]
 [connection signal="timeout" from="WeighingTimer" to="." method="_on_weighing_timer_timeout"]

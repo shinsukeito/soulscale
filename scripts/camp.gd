@@ -51,10 +51,12 @@ func talk_to_npc():
 				return
 		
 		$Transition.fade(false)
-		if global.day < 8 && global.progress < 7:
+		
+		if global.day + 1 < 8 && global.progress < 7:
 			get_node("/root/Music").switch_music("climb", 2)
 		else:
 			get_node("/root/Music").switch_music("ending", 2)
+		
 		return
 	
 	var artifact: Artifact = global.artifact_map[current_npc]

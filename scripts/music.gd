@@ -1,11 +1,13 @@
 extends Node2D
 
-var prev_music = "title"
-var next_music = "title"
+var prev_stream: AudioStreamPlayer
+var current_stream: AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	prev_stream = find_child("title")
+	current_stream = find_child("title")
+	current_stream.play(0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,29 +16,20 @@ func _process(delta):
 	
 	var pct = $TransitionTimer.time_left / $TransitionTimer.wait_time
 	
-	match(next_music):
-		"title":
-			$MusicCamp.volume_db = -80 * pct
-		"climb":
-			$MusicClimb.volume_db = -80 * pct
-		"camp":
-			$MusicCamp.volume_db = -80 * pct
-		"ending":
-			$MusicCamp.volume_db = -80 * pct
-	
-	match(prev_music):
-		"title":
-			$MusicCamp.volume_db = -80 + (80 * pct)
-		"climb":
-			$MusicClimb.volume_db = -80 + (80 * pct)
-		"camp":
-			$MusicCamp.volume_db = -80 + (80 * pct)
-		"ending":
-			$MusicCamp.volume_db = -80 + (80 * pct)
+	current_stream.volume_db = -80 * pct
+	prev_stream.volume_db = -80 + (80 * pct)
 
 func switch_music(music, time):
-	if next_music == music: return
+	if current_stream.name == music: return
 	
-	prev_music = next_music
-	next_music = music
+	prev_stream = current_stream
+	current_stream = find_child(music)
+	
+	# Sync music
+	current_stream.play(prev_stream.get_playback_position())
+	
 	$TransitionTimer.start(time)
+
+
+func _on_transition_timer_timeout():
+	prev_stream.stop()
