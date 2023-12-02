@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://0o3pe1i5d0qo"]
+[gd_scene load_steps=9 format=3 uid="uid://0o3pe1i5d0qo"]
 
 [ext_resource type="Script" path="res://scripts/start.gd" id="1_jf46d"]
 [ext_resource type="FontFile" uid="uid://bk5q15y1568n4" path="res://assets/fonts/Cabin-Bold.ttf" id="2_ca5db"]
@@ -13,12 +13,6 @@ action = &"shield"
 
 [sub_resource type="Shortcut" id="Shortcut_3visq"]
 events = [SubResource("InputEventAction_63c2w"), SubResource("InputEventAction_h3abw")]
-
-[sub_resource type="InputEventAction" id="InputEventAction_p4u7l"]
-action = &"menu"
-
-[sub_resource type="Shortcut" id="Shortcut_kmj1n"]
-events = [SubResource("InputEventAction_p4u7l")]
 
 [sub_resource type="LabelSettings" id="LabelSettings_x5idf"]
 font = ExtResource("2_ca5db")
@@ -75,7 +69,6 @@ theme_override_colors/font_disabled_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("2_ca5db")
 theme_override_font_sizes/font_size = 20
 disabled = true
-shortcut = SubResource("Shortcut_kmj1n")
 shortcut_in_tooltip = false
 text = "QUIT
 "

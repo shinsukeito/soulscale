@@ -36,11 +36,7 @@ func _ready():
 	$Giant.frozen = true
 
 # Called every frame. 'delta' is the elapsed time since the previ ous frame.
-func _process(delta):
-	if Input.is_action_pressed("menu"):
-		get_tree().change_scene_to_file("res://scenes/start.tscn")
-		get_node("/root/Music").switch_music("title", 2)
-		
+func _process(delta):		
 	if starting || global.stamina <= 0: return
 		
 	change_stamina(-delta)
